@@ -97,26 +97,7 @@ jQuery(window).load(function($) {
 				<a href="javascript:ls.photoset.getMore({$oTopic->getId()})" id="topic-photo-more" class="topic-photo-more">{$aLang.topic_photoset_show_more} &darr;</a>
 			{/if}
 		</div>
-	{/if}
-
-    <div class="info">
-    {if !$bTopicList}
-      <ul>
-          <li class="share">{$aLang.share}</li>
-          <li class="vk"><a href="/" title="VKONTAKTE"></a></li>
-          <li class="fb"><a href="/" title="FACEBOOK"></a></li>
-          <li class="tw"><a href="/" title="TWITTER"></a></li>
-          <li class="lj"><a href="/" title="LIVEJOURNAL"></a></li>
-      </ul>
-    {/if}
-      <div class="rating">
-  	    <div id="vote_area_topic_{$oTopic->getId()}" class="voting {if $oVote || ($oUserCurrent && $oTopic->getUserId()==$oUserCurrent->getId()) || strtotime($oTopic->getDateAdd())<$smarty.now-$oConfig->GetValue('acl.vote.topic.limit_time')}{if $oTopic->getRating()>0}positive{elseif $oTopic->getRating()<0}negative{/if}{/if} {if !$oUserCurrent || $oTopic->getUserId()==$oUserCurrent->getId() || strtotime($oTopic->getDateAdd())<$smarty.now-$oConfig->GetValue('acl.vote.topic.limit_time')}guest{/if}{if $oVote} voted {if $oVote->getDirection()>0}plus{elseif $oVote->getDirection()<0}minus{/if}{/if}">
-  			<a href="#" class="minus" onclick="return ls.vote.vote({$oTopic->getId()},this,-1,'topic');"></a>
-  		    <span id="vote_total_topic_{$oTopic->getId()}" class="total" title="{$aLang.topic_vote_count}: {$oTopic->getCountVote()}">{if $oVote || ($oUserCurrent && $oTopic->getUserId()==$oUserCurrent->getId()) || strtotime($oTopic->getDateAdd())<$smarty.now-$oConfig->GetValue('acl.vote.topic.limit_time')} {if $oTopic->getRating()>0}+{/if}{$oTopic->getRating()} {else} <a href="#" onclick="return ls.vote.vote({$oTopic->getId()},this,0,'topic');">?</a> {/if}</span>
-  			<a href="#" class="plus" onclick="return ls.vote.vote({$oTopic->getId()},this,1,'topic');"></a>
-  		</div>
-      </div>
-    </div>
+	{/if}   
 
     <div class="info">
     {if !$bTopicList}
