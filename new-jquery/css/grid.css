@@ -1,0 +1,323 @@
+/* Blocks
+-------------------- */
+#container 	{ margin:0 auto; width:1006px; min-height:100% }
+#header 	{ height: 192px; margin-left:26px; overflow: hidden; zoom: 1 }
+#wrapper 	{ overflow: hidden; zoom: 1; margin-top:30px }
+#content 	{ width: 730px; float: left; overflow:hidden; }
+#sidebar	{ width: 230px; float: right; }
+#footer 	{ overflow: hidden; zoom: 1; height:164px; margin-top:-164px; background:#f1f1f1 }
+
+/* Header
+-------------------- */
+#header .top-header { height:47px; overflow:hidden; margin-bottom:27px; }
+#header .top-header .pages { float:left }
+#header .top-header .pages li { float:left; font-size:14px; line-height:47px; padding:0px 26px 0px 12px }
+#header .top-header .pages li a { color:#525252 }
+#header .top-header .pages li a:hover { color:#fc0000 }
+
+/* Profile */
+#header .top-header .profile { float:right; height:47px }
+#header .top-header .profile li { float:left; text-transform: uppercase; height:47px; line-height:47px; }
+#header .top-header .profile li.add { margin-top:9px }
+#header .top-header .profile li.add a { display:block; padding:0px 13px 0px 13px; line-height:29px; text-decoration:none }
+#header .top-header .profile li.add span { background:url(../images/add-icon.png) no-repeat 0px 6px; height:23px; display:block; padding-left:22px }
+
+#header .top-header .profile li.message { padding:19px 22px 0px 22px; border-right:1px solid #f6f6f6 }
+#header .top-header .profile li.message a { width:16px; height:11px; background:url(../images/message-icon.png) no-repeat; display:block }
+#header .top-header .profile li.message a:hover { background-position:0px -11px }
+#header .top-header .profile li.active a { padding-right:14px; line-height:11px; background:url(../images/message-icon-active.png) no-repeat right; display:block }
+#header .top-header .profile li.active a:hover { background:url(../images/message-icon-active.png) no-repeat right }
+#header .top-header .profile li.active a span { color:#f70000 }
+
+#header .top-header .profile li.myprofile { padding:19px 32px 0px 23px; border-left:1px solid #e4e4e4 }
+#header .top-header .profile li.myprofile a { width:10px; height:11px; background:url(../images/myprofile-icon.png) no-repeat; display:block }
+#header .top-header .profile li.myprofile a:hover { background-position:0px -11px }
+
+#header .top-header .profile li.settings { padding:20px 32px 0px 23px; border-left:1px solid #e4e4e4 }
+#header .top-header .profile li.settings a { width:10px; height:10px; background:url(../images/settings-icon.png) no-repeat; display:block }
+#header .top-header .profile li.settings a:hover { background-position:0px -10px }
+
+#header .top-header .profile li.quit { padding:17px 22px 0px 22px; border-left:1px solid #e4e4e4  }
+#header .top-header .profile li.quit a { width:15px; height:15px; background:url(../images/quit-icon.png) no-repeat; display:block }
+#header .top-header .profile li.quit a:hover { background-position:0px -15px }
+
+#header .top-header .profile-guest { float:right; height:29px; margin-top:9px; background:#fff; border:1px solid #e3e3e3; border-bottom:1px solid #c4c3c4; border-right:1px solid #d0d0d0 }
+#header .top-header .profile-guest li { float:left; text-transform: uppercase; height:28px; line-height:29px; border-bottom:1px solid #f70000 }
+#header .top-header .profile-guest li.border { width:1px; background:#dadada }
+#header .top-header .profile-guest li a { margin-right:14px; padding-left:19px; }
+#header .top-header .profile-guest li a.voiti { background:url(../images/strelka1.png) no-repeat right; padding-right:14px }
+#header .top-header .profile-guest li a.reg { background:url(../images/strelka2.png) no-repeat right; padding-right:17px }
+
+#header .btm-header a.logo { background:#f70000; color:#fff; float:left; width:135px; padding-top:19px; padding-left:30px; height:100px; display:block; text-decoration: none; }
+#header .btm-header a.logo li { font-size:12px; font-family:Tahoma; padding-bottom:5px }
+#header .btm-header a.logo li.title { font-size:36px; font-weight:bold; line-height:30px; }
+
+#header .btm-header .left-menu { float:left; margin-left:42px }
+
+/* top-menu */
+#header .btm-header .left-menu .top-menu { height:60px; width:771px; border-bottom:1px solid #e4e4e4; overflow:hidden }
+#header .btm-header .left-menu .top-menu .navigate { float:left }
+#header .btm-header .left-menu .top-menu .navigate li { float:left; padding:17px 36px 0px 19px; font-size:16px }
+#header .btm-header .left-menu .top-menu .navigate li.last { padding-right:0px }
+
+/* Social Buttons */
+#header .btm-header .left-menu .top-menu .social-buttons { float:right; width:230px; height:60px; background:url(../images/borders-social.png) no-repeat }
+#header .btm-header .left-menu .top-menu .social-buttons ul { padding:16px 0px 0px 60px }
+#header .btm-header .left-menu .top-menu .social-buttons ul li { float:left; padding-right:18px; }
+#header .btm-header .left-menu .top-menu .social-buttons ul li a { width:16px; height:17px; background:url(../images/social-buttons.png) no-repeat; display:block }
+#header .btm-header .left-menu .top-menu .social-buttons ul li a.fb { background-position:0px 0px }
+#header .btm-header .left-menu .top-menu .social-buttons ul li a.tw { background-position:0px -17px }
+#header .btm-header .left-menu .top-menu .social-buttons ul li a.vk { background-position:0px -34px }
+#header .btm-header .left-menu .top-menu .social-buttons ul li a.rss { background-position:0px -51px }
+
+/* btm-menu */
+#header .btm-header .left-menu .btm-menu { margin-top:26px; }
+#header .btm-header .left-menu .btm-menu .top-authors { float:left; }
+#header .btm-header .left-menu .btm-menu .top-authors li { float:left; padding:1px 10px 0px 0px }
+#header .btm-header .left-menu .btm-menu .top-authors li img { width:30px; height:30px }
+#header .btm-header .left-menu .btm-menu .top-authors li.title { padding:0px 34px 0px 0px; line-height:15px }
+#header .btm-header .left-menu .btm-menu .top-authors li.title span { color:#6e6e6e; font-style:Italic; font-family: Georgia }
+
+/* Search */
+#header .btm-header .left-menu .btm-menu .search { width:230px; float:right; margin-top:3px }
+#header .btm-header .left-menu .btm-menu .search form { height:26px; border:1px solid #e4e4e4 }
+#header .btm-header .left-menu .btm-menu .search input { margin:0px; border:0px; width:188px; padding:7px 3px 0px 8px; font-size:11px; color:#949494 }
+#header .btm-header .left-menu .btm-menu .search .search-submit { margin-left:0px; border:0px; float:right; cursor:pointer; background:url(../images/search-btn.png) no-repeat; width:26px; height:26px }
+
+/* Slider */
+.slider { margin-bottom:19px; overflow:hidden; display:inline-block; *display:inline }
+.slider .slider-inner { margin-right:-14px }
+
+.slider .title-best { font-size:22px; font-weight:bold; margin:0px 13px 22px 0px; float:left }
+.slider .switch { overflow:hidden; width:64px; }
+.slider .switch li { float:left; margin-top:13px; margin-right:2px }
+.slider .switch li a { width:8px; height:8px; display:block; background:url(../images/switch-circle.png) no-repeat }
+.slider .switch li a:hover { background-position:-8px 0px }
+.slider .switch li.arrowleft { margin:11px 7px 0px 0px }
+.slider .switch li.arrowleft a { width:9px; height:12px; background:url(../images/switch-arrow.png) no-repeat; display:block }
+.slider .switch li.arrowright { margin:11px 0px 0px 4px }
+.slider .switch li.arrowright a { width:9px; height:12px; background:url(../images/switch-arrow.png) no-repeat -9px 0px; display:block }
+
+.slider .topics { clear:both }
+.slider .topics .topicshort.news { width:332px; height:249px; margin-right:14px }
+.slider .topics .topicshort.news .inform { height:209px; overflow:hidden }
+
+/* Navigation */
+.navigation { padding-bottom:20px; margin-left:26px; overflow:hidden; }
+.navigation h1 { float:left; margin-right:16px; font-weight:bold; font-size:22px }
+.navigation ul { margin-top:6px }
+.navigation ul li { display:inline-block; *display:inline; font-size:11px; padding:1px 6px; text-transform: lowercase }
+.navigation ul li a { color:#6e6e6e; border-bottom:1px dotted; }
+.navigation ul li a:hover { color:#000 }
+.navigation ul li.active { background:#f70000 }
+.navigation ul li.active a { color:#fff; border-bottom:0px }
+
+/* Misc blocks
+-------------------- */
+
+/* Blog profile */
+.blog { margin-left:26px; margin-bottom: 20px; color: #666; position: relative; }
+
+.blog .voting { position: absolute; top: 0px; right: 0px; z-index: 100; }
+.blog .voting .total { font-weight: normal; font-size:30px; color:#000; margin-top:5px; height:20px }
+.blog .voting .text { font-size: 10px; color: #aaa; text-align: center; clear: both; }
+.blog .voting.positive .total { color:#339900 }
+.blog .voting.negative .total { color:#f70000 }
+
+.blog .voting .plus,
+.blog .voting .minus 			{ display:block; width: 18px; height: 18px; float: left; background: url(../images/voting-comments.png) no-repeat; outline: none; margin-top:2px }
+.blog .voting .plus 			{ background-position: -18px 0; }
+.blog .voting .minus 			{ background-position: 0 0 }
+.blog .voting .plus:hover 	    { background-position: -18px -17px }
+.blog .voting .minus:hover 	    { background-position: 0px -17px }
+
+.blog .voting.voted.plus .plus 			{ background-position: -18px -17px !important }
+.blog .voting.voted.minus .minus 		{ background-position: 0px -17px }
+.blog .voting.voted.plus .minus:hover 	{ background-position: 0 0 }
+.blog .voting.voted.minus .plus:hover 	{ background-position: 0 0 }
+
+.blog .voting.guest .plus:hover 	{ background-position: -18px 0; }
+.blog .voting.guest .minus:hover 	{ background-position: 0 0 }
+
+.blog .blog-header { overflow: hidden; zoom: 1; position: relative;  padding: 0 100px 0 30px; }
+.blog .blog-header img { position: absolute; top: 0; left: 0; }
+.blog .blog-header .rss { float:left; overflow:hidden; margin-left:4px; margin-top:-2px }
+.blog .blog-header .rss a { display: block; width: 10px; height: 10px; background: url(../images/icons.gif) no-repeat -70px -250px; margin-right: 4px; margin-top: 4px; }
+.blog .blog-header h2 { font-size: 24px; line-height: 1.3em; float:left; margin-top: -4px; margin-left:5px }
+.blog .blog-header h2 a { text-decoration: none; border-bottom: 1px dashed }
+.blog .blog-header h2.inactive a { color: #999; border-color: #999; }
+
+.blog .actions { margin-left:35px; margin-bottom: 10px; clear:both }
+.blog .actions a:hover { text-decoration:none }
+.blog .actions .blog-edit { margin-left:0px }
+
+.blog .blog-info { display: none; background: #F4F4F6; padding: 25px 30px; margin-top:20px; border-radius: 10px; }
+.blog .blog-info h3 { font-size: 22px; color: #555; font-family: Verdana, sans-serif; }
+.blog .blog-info p { border-bottom: 1px solid #DADADA; padding-bottom: 15px; margin-bottom: 0; }
+.blog .blog-info .user { margin-right: 5px; }
+
+.blog .blog-wrapper { overflow: hidden; zoom: 1; margin-bottom: 40px; border-top: 1px solid #fff; padding: 20px 0 0; }
+.blog .blog-wrapper .blog-admins { float: left; width: 50%; }
+.blog .blog-wrapper .blog-mods { float: left; width: 50%; }
+.blog .blog-wrapper .user-list li { float: left; width: 60px;text-align: center; overflow: hidden; }
+.blog .blog-wrapper .user-list li img { display: block; margin: 0 auto 2px; }
+
+.blog-list-table { }
+.blog-list-table tbody { color: #999; }
+.blog-list-table td .avatar { float: left; position: relative; top: 2px; }
+.blog-list-table td .title { font-size: 18px; line-height: 22px; }
+.blog-list-table td .user { font-weight: bold; color: #999; background: url(../images/icons.gif) 0 -108px no-repeat; }
+.blog-list-table td .private { position: relative; top: 2px; }
+.blog-list-table td p { margin-bottom: 0; color: #999; }
+
+/* User profile */
+.user-profile { margin-bottom: 14px; border-bottom:1px solid #e4e4e4; overflow: hidden; zoom: 1; position: relative; }
+.user-profile .avatar { float: left; margin-right: 15px; }
+.user-profile h2 { font-size:22px; font-weight:bold; line-height:1em; border-bottom:0px }
+.user-profile .last { margin-top:-10px }
+.user-profile .last span { color:#9d9d9d; font-style:italic; font-family:Georgia }
+
+.user-profile .voting { float:right; margin-left:30px }
+.user-profile .voting .total { font-weight: normal; font-size:30px; height:20px; margin-top:5px; color:#000 }
+.user-profile .voting .text { font-size: 11px; color: #9d9d9d; text-align: center; clear: both; }
+.user-profile .voting.positive .total { color:#339900 }
+.user-profile .voting.negative .total { color:#f70000 }
+
+.user-profile .voting .plus,
+.user-profile .voting .minus 			{ display:block; width: 18px; height: 18px; float: left; background: url(../images/voting-comments.png) no-repeat; outline: none; margin-top:2px }
+.user-profile .voting .plus 			{ background-position: -18px 0; }
+.user-profile .voting .minus 			{ background-position: 0 0 }
+.user-profile .voting .plus:hover 	    { background-position: -18px -17px }
+.user-profile .voting .minus:hover 	    { background-position: 0px -17px }
+
+.user-profile .voting.voted.plus .plus 			{ background-position: -18px -17px !important }
+.user-profile .voting.voted.minus .minus 		{ background-position: 0px -17px }
+.user-profile .voting.voted.plus .minus:hover 	{ background-position: 0 0 }
+.user-profile .voting.voted.minus .plus:hover 	{ background-position: -18px 0 }
+
+.user-profile .voting.guest .plus:hover 	    { background-position: -18px 0; }
+.user-profile .voting.guest .minus:hover 	{ background-position: 0 0 }
+
+.user-profile .strength { float: right; }
+.user-profile .strength .total { font-weight: normal; font-size:30px; height:20px; margin-top:5px; color:#000 }
+.user-profile .strength .text { font-size: 11px; color: #9d9d9d; text-align: center; }
+
+.user-profile-content { clear:both; overflow:hidden }
+.user-profile-content .foto-profile { float:left; width:230px; margin-right:20px }
+.user-profile-content .foto-profile img { border-radius:4px; width:230px }
+.user-profile-content .foto-profile .friend { width:206px; height:46px; padding:24px 0px 0px 24px; margin-top:-10px; background:url(../images/friend-bg.png) no-repeat }
+.user-profile-content .foto-profile .friend .add-friend { width:178px; height:30px; background:url(../images/friend-button.png) no-repeat; display:block }
+.user-profile-content .foto-profile .friend .add-friend:hover { background-position:0 -30px }
+.user-profile-content .foto-profile .friend .delete-friend { width:178px; height:30px; background:url(../images/friend-button.png) no-repeat 0px -60px; display:block }
+.user-profile-content .foto-profile .friend .delete-friend:hover { background-position:0 -90px }
+.user-profile-content .foto-profile .friend .send-friend { width:178px; height:30px; background:url(../images/friend-button2.png) no-repeat; display:block }
+.user-profile-content .foto-profile .friend .reject-friend { width:178px; height:30px; background:url(../images/friend-button2.png) no-repeat 0px -30px; display:block }
+
+.user-profile-content .about-profile { float:left; position:relative; width:474px }
+.user-profile-content .about-profile h2 { margin-left:2px; font-size:22px; color:#232323; font-weight:bold; margin-bottom:0px; padding-bottom:0px }
+.user-profile-content .about-profile .where { margin-top:2px; margin-bottom:15px; background:url(../images/where-icon.png) no-repeat 0px 2px; color:#888; padding-left:20px }
+.user-profile-content .about-profile .where a { color:#888 }
+.user-profile-content .about-profile .where a:hover { color:#f70000 }
+.user-profile-content .about-profile .send-message { position:absolute; top:0px; right:0px }
+
+.user-profile-content .about-profile .list-about li { color:#232323; padding-bottom:5px }
+.user-profile-content .about-profile .list-about li span { width:132px; float:left; display:block; color:#9d9d9d }
+.user-profile-content .about-profile .list-about li a { color:#f70000; text-decoration:underline }
+.user-profile-content .about-profile .list-about li a:hover { color:#888; text-decoration:underline }
+.user-profile-content .about-profile .list-about li.about { line-height:24px; padding-top:15px }
+
+.user-profile-content .about-profile .list-about li.social-profile { padding-top:9px }
+.user-profile-content .about-profile .list-about li.social-profile a { width:24px; height:24px; display:inline-block; *display:inline; margin-right:15px; background:url(../images/social-profile.png) no-repeat; text-decoration:none }
+.user-profile-content .about-profile .list-about li.social-profile a.fb { background-position:0px 0px }
+.user-profile-content .about-profile .list-about li.social-profile a.tw { background-position:0px -24px }
+.user-profile-content .about-profile .list-about li.social-profile a.vk { background-position:0px -48px }
+
+.user-profile-topics .zagolovok { margin-bottom:20px; background: url(../images/grey-line.png) repeat-x 0px 9px; height:29px; clear: both; color: #B9B9B9;}
+.user-profile-topics .zagolovok h2 { font-weight:bold; font-size:22px; background: #fff; float: left; margin: -6px 0 0 -2px; padding: 0 8px 0 0;}
+.user-profile-topics .zagolovok a { float:right; padding:0px 0px 0px 8px; color:#fb8282; text-decoration:underline; margin-right:10px; background:#fff; }
+.user-profile-topics .zagolovok a:hover { color:#f70000 }
+
+.user-profile-topics { clear:both; overflow:hidden; margin-top:60px; display:inline-block; *display:inline }
+.user-profile-topics-inner { margin-right:-10px }
+.user-profile-topics .topicshort { margin-right:10px }
+
+.user-profile-comments { clear:both; overflow:hidden; margin-top:50px }
+.user-profile-comments .zagolovok { margin-bottom:20px; background: url(../images/grey-line.png) repeat-x 0px 9px; height:29px; clear: both; color: #B9B9B9;}
+.user-profile-comments .zagolovok h2 { font-weight:bold; font-size:22px; background: #fff; float: left; margin: -6px 0 0 -2px; padding: 0 8px 0 0;}
+.user-profile-comments .zagolovok a { float:right; padding:0px 0px 0px 8px; color:#fb8282; text-decoration:underline; margin-right:10px; background:#fff; }
+.user-profile-comments .zagolovok a:hover { color:#f70000 }
+
+.user-profile-table { width: 100%; }
+.user-profile-table td { vertical-align: top; padding: 0 0 5px; }
+.user-profile-table td.var { width: 150px; font-weight: bold; color: #999; }
+.user-profile-table td .user { margin-right: 7px; }
+
+/* Stat */
+.stat-performance { padding: 15px 20px; background: #fff; border-top: 1px solid #eee; border-bottom: 1px solid #eee; }
+.stat-performance table { }
+.stat-performance table td { width: 200px; vertical-align: top; }
+.stat-performance h4 { font-weight: bold; }
+
+/* Userfeed */
+.userfeed-get-more { display:block; width: 90%; margin: 0px auto; text-align: center; height: 2.5em; padding-top: 1em;}
+.userfeed-get-more:hover { background: #f0f7fd;}
+.userfeed_loading {background: #F7F7F7 url(../images/loader.gif) no-repeat center;}
+
+/* Stream */
+.stream-get-more { display: block; text-align: center; padding: 12px 0; background: #fafafa; color: #aaa; border-top: 1px solid #eee; text-decoration: none; }
+.stream-get-more:hover { background: #f0f7fd; }
+.stream_loading { background: #f7f7f7 url(../images/loader.gif) no-repeat center; }
+.stream-comment-preview { padding: 5px 10px; background: #f3f3f3; margin-top: 5px; }
+
+.stream-list { margin: 0 0 20px; }
+.stream-list li { margin-bottom: 5px; min-height: 48px; _height: 48px; background: #fafafa; padding: 10px 15px 10px 70px; position: relative; }
+.stream-list li .avatar { position: absolute; top: 10px; left: 10px; }
+.stream-list li .date { display: block; color: #999; }
+.stream-list li a { text-decoration: none; }
+.stream-list li a:hover { text-decoration: underline; }
+
+/* Userfields */
+.userfield-list { width: 450px; }
+.userfield-list li { background: #f7f7f7; margin-bottom: 1px; padding: 10px 5px; overflow: hidden; zoom: 1; line-height: 12px; color: #777; }
+.userfield-list li .uf-actions { float: right; }
+.userfield-list li .uf-actions img { vertical-align: top; }
+.userfield-list li .userfield_admin_name { font-weight: bold; color: #333; }
+
+.userfield-add { text-decoration: none; border-bottom: 1px dashed #70AAE0; }
+.userfield-add:hover { color: #333; border-color: #333; }
+
+/* Other
+-------------------- */
+.content-inner { margin-right:-21px}
+
+/* Tags
+-------------------- */
+.tags { clear:both; margin:22px 0px 50px 26px }
+.tags h2 { font-size: 22px; font-weight:bold; margin-bottom:5px }
+.tags .cloud li { display: inline; margin-right: 5px; line-height: 22px; }
+.tags .cloud li a { text-decoration: none; white-space: nowrap; color: #bdbdbd; }
+.tags .cloud li a:hover { color: #f70000; }
+.tags .cloud li a.w1 { font-size: 12px; }
+.tags .cloud li a.w2 { font-size: 12px; }
+.tags .cloud li a.w3 { font-size: 14px; }
+.tags .cloud li a.w4 { font-size: 14px; }
+.tags .cloud li a.w5 { font-size: 18px; }
+.tags .cloud li a.w6 { font-size: 18px; }
+.tags .cloud li a.w7 { font-size: 20px; }
+.tags .cloud li a.w8 { font-size: 20px; }
+.tags .cloud li a.w9 { font-size: 22px; }
+.tags .cloud li a.w10 { font-size: 22px; }
+
+/* Footer
+-------------------- */
+.hFooter { clear: both; height: 164px; }
+
+.footer-inner { margin:0 auto; width:978px; padding:36px 0px 0px 26px; overflow:hidden }
+.footer-inner h3 { font-weight:bold; font-size:14px }
+.footer-inner .block1 { float:left; padding-right:60px; line-height:24px }
+.footer-inner .block1 span { color:#9a9a9a }
+.footer-inner .block1 span a { color:#7b7b7b }
+.footer-inner .block1 span a:hover { color:#f70000; }
+.footer-inner .block1 a { text-decoration:underline }
+.footer-inner .block2 { float:left; width:104px; padding-right:76px }
+.footer-inner .block3 { float:left }
