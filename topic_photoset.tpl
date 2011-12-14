@@ -97,7 +97,11 @@ jQuery(window).load(function($) {
 				<a href="javascript:ls.photoset.getMore({$oTopic->getId()})" id="topic-photo-more" class="topic-photo-more">{$aLang.topic_photoset_show_more} &darr;</a>
 			{/if}
 		</div>
+<<<<<<< HEAD
 	{/if}
+=======
+	{/if}   
+>>>>>>> 9d103586966c954a836ed20b1923db247d2fe3d6
 
     <div class="info">
     {if !$bTopicList}
@@ -117,8 +121,12 @@ jQuery(window).load(function($) {
   		</div>
       </div>
     </div>
+<<<<<<< HEAD
 	{if !$bTopicList}
 		{hook run='topic_show_end' topic=$oTopic}
 	{/if}
+=======
+
+>>>>>>> 9d103586966c954a836ed20b1923db247d2fe3d6
 </div>
 {/if}
