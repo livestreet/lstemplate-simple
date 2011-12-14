@@ -1,0 +1,115 @@
+.block { margin-bottom:35px; overflow:hidden }
+.block h2 { font-size: 20px; font-weight:bold; margin-bottom:5px }
+
+.block.account h2 { margin-bottom:12px; padding-bottom:10px; border-bottom:1px solid #e4e4e4 }
+.block.account .friend-list { margin-right:-10px }
+.block.account .friend-list li { display:inline-block; *display:inline; margin-right:7px; margin-bottom:5px }
+.block.account .friend-list li img { width:30px; height:30px }
+
+.block.account .blog-list li { padding-bottom:12px; clear:both; height:30px; line-height:30px; overflow:hidden }
+.block.account .blog-list li span { float:right; font-weight:bold }
+.block.account .blog-list li img { width:30px; height:30px; float:left; margin-right:10px }
+
+.block .stream-settings-userlist ul,
+.block .stream-settings-friends,
+.block .stream-settings-blogs { overflow: auto; max-height: 200px; _height: expression( this.scrollHeight > 200 ? "200px" : "auto" ); position: relative; }
+
+/* Contacts */
+.block.contacts img { padding: 7px; border: 1px solid #ccc; }
+.block.contacts ul { margin-top: 5px; }
+.block.contacts ul li { padding: 3px 0 3px 25px; }
+.block.contacts ul li.icq { background: url(../images/icons-contacts.gif) no-repeat scroll 0px 2px; }
+.block.contacts ul li.jabber { background: url(../images/icons-contacts.gif) no-repeat scroll 0px -23px; }
+.block.contacts ul li.skype { background: url(../images/icons-contacts.gif) no-repeat scroll 0px -47px; margin-bottom: 10px; }
+.block.contacts ul li.lj { background: url(../images/icons-contacts.gif) no-repeat scroll 0px -73px; }
+.block.contacts ul li.vk { background: url(../images/icons-contacts.gif) no-repeat scroll 0px -99px; margin-bottom: 10px; }
+.block.contacts ul li.email { background: url(../images/icons-contacts.gif) no-repeat scroll 0px -122px; }
+.block.contacts ul li.phone { background: url(../images/icons-contacts.gif) no-repeat scroll 0px -145px; }
+
+/* AboutBlog */
+.blockabout { border:3px solid #fff0f0; padding:10px 11px; overflow:hidden; margin-bottom:24px }
+.blockabout .first-info { min-height:48px; margin-bottom:8px; overflow:hidden }
+.blockabout .first-info .avatar { float:left; margin-right:12px }
+.blockabout .first-info h2 { float:left; font-size:12px; font-weight:bold; }
+.blockabout .second-info { max-height:54px; margin-bottom:5px; clear:both; overflow:hidden; font-size:11px; color:#888 }
+.blockabout .third-info { overflow:hidden; color:#888; font-size:11px; font-style:Italic; font-family:Georgia }
+.blockabout .third-info b { color:#000; font-weight:normal }
+.blockabout .fourth-info { overflow:hidden; border-top:1px solid #e4e4e4; padding-top:10px; margin-top:5px; }
+.blockabout .fourth-info .voting { overflow: hidden; zoom: 1; margin-top:8px; float:left }
+
+.blockabout .fourth-info .voting .total { float: left; padding:0px 6px 0px 5px; font-weight:bold; color: #000; }
+.blockabout .fourth-info .voting .total a { text-decoration: none; color: #000; outline: none; }
+
+.blockabout .fourth-info .voting.positive .total { color: #5eb600 }
+.blockabout .fourth-info .voting.negative .total { color: #cf0000; }
+
+.blockabout .fourth-info .voting .plus,
+.blockabout .fourth-info .voting .minus 			{ display:block; width: 18px; height: 18px; float: left; background: url(../images/voting-comments.png) no-repeat; outline: none; margin-top:-5px }
+.blockabout .fourth-info .voting .plus 			    { background-position: -18px 0; }
+.blockabout .fourth-info .voting .minus 			{ background-position: 0 0 }
+.blockabout .fourth-info .voting .plus:hover 	    { background-position: -18px -17px }
+.blockabout .fourth-info .voting .minus:hover 	    { background-position: 0px -17px }
+
+.blockabout .fourth-info .voting.voted.plus .plus 			{ background-position: -18px -17px !important }
+.blockabout .fourth-info .voting.voted.minus .minus 		{ background-position: 0px -17px }
+.blockabout .fourth-info .voting.voted.plus .minus:hover 	{ background-position: 0 0 }
+.blockabout .fourth-info .voting.voted.minus .plus:hover 	{ background-position: 0 0 }
+
+.blockabout .fourth-info .voting.guest .plus:hover 	    { background-position: -18px 0; }
+.blockabout .fourth-info .voting.guest .minus:hover 	{ background-position: 0 0 }
+
+
+/* Stream */
+.block.stream ul.list { font-size: 11px; color: #999; }
+.block.stream ul.list li { padding: 9px 0px 9px 0px; overflow:hidden; border-top: 1px solid #e4e4e4; }
+.block.stream ul.list li .avatar { float:left; margin-right:10px; width:30px; height:30px; margin-top:4px }
+.block.stream ul.list li .information { float:right; width:190px; position:relative }
+.block.stream ul.list li .information .user { font-weight: bold; font-size:12px; color: #000; text-decoration: none; background:none; padding-left:0px; margin-right:8px }
+.block.stream ul.list li .information .date { color:#9d9d9d; margin-top:-1px; font-style:Italic; font-family: Georgia }
+.block.stream ul.list li .information .topic-title { font-size:12px }
+.block.stream ul.list li .information .stream-comment-icon { position:absolute; right:0px; top:0px; background: url(../images/stream-comment-icon.png) no-repeat 0px 5px; padding-left: 13px; zoom: 1; font-style:Italic; font-family: Georgia }
+.block.stream ul.list li .information .stream-comment-icon:hover { background: url(../images/stream-comment-icon-hover.png) no-repeat 0px 5px }
+
+/* Top Blogs */
+.block.blogs ul.list { border-top: 1px solid #eee; }
+.block.blogs ul.list li { padding: 5px 0 5px; border-bottom: 1px solid #eee; overflow: hidden; zoom: 1; }
+.block.blogs ul.list li a { color: #777; }
+.block.blogs ul.list li img { vertical-align: top; }
+.block.blogs ul.list li .rating { float: right; font-weight: bold; margin-left: 10px; }
+
+.block.blogs .blog-list { padding-top:10px }
+.block.blogs .blog-list li { padding-bottom:12px; position:relative; clear:both; height:30px; line-height:30px; overflow:hidden }
+.block.blogs .blog-list li img { width:30px; height:30px; float:left; margin-right:10px }
+.block.blogs .blog-list li .infa { display:table; line-height:16px }
+.block.blogs .blog-list li span { position:absolute; right:0px; top:-8px; font-weight:bold }
+
+
+/* Tags */
+.block .cloud { text-align: center; }
+.block .cloud li { display: inline; margin-right: 5px; line-height: 22px; }
+.block .cloud li a { text-decoration: none; white-space: nowrap; color: #bdbdbd; }
+.block .cloud li a:hover { color: #f70000; }
+.block .cloud li a.w1 { font-size: 12px; }
+.block .cloud li a.w2 { font-size: 12px; }
+.block .cloud li a.w3 { font-size: 14px; }
+.block .cloud li a.w4 { font-size: 14px; }
+.block .cloud li a.w5 { font-size: 18px; }
+.block .cloud li a.w6 { font-size: 18px; }
+.block .cloud li a.w7 { font-size: 20px; }
+.block .cloud li a.w8 { font-size: 20px; }
+.block .cloud li a.w9 { font-size: 22px; }
+.block .cloud li a.w10 { font-size: 22px; }
+
+/* Stream Settings */
+.block.stream-settings h2 { margin-bottom: 7px; }
+.block.stream-settings h3 { margin-bottom: 7px; }
+.block.stream-settings p.note { margin-bottom: 15px; color: #aaa; }
+.block.stream-settings input.input-checkbox { position: relative; top: 2px; margin: 0 2px 0 1px; }
+.block.stream-settings ul li { padding-bottom: 5px; }
+.block.stream-settings .stream-settings-filter { padding-bottom: 15px; margin: 0 0 15px 0; border-bottom: 1px solid #ddd; }
+.block.stream-settings .stream-settings-userlist { padding-bottom: 15px; margin: 0 0 15px 0; border-bottom: 1px solid #ddd; }
+.block.stream-settings .stream-settings-userlist p { margin-bottom: 10px; }
+.block.stream-settings .stream-settings-userlist p input { border: 1px solid #ccc; padding: 3px; margin-right: 5px; }
+.block.stream-settings .stream-settings-userlist p a { border-bottom: 1px dashed #70AAE0; text-decoration: none; }
+.block.stream-settings .stream-settings-userlist p a:hover { color: #555; border-color: #555; }
+.block.stream-settings .stream-settings-userlist li { padding-bottom: 5px; }
