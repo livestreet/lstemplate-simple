@@ -89,6 +89,8 @@
             <li class="social-profile"><span>{$aLang.social_profile}:</span><a href="/" class="fb" title="FACEBOOK"></a><a href="/" class="tw" title="TWITTER"></a><a href="/" class="vk" title="VKONTAKTE"></a></li>
 
             {if $oUserProfile->getProfileAbout()}<li class="about"><span>{$aLang.profile_about}:</span>{$oUserProfile->getProfileAbout()|escape:'html'}</li>{/if}
+
+        {hook run='profile_whois_item' oUserProfile=$oUserProfile}
         </ul>
     </div>
 </div>

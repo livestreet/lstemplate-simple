@@ -22,24 +22,24 @@
 #header .top-header .profile li.add a { display:block; padding:0px 13px 0px 13px; line-height:29px; text-decoration:none }
 #header .top-header .profile li.add span { background:url(../images/add-icon.png) no-repeat 0px 6px; height:23px; display:block; padding-left:22px }
 
-#header .top-header .profile li.message { padding:19px 22px 0px 22px; border-right:1px solid #f6f6f6 }
-#header .top-header .profile li.message a { width:16px; height:11px; background:url(../images/message-icon.png) no-repeat; display:block }
-#header .top-header .profile li.message a:hover { background-position:0px -11px }
-#header .top-header .profile li.active a { padding-right:14px; line-height:11px; background:url(../images/message-icon-active.png) no-repeat right; display:block }
+#header .top-header .profile li.message { padding:15px 20px 0px 20px; border-right:1px solid #f6f6f6 }
+#header .top-header .profile li.message a { width:22px; height:22px; background:url(../images/message-icon.png) no-repeat; display:block }
+#header .top-header .profile li.message a:hover { background-position:0px -22px }
+#header .top-header .profile li.active a { padding-right:12px; line-height:23px; background:url(../images/message-icon-active.png) no-repeat right; display:block }
 #header .top-header .profile li.active a:hover { background:url(../images/message-icon-active.png) no-repeat right }
 #header .top-header .profile li.active a span { color:#f70000 }
 
-#header .top-header .profile li.myprofile { padding:19px 32px 0px 23px; border-left:1px solid #e4e4e4 }
-#header .top-header .profile li.myprofile a { width:10px; height:11px; background:url(../images/myprofile-icon.png) no-repeat; display:block }
-#header .top-header .profile li.myprofile a:hover { background-position:0px -11px }
+#header .top-header .profile li.myprofile { padding:15px 24px 0px 24px; border-left:1px solid #e4e4e4 }
+#header .top-header .profile li.myprofile a { width:16px; height:22px; background:url(../images/myprofile-icon.png) no-repeat; display:block }
+#header .top-header .profile li.myprofile a:hover { background-position:0px -22px }
 
-#header .top-header .profile li.settings { padding:20px 32px 0px 23px; border-left:1px solid #e4e4e4 }
-#header .top-header .profile li.settings a { width:10px; height:10px; background:url(../images/settings-icon.png) no-repeat; display:block }
-#header .top-header .profile li.settings a:hover { background-position:0px -10px }
+#header .top-header .profile li.settings { padding:15px 20px 0px 20px; border-left:1px solid #e4e4e4 }
+#header .top-header .profile li.settings a { width:22px; height:22px; background:url(../images/settings-icon.png) no-repeat; display:block }
+#header .top-header .profile li.settings a:hover { background-position:0px -22px }
 
-#header .top-header .profile li.quit { padding:17px 22px 0px 22px; border-left:1px solid #e4e4e4  }
-#header .top-header .profile li.quit a { width:15px; height:15px; background:url(../images/quit-icon.png) no-repeat; display:block }
-#header .top-header .profile li.quit a:hover { background-position:0px -15px }
+#header .top-header .profile li.quit { padding:15px 20px 0px 20px; border-left:1px solid #e4e4e4  }
+#header .top-header .profile li.quit a { width:22px; height:22px; background:url(../images/quit-icon.png) no-repeat; display:block }
+#header .top-header .profile li.quit a:hover { background-position:0px -22px }
 
 #header .top-header .profile-guest { float:right; height:29px; margin-top:9px; background:#fff; border:1px solid #e3e3e3; border-bottom:1px solid #c4c3c4; border-right:1px solid #d0d0d0 }
 #header .top-header .profile-guest li { float:left; text-transform: uppercase; height:28px; line-height:29px; border-bottom:1px solid #f70000 }
@@ -85,7 +85,7 @@
 #header .btm-header .left-menu .btm-menu .search .search-submit { margin-left:0px; border:0px; float:right; cursor:pointer; background:url(../images/search-btn.png) no-repeat; width:26px; height:26px }
 
 /* Slider */
-.slider { margin-bottom:19px; overflow:hidden; display:inline-block; *display:inline }
+.slider { margin-bottom:19px; overflow:hidden; height:330px; display:inline-block; *display:inline }
 .slider .slider-inner { margin-right:-14px }
 
 .slider .title-best { font-size:22px; font-weight:bold; margin:0px 13px 22px 0px; float:left }
@@ -98,7 +98,7 @@
 .slider .switch li.arrowright { margin:11px 0px 0px 4px }
 .slider .switch li.arrowright a { width:9px; height:12px; background:url(../images/switch-arrow.png) no-repeat -9px 0px; display:block }
 
-.slider .topics { clear:both }
+.slider .topics { clear:both }                   
 .slider .topics .topicshort.news { width:332px; height:249px; margin-right:14px }
 .slider .topics .topicshort.news .inform { height:209px; overflow:hidden }
 
@@ -321,3 +321,4 @@
 .footer-inner .block1 a { text-decoration:underline }
 .footer-inner .block2 { float:left; width:104px; padding-right:76px }
 .footer-inner .block3 { float:left }
+.footer-inner .block4 { float:left; width:150px; padding-right:60px }

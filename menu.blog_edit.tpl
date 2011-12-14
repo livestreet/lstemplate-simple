@@ -19,6 +19,10 @@
     <ul>
 	    <li {if $sMenuItemSelect=='profile'}class="active"{/if}><a href="{router page='blog'}edit/{$oBlogEdit->getId()}/">{$aLang.profile_blog}</a></li>
 	    <li {if $sMenuItemSelect=='admin'}class="active"{/if}><a href="{router page='blog'}admin/{$oBlogEdit->getId()}/">{$aLang.users_blog}</a></li>
+
+	    {hook run='menu_blog_edit_admin_item'}
     </ul>
+    
+    {hook run='menu_blog_edit'}
     {/if}
 </div>

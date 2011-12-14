@@ -98,6 +98,8 @@
   		</div>
       </div>
     </div>
-
+	{if !$bTopicList}
+		{hook run='topic_show_end' topic=$oTopic}
+	{/if}
 </div>
 {/if}

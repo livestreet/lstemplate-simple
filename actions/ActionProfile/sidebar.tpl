@@ -35,8 +35,12 @@
 
         <ul class="blog-list">
 		    {foreach from=$aBlogsOwner item=oBlog name=blog_owner}
-		        <li><a href="{router page='blog'}{$oBlog->getUrl()}/"><img src="{$oBlog->getAvatarPath(48)}" alt="avatar" class="avatar" title="{$oBlog->getTitle()|escape:'html'}" /></a><a href="{router page='blog'}{$oBlog->getUrl()}/">{$oBlog->getTitle()|escape:'html'}</a><span>{$oBlog->getRating()}</span></li>
-		    {/foreach}
+		        <li>
+                    <a href="{router page='blog'}{$oBlog->getUrl()}/"><img src="{$oBlog->getAvatarPath(48)}" alt="avatar" class="avatar" title="{$oBlog->getTitle()|escape:'html'}" /></a>
+                    <div class="infa"><a href="{router page='blog'}{$oBlog->getUrl()}/">{$oBlog->getTitle()|escape:'html'}</a></div>
+                    <span>{$oBlog->getRating()}</span>
+                </li>
+            {/foreach}
         </ul>
 	</div>
     {/if}
@@ -48,8 +52,12 @@
         <ul class="blog-list">
           {foreach from=$aBlogUsers item=oBlogUser name=blog_user}
               {assign var="oBlog" value=$oBlogUser->getBlog()}
-              <li><a href="{router page='blog'}{$oBlog->getUrl()}/"><img src="{$oBlog->getAvatarPath(48)}" alt="avatar" class="avatar" title="{$oBlog->getTitle()|escape:'html'}" /></a><a href="{router page='blog'}{$oBlog->getUrl()}/">{$oBlog->getTitle()|escape:'html'}</a><span>{$oBlog->getRating()}</span></li>
-		  {/foreach}
+		        <li>
+                    <a href="{router page='blog'}{$oBlog->getUrl()}/"><img src="{$oBlog->getAvatarPath(48)}" alt="avatar" class="avatar" title="{$oBlog->getTitle()|escape:'html'}" /></a>
+                    <div class="infa"><a href="{router page='blog'}{$oBlog->getUrl()}/">{$oBlog->getTitle()|escape:'html'}</a></div>
+                    <span>{$oBlog->getRating()}</span>
+                </li>
+              {/foreach}
         </ul>
 	</div>
     {/if}

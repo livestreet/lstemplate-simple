@@ -7,17 +7,16 @@
 	right: 0; 
 	z-index: 100;
 	text-align: center; 
-	background: #FAFBFB; 
-	border-radius: 10px 0 0 10px;
-	border-top: 1px solid #eee; 
-	border-bottom: 1px solid #ddd; 
-	border-left: 1px solid #ddd; 
+	background: #FAFBFB;
+	border-top: 1px solid #e4e4e4;
+	border-bottom: 1px solid #e4e4e4;
+	border-left: 1px solid #e4e4e4;
 	_position: absolute; 
 	_top: expression( eval(document.documentElement.scrollTop) + 220 +"px" ); 
 }
 .update .update-comments { width: 26px; height: 26px; cursor: pointer; background: url(../images/update.gif) no-repeat; }
 .update .update-comments.active { background: url(../images/update_act.gif) no-repeat; }
-.update .new-comments { border-top: 1px solid #ececed; color: #3cc600; padding-top: 7px; margin-top: 3px; cursor: pointer; }
+.update .new-comments { border-top: 1px solid #e4e4e4; color: #ba1b1b; padding-top: 7px; margin-top: 3px; cursor: pointer; }
 
 
 /* Comments */

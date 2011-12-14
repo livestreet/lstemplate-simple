@@ -29,6 +29,8 @@
               			<a href="#" class="plus" onclick="return ls.vote.vote({$oComment->getId()},this,1,'comment');" title="Согласен"></a>
               		</li>
               	    {/if}
+
+                    {hook run='comment_action' comment=$oComment}
         		</ul>
 
         		{if $oComment->isBad()}

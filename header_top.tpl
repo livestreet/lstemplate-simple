@@ -8,6 +8,7 @@
     				<a href="{router page='stream'}">{$aLang.stream_personal_title}</a>
     			</li>
     		{/if}
+            
     		{hook run='main_menu'}
     	</ul>
 
@@ -22,6 +23,8 @@
                 <li class="settings"><a href="{router page='settings'}profile/" title="{$aLang.settings}"></a></li>
                 <li class="myprofile"><a href="{$oUserCurrent->getUserWebPath()}" title="{$aLang.profile}"></a></li>
                 <li class="quit"><a href="{router page='login'}exit/?security_ls_key={$LIVESTREET_SECURITY_KEY}" title="{$aLang.quit}"></a></li>
+
+                {hook run='userbar_item'}
             </ul>
         {else}
             <ul class="profile-guest">

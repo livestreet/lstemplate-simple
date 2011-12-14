@@ -54,6 +54,16 @@ $config['module']['topic']['photoset']['size'] = array( // список разм
 		'w' => 332,
 		'h' => 249,
 		'crop' => true,
+	),
+	array(
+		'w' => 229,
+		'h' => 116,
+		'crop' => true,
+	),
+	array(
+		'w' => 354,
+		'h' => 186,
+		'crop' => true,
 	)
 );
 return $config;

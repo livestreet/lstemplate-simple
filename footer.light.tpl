@@ -13,6 +13,19 @@
             Блого-социальный движок<br />
             <a href="/">Информация о проекте</a>
         </div>
+        <div class="block4">
+        {if $oUserCurrent}
+            <h3><a href="{$oUserCurrent->getUserWebPath()}">{$oUserCurrent->getLogin()}</a></h3>
+            <a href="{router page='topic'}add/">Создать топик</a><br />
+            <a href="{router page='talk'}">Личные сообщения</a><br />
+            <a href="{router page='settings'}profile/">Настройки профиля</a><br />
+            <a href="{router page='login'}exit/?security_ls_key={$LIVESTREET_SECURITY_KEY}">Выйти</a>
+        {else}
+            <h3>Авторизация</h3>
+            <a href="{router page='login'}">Войти</a><br />
+            <a href="{router page='registration'}">Зарегистироваться</a>
+        {/if}
+        </div>
         <div class="block2">
             <h3>О сайте</h3>
             <a href="/">Контакты</a>

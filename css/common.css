@@ -46,6 +46,16 @@
 .switcher li.active { color: #f70000; }
 .switcher li a:hover { color: #f70000; }
 
+/* Switcher2 */
+.switcher2 { overflow: hidden; clear:both; zoom: 1; font-size: 12px; padding:7px }
+.switcher2 li { float: left; color: #adadad; height:22px; padding:0px 10px 0px 10px; line-height:22px; font-weight:bold;cursor:pointer; border-left:1px solid #e4e4e4; text-transform: uppercase }
+.switcher2 li.first { border:0px; padding:0px 10px 0px 5px }
+.switcher2 li.last { padding-right:0px }
+.switcher2 li a { color: #A2A2A2; text-decoration: none; }
+.switcher2 li:hover { color: #f70000; }
+.switcher2 li.active { color: #f70000; }
+.switcher2 li a:hover { color: #f70000; }
+
 /* System messages */
 .system-message-error 	{ background: #f0c8c8; color: #b22626; padding: 10px 15px; margin-bottom: 15px; margin-left:26px }
 .system-message-notice { background: #dafad8; color: #4bb23b; padding: 10px 15px; margin-bottom: 15px; margin-left:26px }

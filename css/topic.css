@@ -126,7 +126,6 @@
 .topicshort.photo2 .topic-photo-preview .topic-photo-count { cursor: pointer; position: absolute; bottom: 5px; right: 8px; background: #000; color: #fff; font-size:11px; padding:0px 4px; background: rgba(0,0,0,.4); }
 .topicshort.photo2 .topic-photo-preview .topic-photo-count span { background:url(../images/photo-icon.png) no-repeat 0px 1px; padding-left:18px }
 
-
 .topic.photo .topic-photo-preview { margin-left:22px }
 .topic.photo .topic-photo-preview .topic-photo-desc { display: none; width: 96%; padding: 7px 2%; position: absolute; bottom: 0; left: 0; background: #000; color: #6bd24b; color: #fff; line-height: 16px; background: rgba(0,0,0,.7); }
 .topic.photo .topic-photo-preview { position: relative; margin-bottom: 15px; cursor: pointer; }

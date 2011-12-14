@@ -6,9 +6,10 @@
 .block.account .friend-list li { display:inline-block; *display:inline; margin-right:7px; margin-bottom:5px }
 .block.account .friend-list li img { width:30px; height:30px }
 
-.block.account .blog-list li { padding-bottom:12px; clear:both; height:30px; line-height:30px; overflow:hidden }
-.block.account .blog-list li span { float:right; font-weight:bold }
+.block.account .blog-list li { padding-bottom:12px; position:relative; clear:both; height:30px; line-height:30px; overflow:hidden }
 .block.account .blog-list li img { width:30px; height:30px; float:left; margin-right:10px }
+.block.account .blog-list li .infa { display:table; line-height:16px }
+.block.account .blog-list li span { position:absolute; right:0px; top:-8px; font-weight:bold }
 
 .block .stream-settings-userlist ul,
 .block .stream-settings-friends,
