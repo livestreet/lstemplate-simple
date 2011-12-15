@@ -9,7 +9,13 @@
         <h2><a href="{$oBlog->getUrlFull()}">{$oTopic->getBlog()->getTitle()|escape:'html'}</a></h2>
     </div>
     <div class="second-info">{$oTopic->getBlog()->getDescription()}</div>
-    <div class="third-info"><b>{$oTopic->getBlog()->getCountUser()}</b> {$aLang.readers}</div>
+    <div class="third-info">
+    {if $oTopic->getBlog()->getCountUser()}
+        <b>{$oTopic->getBlog()->getCountUser()}</b> {$aLang.readers}
+    {else}
+        <b>{$aLang.none_readers}</b>
+    {/if}
+    </div>
     {if $oUserCurrent}
     <div class="fourth-info">
         <div id="vote_area_blog_{$oTopic->getBlog()->getId()}" class="voting {if $oTopic->getBlog()->getRating()>0}positive{elseif $oTopic->getBlog()->getRating()<0}negative{/if} {if !$oUserCurrent || $oTopic->getBlog()->getOwnerId()==$oUserCurrent->getId()}guest{/if} {if $oTopic->getVote()} voted {if $oTopic->getVote()->getDirection()>0}plus{elseif $oTopic->getVote()->getDirection()<0}minus{/if}{/if}" style="{if $oUserCurrent and $oUserCurrent->getId()!=$oTopic->getBlog()->getOwnerId() and $oTopic->getBlog()->getType()=='personal'}margin-top:0px{/if}">

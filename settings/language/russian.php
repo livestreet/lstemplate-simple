@@ -62,6 +62,7 @@ return array(
     'add_blog' => 'Блога',
     'profile_blog' => 'Профиля блога',
     'users_blog' => 'Пользователей',
+    'none_readers' => 'Нет читателей',
     '' => '',
     '' => '',
     '' => '',

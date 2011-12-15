@@ -49,12 +49,7 @@ $config['module']['topic']['photoset']['size'] = array( // список разм
 		'w' => 50,
 		'h' => 50,
 		'crop' => true,
-	),
-	array(
-		'w' => 332,
-		'h' => 249,
-		'crop' => true,
-	),
+	),        
 	array(
 		'w' => 229,
 		'h' => 116,

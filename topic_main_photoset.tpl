@@ -17,7 +17,7 @@ jQuery(window).load(function($) {
 		{if $oMainPhoto->getDescription()}
 			<div class="topic-photo-desc" id="photoset-photo-desc-{$oTopic->getId()}">{$oMainPhoto->getDescription()}</div>
 		{/if}
-		<img src="{$oMainPhoto->getWebPath('228crop')}" alt="image" id="photoset-main-image-{$oTopic->getId()}" />
+		<img src="{$oMainPhoto->getWebPath('229crop')}" alt="image" id="photoset-main-image-{$oTopic->getId()}" />
 	</div>
 
 	{assign var=iPhotosCount value=$oTopic->getPhotosetCount()}
