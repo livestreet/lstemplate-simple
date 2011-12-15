@@ -79,7 +79,7 @@
 .act { color:#f80000; text-decoration:underline !important }
 .act:hover { text-decoration:none !important }
 
-.padding { padding: 10px 20px; }
+.padding {  padding: 10px 20px; }
 
 .tags-search { margin-left:26px; margin-bottom: 20px; }
 .tags-search img { top:4px; position:relative }
