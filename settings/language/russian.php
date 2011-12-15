@@ -63,7 +63,7 @@ return array(
     'profile_blog' => 'Профиля блога',
     'users_blog' => 'Пользователей',
     'none_readers' => 'Нет читателей',
-    '' => '',
+    'slider_title_best' => 'Лучшее',
     '' => '',
     '' => '',
     '' => '',

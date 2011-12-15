@@ -85,7 +85,8 @@
 #header .btm-header .left-menu .btm-menu .search .search-submit { margin-left:0px; border:0px; float:right; cursor:pointer; background:url(../images/search-btn.png) no-repeat; width:26px; height:26px }
 
 /* Slider */
-.slider-nav .title-best { font-size:22px; font-weight:bold; margin:0px 13px 22px 0px; float:left }
+.slider-nav { margin-bottom:22px; overflow:hidde }
+.slider-nav .title-best { font-size:22px; font-weight:bold; margin:0px 13px 0px 0px; float:left }
 .slider-nav .switch { overflow:hidden; width:64px; }
 .slider-nav .switch li { float:left; margin-top:13px; margin-right:2px }
 .slider-nav .switch li a { width:8px; height:8px; display:block; background:url(../images/switch-circle.png) no-repeat }
@@ -97,7 +98,7 @@
 .slider-nav .switch li.arrowright a { width:9px; height:12px; background:url(../images/switch-arrow.png) no-repeat -9px 0px; display:block }
 .slider-nav .switch li.arrowright a:hover { background-position:-27px 0px }
 
-#slider { height: 300px;width: 729px;overflow: hidden }
+#slider { height: 300px;width: 729px;overflow: hidden; clear:both }
 #slider-hidden { height: 300px; width: 6000px; margin-left: 0; margin-right:-11px }
 .topic-slider_area { height: 330px; width: 356px; display: inline-block;}
 .topic-slider { height: 300px; width: 356px; margin-right:14px; display: inline-block; }
