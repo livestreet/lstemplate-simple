@@ -85,22 +85,24 @@
 #header .btm-header .left-menu .btm-menu .search .search-submit { margin-left:0px; border:0px; float:right; cursor:pointer; background:url(../images/search-btn.png) no-repeat; width:26px; height:26px }
 
 /* Slider */
-.slider { margin-bottom:19px; overflow:hidden; height:330px; display:inline-block; *display:inline }
-.slider .slider-inner { margin-right:-14px }
+.slider-nav .title-best { font-size:22px; font-weight:bold; margin:0px 13px 22px 0px; float:left }
+.slider-nav .switch { overflow:hidden; width:64px; }
+.slider-nav .switch li { float:left; margin-top:13px; margin-right:2px }
+.slider-nav .switch li a { width:8px; height:8px; display:block; background:url(../images/switch-circle.png) no-repeat }
+.slider-nav .switch li a:hover { background-position:-8px 0px }
+.slider-nav .switch li.arrowleft { margin:11px 7px 0px 0px }
+.slider-nav .switch li.arrowleft a { width:9px; height:12px; background:url(../images/switch-arrow.png) no-repeat; display:block }
+.slider-nav .switch li.arrowleft a:hover { background-position:-18px 0px }
+.slider-nav .switch li.arrowright { margin:11px 0px 0px 4px }
+.slider-nav .switch li.arrowright a { width:9px; height:12px; background:url(../images/switch-arrow.png) no-repeat -9px 0px; display:block }
+.slider-nav .switch li.arrowright a:hover { background-position:-27px 0px }
 
-.slider .title-best { font-size:22px; font-weight:bold; margin:0px 13px 22px 0px; float:left }
-.slider .switch { overflow:hidden; width:64px; }
-.slider .switch li { float:left; margin-top:13px; margin-right:2px }
-.slider .switch li a { width:8px; height:8px; display:block; background:url(../images/switch-circle.png) no-repeat }
-.slider .switch li a:hover { background-position:-8px 0px }
-.slider .switch li.arrowleft { margin:11px 7px 0px 0px }
-.slider .switch li.arrowleft a { width:9px; height:12px; background:url(../images/switch-arrow.png) no-repeat; display:block }
-.slider .switch li.arrowright { margin:11px 0px 0px 4px }
-.slider .switch li.arrowright a { width:9px; height:12px; background:url(../images/switch-arrow.png) no-repeat -9px 0px; display:block }
-
-.slider .topics { clear:both }                   
-.slider .topics .topicshort.news { width:332px; height:249px; margin-right:14px }
-.slider .topics .topicshort.news .inform { height:209px; overflow:hidden }
+#slider { height: 300px;width: 729px;overflow: hidden }
+#slider-hidden { height: 300px; width: 6000px; margin-left: 0; margin-right:-11px }
+.topic-slider_area { height: 330px; width: 356px; display: inline-block;}
+.topic-slider { height: 300px; width: 356px; margin-right:14px; display: inline-block; }
+.topic-slider .topicshort.news { width:332px; height:249px; margin-right:14px }
+.topic-slider .topicshort.news .inform { height:209px; overflow:hidden }
 
 /* Navigation */
 .navigation { padding-bottom:20px; margin-left:26px; overflow:hidden; }
