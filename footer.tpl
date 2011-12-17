@@ -43,7 +43,7 @@
         </div>
         <div class="block3">
             <h3>Подписка</h3>
-            <a href="/">RSS</a><br />
+            <a href="{router page='rss'}">RSS</a><br />
             <a href="/">Facebook</a><br />
             <a href="/">Twitter</a><br />
             <a href="/">Вконтакте</a>
