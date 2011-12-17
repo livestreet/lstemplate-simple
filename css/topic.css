@@ -20,6 +20,11 @@
 .topic .content img[align="left"] { margin: 4px 15px 10px 0; }
 .topic .content img.image-center { display: block; margin: 0 auto; }
 
+/* Tags */
+.topic .tags { clear:both; overflow:hidden; color:#999; margin-bottom:20px; margin-left:22px; padding-left:20px; background:url(../images/tags-icon.png) no-repeat }
+.topic .tags a { font-size:11px; text-decoration:underline; color:#999 }
+.topic .tags a:hover { color:#353535 }
+
 /* Info */
 .topic .info-top { margin-bottom: 15px; }
 .topic .info-top li { display:inline-block; color:#6e6e6e; font-family:Georgia; font-style:Italic; margin-right:10px }

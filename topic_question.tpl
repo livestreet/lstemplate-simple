@@ -29,7 +29,7 @@
         {/if}
 	</ul>
 
-    {if !$bTopicList}
+
     <div id="topic_question_area_{$oTopic->getId()}" class="poll">
 		{if !$oTopic->getUserQuestionIsVote()}
 			<ul class="poll-vote">
@@ -61,7 +61,6 @@
 			<p class="poll-total">{$aLang.topic_question_vote_result}: {$oTopic->getQuestionCountVote()}, {$aLang.topic_question_abstain_result}: {$oTopic->getQuestionCountVoteAbstain()}</p>
 		{/if}
 	</div>
-    {/if}
 
 	<div class="content">
 	{if $bTopicList}
@@ -78,6 +77,12 @@
     {else}
         {$oTopic->getText()}
     {/if}
+	</div>
+
+    <div class="tags">
+		{foreach from=$oTopic->getTagsArray() item=sTag name=tags_list}
+			<a href="{router page='tag'}{$sTag|escape:'url'}/">{$sTag|escape:'html'}</a>{if !$smarty.foreach.tags_list.last}, {/if}
+		{/foreach}
 	</div>
 
     <div class="info">

@@ -26,19 +26,19 @@
 	</p>
 	<p>
 		<label for="">{$aLang.settings_profile_birthday}:</label><br />
-		<select name="profile_birthday_day">
+		<select name="profile_birthday_day" style="width:20% !important">
 			<option value="">{$aLang.date_day}</option>
 			{section name=date_day start=1 loop=32 step=1}
 				<option value="{$smarty.section.date_day.index}" {if $smarty.section.date_day.index==$oUserCurrent->getProfileBirthday()|date_format:"%d"}selected{/if}>{$smarty.section.date_day.index}</option>
 			{/section}
 		</select>
-		<select name="profile_birthday_month">
+		<select name="profile_birthday_month" style="width:20% !important">
 			<option value="">{$aLang.date_month}</option>
 			{section name=date_month start=1 loop=13 step=1}
 				<option value="{$smarty.section.date_month.index}" {if $smarty.section.date_month.index==$oUserCurrent->getProfileBirthday()|date_format:"%m"}selected{/if}>{$aLang.month_array[$smarty.section.date_month.index][0]}</option>
 			{/section}
 		</select>
-		<select name="profile_birthday_year">
+		<select name="profile_birthday_year" style="width:20% !important">
 			<option value="">{$aLang.date_year}</option>
 			{section name=date_year start=1940 loop=2000 step=1}
 				<option value="{$smarty.section.date_year.index}" {if $smarty.section.date_year.index==$oUserCurrent->getProfileBirthday()|date_format:"%Y"}selected{/if}>{$smarty.section.date_year.index}</option>

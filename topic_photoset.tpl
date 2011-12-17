@@ -99,6 +99,12 @@ jQuery(window).load(function($) {
 		</div>
 	{/if}
 
+    <div class="tags">
+		{foreach from=$oTopic->getTagsArray() item=sTag name=tags_list}
+			<a href="{router page='tag'}{$sTag|escape:'url'}/">{$sTag|escape:'html'}</a>{if !$smarty.foreach.tags_list.last}, {/if}
+		{/foreach}
+	</div>
+
     <div class="info">
     {if !$bTopicList}
 		{include file="block.addthis.tpl"}
