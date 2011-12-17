@@ -48,13 +48,7 @@
 
     <div class="info">
     {if !$bTopicList}
-      <ul>
-          <li class="share">{$aLang.share}</li>
-          <li class="vk"><a href="/" title="VKONTAKTE"></a></li>
-          <li class="fb"><a href="/" title="FACEBOOK"></a></li>
-          <li class="tw"><a href="/" title="TWITTER"></a></li>
-          <li class="lj"><a href="/" title="LIVEJOURNAL"></a></li>
-      </ul>
+		{include file="block.addthis.tpl"}
     {/if}
       <div class="rating">
   	    <div id="vote_area_topic_{$oTopic->getId()}" class="voting {if $oVote || ($oUserCurrent && $oTopic->getUserId()==$oUserCurrent->getId()) || strtotime($oTopic->getDateAdd())<$smarty.now-$oConfig->GetValue('acl.vote.topic.limit_time')}{if $oTopic->getRating()>0}positive{elseif $oTopic->getRating()<0}negative{/if}{/if} {if !$oUserCurrent || $oTopic->getUserId()==$oUserCurrent->getId() || strtotime($oTopic->getDateAdd())<$smarty.now-$oConfig->GetValue('acl.vote.topic.limit_time')}guest{/if}{if $oVote} voted {if $oVote->getDirection()>0}plus{elseif $oVote->getDirection()<0}minus{/if}{/if}">

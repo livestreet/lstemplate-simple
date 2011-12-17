@@ -64,7 +64,7 @@
 			<div id="content" {if $sAction=='index'}style="margin-left:26px"{else}style="width:750px"{/if}>
 			    {if $sAction=='index'}<div class="content-inner">{/if}
 
-                    {if $sAction=='index'}{include file='slider.tpl'}{/if}
+                    {if $sAction=='index'}{insert name="block" block=simpleTopicsTop}{/if}
 
                     {include file='nav.tpl'}
 

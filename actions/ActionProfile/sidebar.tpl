@@ -12,22 +12,6 @@
 	</div>
     {/if}
 
-	<div class="block account">
-        <h2>{$aLang.feed_h2}</h2>
-
-        <ul class="friend-list">
-            <li><a href="/"><img src="{cfg name='path.static.skin'}/images/foto.png" title="LOGIN" /></a></li>
-            <li><a href="/"><img src="{cfg name='path.static.skin'}/images/foto.png" title="LOGIN" /></a></li>
-            <li><a href="/"><img src="{cfg name='path.static.skin'}/images/foto.png" title="LOGIN" /></a></li>
-            <li><a href="/"><img src="{cfg name='path.static.skin'}/images/foto.png" title="LOGIN" /></a></li>
-            <li><a href="/"><img src="{cfg name='path.static.skin'}/images/foto.png" title="LOGIN" /></a></li>
-            <li><a href="/"><img src="{cfg name='path.static.skin'}/images/foto.png" title="LOGIN" /></a></li>
-            <li><a href="/"><img src="{cfg name='path.static.skin'}/images/foto.png" title="LOGIN" /></a></li>
-            <li><a href="/"><img src="{cfg name='path.static.skin'}/images/foto.png" title="LOGIN" /></a></li>
-            <li><a href="/"><img src="{cfg name='path.static.skin'}/images/foto.png" title="LOGIN" /></a></li>
-            <li><a href="/"><img src="{cfg name='path.static.skin'}/images/foto.png" title="LOGIN" /></a></li>
-        </ul>
-	</div>
 
     {if $aBlogsOwner}
 	<div class="block account">

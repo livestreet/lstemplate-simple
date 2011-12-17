@@ -59,29 +59,12 @@
                         <li><a href="/" class="fb" title="FACEBOOK"></a></li>
                         <li><a href="/" class="tw" title="TWITTER"></a></li>
                         <li><a href="/" class="vk" title="VKONTAKTE"></a></li>
-                        <li><a href="/" class="rss" title="RSS"></a></li>
+                        <li><a href="{router page='rss'}" class="rss" title="RSS"></a></li>
                     </ul>
                 </div>
             </div>
             <div class="btm-menu">
-                <div class="top-authors">
-                    <ul>
-                        <li class="title">
-                            {$aLang.best_authors}<br />
-                            <span>{$aLang.by_rating}</span>
-                        </li>
-                        <li><a href="/" title="LOGIN USERA"><img src="{cfg name='path.static.skin'}/images/foto.png" /></a></li>
-                        <li><a href="/" title="LOGIN USERA"><img src="{cfg name='path.static.skin'}/images/foto.png" /></a></li>
-                        <li><a href="/" title="LOGIN USERA"><img src="{cfg name='path.static.skin'}/images/foto.png" /></a></li>
-                        <li><a href="/" title="LOGIN USERA"><img src="{cfg name='path.static.skin'}/images/foto.png" /></a></li>
-                        <li><a href="/" title="LOGIN USERA"><img src="{cfg name='path.static.skin'}/images/foto.png" /></a></li>
-                        <li><a href="/" title="LOGIN USERA"><img src="{cfg name='path.static.skin'}/images/foto.png" /></a></li>
-                        <li><a href="/" title="LOGIN USERA"><img src="{cfg name='path.static.skin'}/images/foto.png" /></a></li>
-                        <li><a href="/" title="LOGIN USERA"><img src="{cfg name='path.static.skin'}/images/foto.png" /></a></li>
-                        <li><a href="/" title="LOGIN USERA"><img src="{cfg name='path.static.skin'}/images/foto.png" /></a></li>
-                        <li><a href="/" title="LOGIN USERA"><img src="{cfg name='path.static.skin'}/images/foto.png" /></a></li>
-                    </ul>
-                </div>
+				{insert name="block" block=simpleUsersTop}
 
                 <div class="search">
                     <form action="{router page='search'}topics/" method="GET">

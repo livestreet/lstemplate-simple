@@ -86,7 +86,14 @@
               </li>
             {/if}
 
-            <li class="social-profile"><span>{$aLang.social_profile}:</span><a href="/" class="fb" title="FACEBOOK"></a><a href="/" class="tw" title="TWITTER"></a><a href="/" class="vk" title="VKONTAKTE"></a></li>
+
+			{if $oUserProfile->getProfileIcq()}
+				<li class="social-profile"><span>{$aLang.social_profile}:</span>
+					{if $oUserProfile->getProfileIcq()}
+						<a class="icq" href="http://www.icq.com/people/about_me.php?uin={$oUserProfile->getProfileIcq()|escape:'html'}" target="_blank"></a></li>
+					{/if}
+				</li>
+			{/if}
 
             {if $oUserProfile->getProfileAbout()}<li class="about"><span>{$aLang.profile_about}:</span>{$oUserProfile->getProfileAbout()|escape:'html'}</li>{/if}
 
@@ -95,141 +102,12 @@
     </div>
 </div>
 
-<div class="user-profile-topics">
-    <div class="user-profile-topics-inner">
 
-    <div class="zagolovok">
-        <h2>{$aLang.topics_h2}</h2>
-        <a href="{router page='my'}{$oUserProfile->getLogin()}/">{$aLang.all_topics}</a>
-    </div>
+{$aBlockParams.user=$oUserProfile}
+{insert name="block" block=simpleProfileTopics params=$aBlockParams}
 
-    <div class="topicshort">
-        <div class="inform">
-        	<h1 class="title">
-        	    <a href="/" class="title-topic">Каддафи жив</a>
-        	</h1>
+{insert name="block" block=simpleProfileComments params=$aBlockParams}
 
-        	<div class="content">
-                Сегодня на Болотной площади собралось более 300 оппозиционно настроенных граждан. Активисты призывают правительство России прекратить «кормить Кавказ» и «грабить...
-            </div>
-        </div>
-
-    	<ul class="info">
-            <li class="avatar"><a href="/" title="LOGIN"><img src="{cfg name='path.static.skin'}/images/foto.png" alt="avatar" /></a></li>
-    		<li class="username">
-                <a href="/">Lora_GT</a><br />
-                22.16.2011
-            </li>
-    		<li class="comments-link">
-    		    <a href="/">19</a>
-    		</li>
-    	</ul>
-    </div>
-
-    <div class="topicshort">
-        <div class="inform">
-        	<h1 class="title">
-        	    <a href="/" class="title-topic">Омский гаишник уволен за мат</a>
-        	</h1>
-
-        	<div class="content">
-                В Омске уволен капитан ДПС, который прославился на весь Youtube тем, что в нецензурной форме отчитывал подчиненных...
-            </div>
-        </div>
-
-    	<ul class="info">
-            <li class="avatar"><a href="/" title="LOGIN"><img src="{cfg name='path.static.skin'}/images/foto.png" alt="avatar" /></a></li>
-    		<li class="username">
-                <a href="/">eXtravert</a><br />
-                22.16.2011
-            </li>
-    		<li class="comments-link">
-    		    <a href="/">21</a>
-    		</li>
-    	</ul>
-    </div>
-
-    <div class="topicshort photo1">
-            <div class="inform">
-            	<div class="topic-photo-preview">
-                    <div class="topic-photo-count"><span>16</span></div>
-            		<img src="{cfg name='path.static.skin'}/images/putin-foto.png" alt="image" />
-            	</div>
-
-            	<h1 class="title">
-            	    <a href="/" class="title-topic">Россия ответила США</a>
-            	</h1>
-            </div>
-
-        	<ul class="info">
-                <li class="avatar"><a href="/" title="LOGIN"><img src="{cfg name='path.static.skin'}/images/foto.png" alt="avatar" /></a></li>
-        		<li class="username">
-                    <a href="/">avadim</a><br />
-                    18.11.2011
-                </li>
-        		<li class="comments-link">
-        		    <a href="/">31</a>
-        		</li>
-        	</ul>
-        </div>
-  </div>
-</div>
-
-<div class="user-profile-comments">
-
-        <div class="zagolovok">
-            <h2>{$aLang.comments_h2}</h2>
-            <a href="{router page='my'}{$oUserProfile->getLogin()}/comment/">{$aLang.all_comments}</a>
-        </div>
-
-        <div class="comment">
-            <div class="avatar"><a href="/" title="LOGIN"><img src="{cfg name='path.static.skin'}/images/foto.png" alt="avatar" /></a></div>
-            <div class="border-comment">
-            	<div class="content">
-                    <div class="arrow"></div>
-                    <div class="padding">
-                        <div class="text-style">Господи, какая разница: платят, не платят. Это же бизнес. Смогли привести звезду, чтобы ее читали и за это платили — молодцы, не смогли — не молодцы.</div>
-                    </div>
-            	</div>
-            </div>
-        </div>
-
-        <div class="comment">
-            <div class="avatar"><a href="/" title="LOGIN"><img src="{cfg name='path.static.skin'}/images/foto.png" alt="avatar" /></a></div>
-            <div class="border-comment">
-            	<div class="content">
-                    <div class="arrow"></div>
-                    <div class="padding">
-                        <div class="text-style">Господи, какая разница: платят, не платят. Это же бизнес. Смогли привести звезду, чтобы ее читали и за это платили — молодцы, не смогли — не молодцы.</div>
-                    </div>
-            	</div>
-            </div>
-        </div>
-
-        <div class="comment">
-            <div class="avatar"><a href="/" title="LOGIN"><img src="{cfg name='path.static.skin'}/images/foto.png" alt="avatar" /></a></div>
-            <div class="border-comment">
-            	<div class="content">
-                    <div class="arrow"></div>
-                    <div class="padding">
-                        <div class="text-style">Господи, какая разница: платят, не платят. Это же бизнес. Смогли привести звезду, чтобы ее читали и за это платили — молодцы, не смогли — не молодцы.</div>
-                    </div>
-            	</div>
-            </div>
-        </div>
-
-        <div class="comment">
-            <div class="avatar"><a href="/" title="LOGIN"><img src="{cfg name='path.static.skin'}/images/foto.png" alt="avatar" /></a></div>
-            <div class="border-comment">
-            	<div class="content">
-                    <div class="arrow"></div>
-                    <div class="padding">
-                        <div class="text-style">Господи, какая разница: платят, не платят. Это же бизнес. Смогли привести звезду, чтобы ее читали и за это платили — молодцы, не смогли — не молодцы.</div>
-                    </div>
-            	</div>
-            </div>
-        </div>
-</div>
 
 </div>
 
