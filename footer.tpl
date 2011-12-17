@@ -20,6 +20,7 @@
 	<div class="footer-inner">
         <div class="block1">
             <span>{hook run='copyright'}</span><br />
+			Design by mindfreak
         </div>
         <div class="block4">
         {if $oUserCurrent}
