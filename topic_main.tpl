@@ -9,7 +9,7 @@
 	</h1>
 
 	<div class="content">
-        {$oTopic->getText()|strip_tags|truncate:120:'...'}
+        {$oTopic->getTextShort()|strip_tags|truncate:120:'...'}
 	</div>
     </div>
 

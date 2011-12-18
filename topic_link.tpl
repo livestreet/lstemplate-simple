@@ -18,7 +18,7 @@
 
 	<ul class="info-top">
 		<li class="writer">{$aLang.author_topic}: <a href="{$oUser->getUserWebPath()}">{$oUser->getLogin()}</a></li>
-        <li class="view">116</li>
+        <li class="view">{$oTopic->getCountRead()}</li>
         <li class="comments-link"><a href="{$oTopic->getUrl()}#comments">{$oTopic->getCountComment()}</a></li>
         {if $oUserCurrent and ($oUserCurrent->getId()==$oTopic->getUserId() or $oUserCurrent->isAdministrator() or $oBlog->getUserIsAdministrator() or $oBlog->getUserIsModerator() or $oBlog->getOwnerId()==$oUserCurrent->getId())}
             <li><a href="{cfg name='path.root.web'}/{$oTopic->getType()}/edit/{$oTopic->getId()}/" title="{$aLang.topic_edit}">{$aLang.topic_edit}</a></li>

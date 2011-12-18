@@ -41,7 +41,7 @@
 					</h1>
 
 					<div class="content">
-						{$oTopic->getTextShort()}
+						{$oTopic->getTextShort()|strip_tags|truncate:450:'...'}
 					</div>
 				</div>
 
