@@ -1,8 +1,7 @@
 {include file='header.tpl' menu='blog'}
 
-<div class="inside" style="margin-bottom:0px">
 <div class="navigation">
-    <h1>{$aLang.top_topics}</h1>
+    <h2>{$aLang.top_topics}</h2>
 
     <ul>
 		<li {if $aParams[0] and $aParams[0]=='24h'}class="active"{/if}><a href="{router page='top'}topic/24h/">{$aLang.blog_menu_top_period_24h}</a></li>
@@ -10,8 +9,7 @@
 		<li {if $aParams[0] and $aParams[0]=='30d'}class="active"{/if}><a href="{router page='top'}topic/30d/">{$aLang.blog_menu_top_period_30d}</a></li>
 		<li {if $aParams[0] and $aParams[0]=='all'}class="active"{/if}><a href="{router page='top'}topic/all/">{$aLang.blog_menu_top_period_all}</a></li>
     </ul>
-</div>
-</div>
+</div>    
 
 {include file='topic_list.tpl'}
 {include file='footer.tpl'}

@@ -1,3 +1,5 @@
+{if $sAction=='top'}
+{else}
 <div class="navigation" {if $sAction=='index'}style="margin-left:0px"{/if}>
     <h2>
         {if $sMenuItemSelect=='index'}
@@ -17,3 +19,4 @@
 	    {hook run='menu_blog'}
     </ul>
 </div>
+{/if}
