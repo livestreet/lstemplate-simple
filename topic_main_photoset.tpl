@@ -13,7 +13,7 @@ jQuery(window).load(function($) {
     <div class="inform">
 	<div class="topic-photo-preview" onclick="window.location='{$oTopic->getUrl()}#photoset'" id="photoset-main-preview-{$oTopic->getId()}">
         {assign var=oMainPhoto value=$oTopic->getPhotosetMainPhoto()}
-		<div class="topic-photo-count" id="photoset-photo-count-{$oTopic->getId()}"><span>{$oTopic->getPhotosetCount()}</span></div>     
+		<div class="topic-photo-count" id="photoset-photo-count-{$oTopic->getId()}"><span>{$oTopic->getPhotosetCount()}</span></div>
 		<img src="{$oMainPhoto->getWebPath('229crop')}" alt="image" id="photoset-main-image-{$oTopic->getId()}" />
 	</div>
 
@@ -54,9 +54,9 @@ jQuery(window).load(function($) {
 		</div>
 	{/if}
 
-	<h1 class="title">
+	<h2 class="title">
 	    <a href="{$oTopic->getUrl()}" class="title-topic">{$oTopic->getTitle()|escape:'html'}</a>
-	</h1>
+	</h2>
     </div>
 
 	<ul class="info">

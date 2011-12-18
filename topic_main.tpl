@@ -4,9 +4,9 @@
 
 <div class="topicshort">
     <div class="inform">
-	<h1 class="title">
+	<h2 class="title">
 	    <a href="{$oTopic->getUrl()}" class="title-topic">{$oTopic->getTitle()|escape:'html'}</a>
-	</h1>
+	</h2>
 
 	<div class="content">
         {$oTopic->getTextShort()|strip_tags|truncate:120:'...'}
