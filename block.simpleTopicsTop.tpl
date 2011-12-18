@@ -36,9 +36,9 @@
 							<img src="{$oMainPhoto->getWebPath('354crop')}" alt="image" />
 						</div>
 					{/if}
-					<h1 class="title">
-						<a href="{$oTopic->getUrl()}" class="title-topic">{$oTopic->getTitle()|escape:'html'}</a>
-					</h1>
+					<h3 class="title">
+						<a href="{$oTopic->getUrl()}" class="title-topic" title="{$oTopic->getTitle()|escape:'html'}">{$oTopic->getTitle()|escape:'html'}</a>
+					</h3>
 
 					<div class="content">
 						{$oTopic->getTextShort()|strip_tags|truncate:450:'...'}
