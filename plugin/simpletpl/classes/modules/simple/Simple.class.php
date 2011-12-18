@@ -29,17 +29,12 @@ class PluginSimpletpl_ModuleSimple extends Module {
 
 
 	public function UploadTopicPhoto($sFile) {
-
 		$aPathInfo=pathinfo($sFile);
 
 		$sFileName = $aPathInfo['filename'];
 		$sPath = str_replace(Config::Get('path.root.server'),'',$aPathInfo['dirname'].'/');
 
-		//$sPath = Config::Get('path.uploads.images').'/topic/'.date('Y/m/d').'/';
-
-
 		$aParams=$this->Image_BuildParams('photoset');
-
 		$oImage = new LiveImage($sFile);
 		/**
 		 * Если объект изображения не создан,
