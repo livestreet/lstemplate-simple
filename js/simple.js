@@ -36,7 +36,7 @@ ls.plugin.simpletpl = (function ($) {
 	};
 
 	this.page = function(iPage) {
-		var margin=746*(iPage-1);
+		var margin=744*(iPage-1);
 		//$('#slider-hidden').css({'margin-left':'-'+margin+'px'});
 
 		$('#slider-hidden').animate({

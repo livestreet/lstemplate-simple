@@ -102,7 +102,7 @@
 #slider { height: 300px;width: 729px;overflow: hidden; clear:both }
 #slider-hidden { height: 300px; width: 6000px; margin-left: 0; margin-right:-11px }
 .topic-slider_area { height: 330px; width: 356px; display: inline-block;}
-.topic-slider { height: 300px; width: 356px; margin-right:14px; display: inline-block; }
+.topic-slider { height: 300px; width: 356px; margin-right:13px; display: inline-block; }
 .topic-slider .topicshort.news { width:332px; height:249px; margin-right:14px }
 .topic-slider .topicshort.news .inform { height:209px; overflow:hidden }
 
