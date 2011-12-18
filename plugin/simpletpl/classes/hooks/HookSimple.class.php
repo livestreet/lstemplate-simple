@@ -19,9 +19,13 @@ class PluginSimpletpl_HookSimple extends Hook {
 
     public function RegisterHook() {
         $this->AddHook('topic_show','TopicShow');
+        $this->AddHook('template_admin_action_item','InjectAdmin');
     }
 
 
+	public function InjectAdmin() {
+		return $this->Viewer_Fetch(Plugin::GetTemplatePath(__CLASS__).'inject.admin.menu.tpl');
+	}
     
     public function TopicShow($aParams) {
     	$oTopic=$aParams['oTopic'];

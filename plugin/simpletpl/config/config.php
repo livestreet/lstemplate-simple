@@ -15,6 +15,7 @@
 ---------------------------------------------------------
 */
 
+Config::Set('router.page.simpletpl', 'PluginSimpletpl_ActionSimple');
 
 /**
  * Настройки
