@@ -1,10 +1,10 @@
 
 <div class="navigation">
-    <h1>
+    <h2>
         {if $sMenuItemSelect=='people'}
             {$aLang.people_page}
         {/if}
-    </h1>
+    </h2>
 
     <ul>
         <li {if $sEvent=='' || $sEvent=='good'}class="active"{/if}><a href="{router page='people'}">{$aLang.people_all}</a></li>

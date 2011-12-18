@@ -1,6 +1,6 @@
 
 <div class="navigation">
-    <h1>
+    <h2>
         {if $sEvent=='inbox'}
             {$aLang.talk_menu_inbox_list}
         {elseif $sEvent=='add'}
@@ -8,7 +8,7 @@
         {elseif $sEvent=='favourites'}
             {$aLang.talk_menu_inbox_favourites}
         {/if}
-    </h1>
+    </h2>
 
     <ul>
         <li {if $sEvent=='inbox'}class="active"{/if}><a href="{router page='talk'}">{$aLang.talk_menu_inbox_list}</a></li>

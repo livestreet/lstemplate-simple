@@ -1,10 +1,10 @@
 
 <div class="navigation">
-    <h1>
+    <h2>
         {if $sMenuItemSelect=='settings'}
             {$aLang.settings_nav}
         {/if}
-    </h1>
+    </h2>
 
     <ul>
         <li {if $sMenuSubItemSelect=='profile'}class="active"{/if}><a href="{router page='settings'}profile/">{$aLang.settings_profile}</a></li>

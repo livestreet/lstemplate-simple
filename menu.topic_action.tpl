@@ -1,11 +1,11 @@
 <div class="navigation">
-    <h1>
+    <h2>
         {if $sEvent=='add'}
         	{$aLang.add}
         {else}
         	{$aLang.edit}
         {/if}
-    </h1>
+    </h2>
 
     <ul>
         <li {if $sMenuItemSelect=='topic'}class="active"{/if}><a href="{router page='topic'}add/">{$aLang.add_topic}</a></li>

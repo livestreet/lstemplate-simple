@@ -10,9 +10,9 @@
 
     <div class="date">{date_format date=$oTopic->getDateAdd() format="d F Y"}</div>
 
-	<h2 class="title">
+	<h3 class="title">
 	    <a href="{$oTopic->getUrl()}" class="title-topic">{$oTopic->getTitle()|escape:'html'}</a>  
-	</h2>
+	</h3>
 
 	<a href="#" onclick="return ls.favourite.toggle({$oTopic->getId()},this,'topic');" class="favourite {if $oUserCurrent && $oTopic->getIsFavourite()}active{/if}"></a>
 

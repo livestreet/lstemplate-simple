@@ -54,9 +54,9 @@ jQuery(window).load(function($) {
 		</div>
 	{/if}
 
-	<h2 class="title">
-	    <a href="{$oTopic->getUrl()}" class="title-topic">{$oTopic->getTitle()|escape:'html'}</a>
-	</h2>
+	<h3 class="title">
+	    <a href="{$oTopic->getUrl()}" class="title-topic" title="{$oTopic->getTitle()|escape:'html'}">{$oTopic->getTitle()|escape:'html'}</a>
+	</h3>
     </div>
 
 	<ul class="info">

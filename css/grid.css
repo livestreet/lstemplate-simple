@@ -108,7 +108,7 @@
 
 /* Navigation */
 .navigation { padding-bottom:20px; margin-left:26px; overflow:hidden; }
-.navigation h1 { float:left; margin-right:16px; font-weight:bold; font-size:22px }
+.navigation h2 { float:left; margin-right:16px; font-weight:bold; font-size:22px }
 .navigation ul { margin-top:6px }
 .navigation ul li { display:inline-block; *display:inline; font-size:11px; padding:1px 6px; text-transform: lowercase }
 .navigation ul li a { color:#6e6e6e; border-bottom:1px dotted; }

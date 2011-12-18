@@ -7,7 +7,7 @@
 	});
 </script>
 <div class="slider-nav">
-	<h1 class="title-best">{$aLang.slider_title_best}</h1>
+	<h2 class="title-best">{$aLang.slider_title_best}</h2>
 
 	<div class="switch">
 		<ul>
