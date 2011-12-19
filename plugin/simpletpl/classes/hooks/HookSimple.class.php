@@ -21,8 +21,11 @@ class PluginSimpletpl_HookSimple extends Hook {
 		$this->AddHook('init_action', 'InitAction');
         $this->AddHook('topic_show','TopicShow');
         $this->AddHook('template_admin_action_item','InjectAdmin');
-        $this->AddHook('topic_add_before','SaveTopic');
-        $this->AddHook('topic_edit_before','SaveTopic');
+
+		if (Config::Get('plugin.simpletpl.make_preview_video')) {
+			$this->AddHook('topic_add_before','SaveTopic');
+			$this->AddHook('topic_edit_before','SaveTopic');
+		}
     }
 
 	public function SaveTopic($aParams) {
