@@ -8,11 +8,7 @@
 		</div>
 
 		{foreach from=$simpletpl_aTopicsProfile item=oTopic}
-			{if $oTopic->getType()=='photoset'}
-				{include file='topic_main_photoset.tpl' }
-			{else}
-				{include file='topic_main.tpl' }
-			{/if}
+			{include file='topic_main.tpl' }
 		{/foreach}
 
 	</div>

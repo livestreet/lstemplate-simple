@@ -21,7 +21,14 @@ class PluginSimpletpl_HookSimple extends Hook {
 		$this->AddHook('init_action', 'InitAction');
         $this->AddHook('topic_show','TopicShow');
         $this->AddHook('template_admin_action_item','InjectAdmin');
+        $this->AddHook('topic_add_before','SaveTopic');
+        $this->AddHook('topic_edit_before','SaveTopic');
     }
+
+	public function SaveTopic($aParams) {
+		$oTopic=$aParams['oTopic'];
+		$this->PluginSimpletpl_Simple_AnalysisTopic($oTopic);
+	}
 
 	public function InitAction() {
 		$this->Viewer_Assign('iCountTopicsNew',$this->Topic_GetCountTopicsCollectiveNew()+$this->Topic_GetCountTopicsPersonalNew());

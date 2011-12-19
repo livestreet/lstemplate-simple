@@ -26,6 +26,18 @@ $config['topic_time_top']   = 60*60*24*7*10;  // Число секунд за к
 $config['count_profile_topics']   = 6;  // Число топиков на странице профиля пользователя
 $config['count_profile_comments']   = 10;  // Число комментов на странице профиля пользователя
 
+$config['size_images']=array(
+	array(
+		'w' => 229,
+		'h' => 116,
+		'crop' => true,
+	),
+	array(
+		'w' => 354,
+		'h' => 186,
+		'crop' => true,
+	)
+);
 
 return $config;
 ?>

@@ -27,13 +27,17 @@
 		{foreach from=$simpletpl_aTopicsTop item=oTopic}
 		{assign var="oUser" value=$oTopic->getUser()}
 		<div class="topic-slider">
-			<div class="topicshort {if $oTopic->getType()=='photoset'}photo2{else}news{/if}">
+			<div class="topicshort {if $oTopic->getType()=='photoset' or $oTopic->getPreviewImage()}photo2{else}news{/if}">
 				<div class="inform">
 					{if $oTopic->getType()=='photoset'}
 						{assign var=oMainPhoto value=$oTopic->getPhotosetMainPhoto()}
 						<div class="topic-photo-preview" onclick="window.location='{$oTopic->getUrl()}#photoset'">
 							<div class="topic-photo-count"><span>{$oTopic->getPhotosetCount()}</span></div>
 							<img src="{$oMainPhoto->getWebPath('354crop')}" alt="image" />
+						</div>
+					{elseif $oTopic->getPreviewImage()}
+						<div class="topic-photo-preview" onclick="window.location='{$oTopic->getUrl()}'">
+							<img src="{$oTopic->getPreviewImageWebPath('354crop')}" alt="image" />
 						</div>
 					{/if}
 					<h3 class="title">
