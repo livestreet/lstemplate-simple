@@ -21,7 +21,25 @@
  */
 class PluginSimpletpl_ModuleTopic extends PluginSimpletpl_Inherit_ModuleTopic {
 
+	/**
+	 * Дополнительная обработка удаления топика
+	 *
+	 * @param unknown_type $oTopicId
+	 * @return unknown
+	 */
+	public function DeleteTopic($oTopicId) {
+		if ($oTopicId instanceof ModuleTopic_EntityTopic) {
+			$oTopic=$oTopicId;
+		} else {
+			$oTopic=$this->GetTopicById($oTopicId);
+		}
 
+		if ($oTopic) {
+			$this->PluginSimpletpl_Simple_DeleteTopic($oTopic);
+		}
+
+		return parent::DeleteTopic($oTopicId);
+	}
 
 }
 ?>

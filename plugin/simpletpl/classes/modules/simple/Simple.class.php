@@ -94,7 +94,7 @@ class PluginSimpletpl_ModuleSimple extends Module {
 		 * Открываем файловый поток и считываем файл поблочно,
 		 * контролируя максимальный размер изображения
 		 */
-		$oFile=fopen($sUrl,'r');
+		$oFile=@fopen($sUrl,'r');
 		if(!$oFile) {
 			return false;
 		}
@@ -166,7 +166,20 @@ class PluginSimpletpl_ModuleSimple extends Module {
 			return false;
 		}
 		return $this->Image_GetWebPath($sFile);
+	}
 
+
+	public function DeleteTopic($oTopic) {
+		@unlink($this->Image_GetServerPath($oTopic->getPreviewImage()));
+		$aSizes=Config::Get('plugin.simpletpl.size_images');
+		// Удаляем все сгенерированные миниатюры основываясь на данных из конфига.
+		foreach ($aSizes as $aSize) {
+			$sSize = $aSize['w'];
+			if ($aSize['crop']) {
+				$sSize .= 'crop';
+			}
+			@unlink($this->Image_GetServerPath($oTopic->getPreviewImageWebPath($sSize)));
+		}
 	}
 }
 ?>
