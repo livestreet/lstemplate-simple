@@ -106,7 +106,7 @@
             <em></em><span></span><input type="submit" name="submit_preview" value="{$aLang.topic_create_submit_preview}" onclick="jQuery('#text_preview').parent().show(); ls.tools.textPreview('topic_text',false); return false;" />
         </div>
         <div class="button2">
-            <em></em><span></span><input name="submit_topic_save" value="{$aLang.topic_create_submit_save}" />
+            <em></em><span></span><input  type="submit" name="submit_topic_save" value="{$aLang.topic_create_submit_save}" />
         </div>
 	</p>
 </form>

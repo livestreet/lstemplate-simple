@@ -4,13 +4,13 @@
 
 <div class="topicshort">
     <div class="inform">
-	<h3 class="title">
-	    <a href="{$oTopic->getUrl()}" class="title-topic" title="{$oTopic->getTitle()|escape:'html'}">{$oTopic->getTitle()|escape:'html'}</a>
-	</h3>
+		<h3 class="title">
+			<a href="{$oTopic->getUrl()}" class="title-topic" title="{$oTopic->getTitle()|escape:'html'}">{$oTopic->getTitle()|escape:'html'}</a>
+		</h3>
 
-	<div class="content">
-        {$oTopic->getTextShort()|strip_tags|truncate:120:'...'}
-	</div>
+		<div class="content">
+			{$oTopic->getTextShort()|strip_tags|truncate:120:'...'}
+		</div>
     </div>
 
 	<ul class="info">
@@ -19,10 +19,8 @@
             <a href="{$oUser->getUserWebPath()}">{$oUser->getLogin()}</a><br />
             {date_format date=$oTopic->getDateAdd() format="d.m.Y"}
         </li>
-		{if $bTopicList}
 		<li class="comments-link">
 		    <a href="{$oTopic->getUrl()}#comments">{$oTopic->getCountComment()}</a>
 		</li>
-		{/if}
 	</ul>
 </div>
