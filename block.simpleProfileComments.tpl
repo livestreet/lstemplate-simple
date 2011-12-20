@@ -13,7 +13,7 @@
 			<div class="border-comment">
 				<div class="content">
 					<div class="arrow"></div>
-					<div class="padding">
+					<div class="padding"> 
 						<div class="text-style">{$oComment->getText()}</div>
 					</div>
 				</div>

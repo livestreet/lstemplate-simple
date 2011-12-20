@@ -60,6 +60,10 @@
 .comment .info li .comment-link { margin-top:4px; background:url(../images/comment-link.png) no-repeat; width:7px; height:9px; display:block }
 .comment .info li .reply-link { color:#0090ff; border-bottom:1px dotted }
 .comment .info li .reply-link:hover { color:#f70000 }
+.comment .info li a.favourite { margin-top:2px; width: 11px; height: 11px; background: url(../images/like-icon2.png) no-repeat }
+.comment .info li a.favourite.active { background-position: 0px -11px }
+.comment .info li a.favourite:hover { background-position: 0px -11px }
+
 
 .comment .info li.voting { overflow: hidden; zoom: 1; float:right; margin-right:0px }
 

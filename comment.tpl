@@ -22,7 +22,10 @@
         		    {if $oUserCurrent and !$oComment->getDelete() and !$bAllowNewComment}
             			<li><a href="#" onclick="ls.comments.toggleCommentForm({$oComment->getId()}); return false;" class="reply-link">{$aLang.comment_answer}</a></li>
             		{/if}
-                    {if $oComment->getTargetType()!='talk'}
+                    {if $oUserCurrent and !$bNoCommentFavourites}
+			            <li><a href="#" onclick="return ls.favourite.toggle({$oComment->getId()},this,'comment');" class="favourite {if $oComment->getIsFavourite()}active{/if}"></a></li>
+		            {/if}
+		            {if $oComment->getTargetType()!='talk'}
               		<li id="vote_area_comment_{$oComment->getId()}" class="voting {if $oComment->getRating()>0}positive{elseif $oComment->getRating()<0}negative{/if} {if !$oUserCurrent || $oComment->getUserId()==$oUserCurrent->getId() ||  strtotime($oComment->getDate())<$smarty.now-$oConfig->GetValue('acl.vote.comment.limit_time')}guest{/if}   {if $oVote} voted {if $oVote->getDirection()>0}plus{else}minus{/if}{/if}  ">
                         <a href="#" class="minus" onclick="return ls.vote.vote({$oComment->getId()},this,-1,'comment');" title="Не согласен"></a>
               			<span id="vote_total_comment_{$oComment->getId()}" class="total">{if $oComment->getRating()>0}+{/if}{$oComment->getRating()}</span>
