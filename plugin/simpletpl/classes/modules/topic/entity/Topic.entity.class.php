@@ -21,8 +21,16 @@ class PluginSimpletpl_ModuleTopic_EntityTopic extends PluginSimpletpl_Inherit_Mo
 		return $this->getExtraValue('preview_image');
 	}
 
+	public function getPreviewImageIsAuto() {
+		return $this->getExtraValue('preview_image_is_auto');
+	}
+
 	public function setPreviewImage($data) {
 		$this->setExtraValue('preview_image',$data);
+	}
+
+	public function setPreviewImageIsAuto($data) {
+		$this->setExtraValue('preview_image_is_auto',$data);
 	}
 
 	public function getPreviewImageWebPath($sWidth = null)

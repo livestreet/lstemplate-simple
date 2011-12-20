@@ -42,6 +42,19 @@ $config['size_images']=array(
 		'crop' => true,
 	)
 );
+/**
+ * Список размеров превью топика
+ * По умолчанию наследуется от $config['size_images'], но можно добавить и свои размеры, например 100х100
+ */
+$config['size_images_review']=array_merge(array(
+								/*
+								  array(
+									  'w' => 100,
+									  'h' => 100,
+									  'crop' => true,
+								  ),
+								*/
+								   ),$config['size_images']);
 
 Config::Set('module.topic.photoset.size',array_merge(Config::Get('module.topic.photoset.size'),$config['size_images']));
 
