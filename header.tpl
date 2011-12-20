@@ -44,29 +44,11 @@
 
 	{$aHtmlHeadFiles.js}
 
-    {literal}
-    <script type="text/javascript">
-            $(document).ready(function() {
-
-                $(".signin").click(function(e) {
-                    e.preventDefault();
-                    $("ul#signin_menu").toggle();
-                    $(".signin").toggleClass("menu-open");
-                });
-
-                $("ul#signin_menu").mouseup(function() {
-                    return false
-                });
-                $(document).mouseup(function(e) {
-                    if($(e.target).parent(".signin").length==0) {
-                        $(".signin").removeClass("menu-open");
-                        $("ul#signin_menu").hide();
-                    }
-                });
-
-            });
-    </script>
-    {/literal}
+	<script type="text/javascript">
+		jQuery(document).ready(function() {
+			ls.plugin.simpletpl.initUserBar();
+		});
+	</script>
 
 	<script language="JavaScript" type="text/javascript">
 		var tinyMCE=false;
