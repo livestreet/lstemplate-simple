@@ -16,7 +16,7 @@
 */
 
 /**
- * Обработка блока с архивом
+ * Обработка комментариев в профиле пользователя
  *
  */
 class PluginSimpletpl_BlockSimpleProfileComments extends Block {

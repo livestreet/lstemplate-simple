@@ -23,11 +23,25 @@ class PluginSimpletpl_ModuleSimple extends Module {
 	}
 
 
+	/**
+	 * Возвращает список топиков фото-сетов
+	 *
+	 * @param int $iCurrPage
+	 * @param int $iPerPage
+	 *
+	 * @return array
+	 */
 	public function GetTopicsPhotoset($iCurrPage,$iPerPage) {
 		return $this->oMapper->GetTopicsPhotoset($iCount,$iCurrPage,$iPerPage);
 	}
 
-
+	/**
+	 * Загружает фото нового размера в фото-сет
+	 *
+	 * @param string $sFile
+	 *
+	 * @return bool
+	 */
 	public function UploadTopicPhoto($sFile) {
 		$aPathInfo=pathinfo($sFile);
 
@@ -64,12 +78,19 @@ class PluginSimpletpl_ModuleSimple extends Module {
 		return $this->Image_GetWebPath($sFile);
 	}
 
-
+	/**
+	 * Анализирует текст топика на наличие источников превью
+	 *
+	 * @param $oTopic
+	 */
 	public function AnalysisTopic($oTopic) {
 		/**
 		 * Анализируем текст на наличие видео с youtube.com
 		 * Проверям старый и новый код вставки
 		 */
+		if (!Config::Get('plugin.simpletpl.make_preview_video')) {
+			return;
+		}
 		$sImage=null;
 		if (preg_match('#<\s*param[^>]+value\s*=\s*"https?://(?:www\.|)youtube.com/v/([a-zA-Z0-9_\-]+)[^"]*"#i',$oTopic->getText(),$aMatch)) {
 			$sImage="http://i3.ytimg.com/vi/{$aMatch[1]}/hqdefault.jpg";
@@ -77,13 +98,53 @@ class PluginSimpletpl_ModuleSimple extends Module {
 			$sImage="http://i3.ytimg.com/vi/{$aMatch[1]}/hqdefault.jpg";
 		}
 		if (!is_null($sImage)) {
-			if ($sImagePath=$this->UploadVideoImage($oTopic,$sImage)) {
+			// удаляем старую превьюшку на основе анализа текста топика
+			if ($oTopic->getPreviewImage()) {
+				$this->DeleteTopic($oTopic);
+			}
+			/**
+			 * Загружаем превью
+			 */
+			if ($sImagePath=$this->UploadImageByUrl($oTopic,$sImage)) {
 				$oTopic->setPreviewImage($sImagePath);
+				$oTopic->setPreviewImageIsAuto(true);
 			}
 		}
 	}
 
-	public function UploadVideoImage($oTopic,$sUrl) {
+	/**
+	 * Обработка загружки превью через форму (с компьютера)
+	 *
+	 * @param $oTopic
+	 * @param $aFile
+	 *
+	 * @return string | bool
+	 */
+	public function UploadImageBySubmit($oTopic,$aFile) {
+		if(!is_array($aFile) || !isset($aFile['tmp_name'])) {
+			return false;
+		}
+
+		/**
+		 * Сохраняем во временный файл
+		 */
+		$sFileTmp=Config::Get('sys.cache.dir').func_generator();
+		if (!move_uploaded_file($aFile['tmp_name'],$sFileTmp)) {
+			return false;
+		}
+
+		return $this->UploadImage($oTopic,$sFileTmp);
+	}
+
+	/**
+	 * Обработка загрузки превью по внешнему URL (с интернета)
+	 *
+	 * @param $oTopic
+	 * @param $sUrl
+	 *
+	 * @return string | bool
+	 */
+	public function UploadImageByUrl($oTopic,$sUrl) {
 		/**
 		 * Проверяем, является ли файл изображением
 		 */
@@ -116,20 +177,29 @@ class PluginSimpletpl_ModuleSimple extends Module {
 		}
 		fclose($oFile);
 
-		$sDirSave=$this->Image_GetIdDir($oTopic->getUserId());
-		$aParams=$this->Image_BuildParams('topic');
-
-		if (!is_dir(Config::Get('path.root.server').$sDirSave)) {
-			mkdir(Config::Get('path.root.server').$sDirSave, 0755, true);
-		}
-
-		$sFileName=func_generator();
-		$sFileTmp=Config::Get('path.root.server').$sDirSave.'/'.$sFileName;
+		/**
+		 * Сохраняем во временный файл
+		 */
+		$sFileTmp=Config::Get('sys.cache.dir').func_generator();
 		$fp=fopen($sFileTmp,'w');
 		fwrite($fp,$sContent);
 		fclose($fp);
 
+		return $this->UploadImage($oTopic,$sFileTmp);
+	}
+
+	/**
+	 * Обработка загрузки превью
+	 *
+	 * @param $oTopic
+	 * @param $sFileTmp
+	 *
+	 * @return string | bool
+	 */
+	public function UploadImage($oTopic,$sFileTmp) {
+		require_once Config::Get('path.root.engine').'/lib/external/LiveImage/Image.php';
 		$oImage = new LiveImage($sFileTmp);
+		$aParams=$this->Image_BuildParams('topic');
 		/**
 		 * Если объект изображения не создан,
 		 * возвращаем ошибку
@@ -139,12 +209,23 @@ class PluginSimpletpl_ModuleSimple extends Module {
 			return false;
 		}
 
+		/**
+		 * Генерируем имя файла и каталога для превью
+		 */
+		$sFileName=func_generator();
+		$sDirSave = Config::Get('path.uploads.root').'/topics/preview/'.preg_replace('~(.{2})~U', "\\1/", str_pad($oTopic->getId(), 8, "0", STR_PAD_LEFT));
+		$sDirSave=rtrim($sDirSave,'/');
+
+		if (!is_dir(Config::Get('path.root.server').$sDirSave)) {
+			mkdir(Config::Get('path.root.server').$sDirSave, 0755, true);
+		}
+
 		// Добавляем к загруженному файлу расширение
-		$sFile=$sFileTmp.'.'.$oImage->get_image_params('format');
+		$sFile=Config::Get('path.root.server').$sDirSave.'/'.$sFileName.'.'.$oImage->get_image_params('format');
 		rename($sFileTmp,$sFile);
 
 		// Новые размеры
-		$aSizes=Config::Get('plugin.simpletpl.size_images');
+		$aSizes=Config::Get('plugin.simpletpl.size_images_review');
 
 		$bError=false;
 		foreach ($aSizes as $aSize) {
@@ -157,7 +238,6 @@ class PluginSimpletpl_ModuleSimple extends Module {
 			}
 
 			if (!$this->Image_Resize($sFile,$sDirSave,$sNewFileName,Config::Get('view.img_max_width'),Config::Get('view.img_max_height'),$aSize['w'],$aSize['h'],true,$aParams,$oImage)) {
-				var_dump("error");
 				$bError=true;
 			}
 		}
@@ -168,7 +248,11 @@ class PluginSimpletpl_ModuleSimple extends Module {
 		return $this->Image_GetWebPath($sFile);
 	}
 
-
+	/**
+	 * Удаление превью у топика
+	 *
+	 * @param $oTopic
+	 */
 	public function DeleteTopic($oTopic) {
 		@unlink($this->Image_GetServerPath($oTopic->getPreviewImage()));
 		$aSizes=Config::Get('plugin.simpletpl.size_images');
@@ -180,6 +264,8 @@ class PluginSimpletpl_ModuleSimple extends Module {
 			}
 			@unlink($this->Image_GetServerPath($oTopic->getPreviewImageWebPath($sSize)));
 		}
+		$oTopic->setPreviewImage(null);
+		$oTopic->setPreviewImageIsAuto(false);
 	}
 }
 ?>

@@ -34,6 +34,9 @@ class PluginSimpletpl extends Plugin {
 	public function __construct() {
 		parent::__construct();
 
+		/**
+		 * Небольшой хак, который позволяет переопредеить шаблон плагина
+		 */
 		$this->aDelegates=array(
 			'template'  =>array(Config::Get('path.root.server').'/plugins/page/templates/skin/default/actions/ActionPage/add.tpl'=>'_actions/ActionPage/add.tpl'),
 		);

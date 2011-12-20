@@ -15,14 +15,27 @@
 ---------------------------------------------------------
 */
 
+
+/**
+ * Добавление новых полей в топик
+ * Поля хранятся в специальном поле extra в виде сериализованного массива
+ */
 class PluginSimpletpl_ModuleTopic_EntityTopic extends PluginSimpletpl_Inherit_ModuleTopic_EntityTopic {
 
 	public function getPreviewImage() {
 		return $this->getExtraValue('preview_image');
 	}
 
+	public function getPreviewImageIsAuto() {
+		return $this->getExtraValue('preview_image_is_auto');
+	}
+
 	public function setPreviewImage($data) {
 		$this->setExtraValue('preview_image',$data);
+	}
+
+	public function setPreviewImageIsAuto($data) {
+		$this->setExtraValue('preview_image_is_auto',$data);
 	}
 
 	public function getPreviewImageWebPath($sWidth = null)

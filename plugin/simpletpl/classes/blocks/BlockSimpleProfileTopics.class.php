@@ -16,7 +16,7 @@
 */
 
 /**
- * Обработка блока с архивом
+ * Обработка топиков в профиле пользователя
  *
  */
 class PluginSimpletpl_BlockSimpleProfileTopics extends Block {

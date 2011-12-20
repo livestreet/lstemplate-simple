@@ -23,6 +23,10 @@ return array(
 	'simpletpl_submit_convert' => 'Запустить конвертацию размеров фото-сетов',
 	'simpletpl_submit_convert_notice' => 'Внимание! Если у вас много фото-сетов, то процесс конвертации может занять длительное время. ',
 	'simpletpl_convert_end' => 'Проверено фото-сетов %%count_topic%%, конвертированно фотографий %%count_photo%%',
+	'simpletpl_form_preview_image_delete' => 'Удалить превью',
+	'simpletpl_form_preview_image_delete_auto' => 'автоматическое',
+	'simpletpl_form_preview_image' => 'Превью топика',
+	'simpletpl_form_preview_image_notice' => 'Вы можете загрузить картинку, которая будет превью топика на главной странице',
 );
 
 ?>
