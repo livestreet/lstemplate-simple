@@ -97,7 +97,7 @@
 				</li>
 			{/if}
 
-            {if $oUserProfile->getProfileAbout()}<li class="about"><span>{$aLang.profile_about}:</span>{$oUserProfile->getProfileAbout()|escape:'html'}</li>{/if}
+            {if $oUserProfile->getProfileAbout()}<li class="about"><span>{$aLang.profile_about}:</span><b>{$oUserProfile->getProfileAbout()|escape:'html'}</b></li>{/if}
 
         {hook run='profile_whois_item' oUserProfile=$oUserProfile}
         </ul>

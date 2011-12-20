@@ -4,7 +4,7 @@
 		{assign var="oTopic" value=$oComment->getTarget()}
 		{assign var="oBlog" value=$oTopic->getBlog()}
 		
-		<li>
+		<li {if $smarty.foreach.cmt.iteration == 1}style="border-top:0px"{/if}>
             <a href="{$oUser->getUserWebPath()}" title="{$oUser->getLogin()}"><img src="{$oUser->getProfileAvatarPath(48)}" class="avatar" alt="avatar" /></a>
             <div class="information">
                 <a href="{if $oConfig->GetValue('module.comment.nested_per_page')}{router page='comments'}{else}{$oTopic->getUrl()}#comment{/if}{$oComment->getId()}" class="stream-comment-icon">{$oTopic->getCountComment()}</a>
@@ -15,3 +15,7 @@
         </li>
 	{/foreach}
 </ul>
+
+<div class="bottom">
+	<a href="{router page='comments'}">{$aLang.block_stream_comments_all}</a>
+</div>

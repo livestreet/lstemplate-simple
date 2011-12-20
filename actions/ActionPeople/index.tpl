@@ -1,7 +1,13 @@
 {include file='header.tpl' menu='people'}
 
 
-<div class="inside">
+
+<div class="inside" style="margin-top:-20px">
+
+<ul class="switcher" style="margin-bottom:20px">
+	<li {if $sEvent=='good'}class="active"{/if}><a href="{router page='people'}good/">{$aLang.user_good}</a></li>
+	<li {if $sEvent=='bad'}class="active"{/if}><a href="{router page='people'}bad/">{$aLang.user_bad}</a></li>
+</ul>
 
 {if $aUsersRating}
 	<table class="table table-people">

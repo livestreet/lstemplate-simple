@@ -1,6 +1,8 @@
 .block { margin-bottom:35px; overflow:hidden }
 .block h2 { font-size: 20px; font-weight:bold; margin-bottom:5px }
 
+.block .bottom { float:right; padding-top:10px }
+
 .block.account h2 { margin-bottom:12px; padding-bottom:10px; border-bottom:1px solid #e4e4e4 }
 .block.account .friend-list { margin-right:-10px }
 .block.account .friend-list li { display:inline-block; *display:inline; margin-right:7px; margin-bottom:5px }
@@ -61,8 +63,9 @@
 
 
 /* Stream */
+.block.stream h2 { margin-bottom:10px }
 .block.stream ul.list { font-size: 11px; color: #999; }
-.block.stream ul.list li { padding: 9px 0px 9px 0px; overflow:hidden; border-top: 1px solid #e4e4e4; }
+.block.stream ul.list li { padding: 9px 0px 9px 0px; overflow:hidden; border-top:1px solid #e4e4e4 }
 .block.stream ul.list li .avatar { float:left; margin-right:10px; width:30px; height:30px; margin-top:4px }
 .block.stream ul.list li .information { float:right; width:190px; position:relative }
 .block.stream ul.list li .information .user { font-weight: bold; font-size:12px; color: #000; text-decoration: none; background:none; padding-left:0px; margin-right:8px }

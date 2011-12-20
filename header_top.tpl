@@ -16,14 +16,13 @@
         {if $oUserCurrent}
             <ul class="profile">
                 <li class="add"><a href="{router page='topic'}add/" class="button"><span>{$aLang.make}</span></a></li>
-                {if $iUserCurrentCountTalkNew}
-                    <li class="message active"><a href="{router page='talk'}" title="{$aLang.messages}"><span>{$iUserCurrentCountTalkNew}</span></a></li>
-                {else}
-                    <li class="message"><a href="{router page='talk'}" title="{$aLang.messages}"></a></li>
-                {/if}
-                <li class="settings"><a href="{router page='settings'}profile/" title="{$aLang.settings}"></a></li>
-                <li class="myprofile"><a href="{$oUserCurrent->getUserWebPath()}" title="{$aLang.profile}"></a></li>
-                <li class="quit"><a href="{router page='login'}exit/?security_ls_key={$LIVESTREET_SECURITY_KEY}" title="{$aLang.quit}"></a></li>
+                <li class="message">
+                    {if $iUserCurrentCountTalkNew}
+                        <a href="{router page='talk'}" class="new" title="{$aLang.user_privat_messages_new}">{$iUserCurrentCountTalkNew}</a>
+                    {/if}
+                    <a href="{router page='talk'}" title="{$aLang.messages}"></a>
+                </li>
+                <li class="myprofile"><a href="login" class="signin" title="Открыть/Закрыть"><img src="{$oUserCurrent->getProfileAvatarPath(48)}" alt="{$oUserCurrent->getLogin()}" class="avatar" /></a></li>
 
                 {hook run='userbar_item'}
             </ul>
@@ -34,6 +33,15 @@
                 <li><a href="{router page='registration'}" class="reg">{$aLang.registration}</a></li>
             </ul>
         {/if}
+
+        <ul id="signin_menu">
+            <li><a href="{$oUserCurrent->getUserWebPath()}">{$aLang.profile}</a></li>
+            <li><a href="{router page='topic'}saved/">{$aLang.saved}</a></li>
+            <li><a href="{router page='profile'}{$oUserCurrent->getLogin()}/favourites/">{$aLang.favourites}</a></li>
+            <li><a href="{router page='my'}{$oUserCurrent->getLogin()}/">{$aLang.my_topics}</a></li>
+            <li class="settings"><a href="{router page='settings'}profile/">{$aLang.settings}</a></li>
+            <li><a href="{router page='login'}exit/?security_ls_key={$LIVESTREET_SECURITY_KEY}">{$aLang.quit}</a></li>
+        </ul>
     </div>
 
     <div class="btm-header">
