@@ -26,6 +26,8 @@ class PluginSimpletpl extends Plugin {
 	
 	protected $aInherits=array(
 		'block'  =>array('BlockSimpleUsersTop','BlockSimpleTopicsTop','BlockSimpleTags','BlockSimpleProfileTopics','BlockSimpleProfileComments'),
+		'module'  =>array('ModuleTopic'),
+		'entity'  =>array('ModuleTopic_EntityTopic'),
 	);
 
 

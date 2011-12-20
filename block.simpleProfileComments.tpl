@@ -20,6 +20,7 @@
 			</div>
 		</div>
 	{/foreach}
+	{include file='comment_list.tpl' aComments=$simpletpl_aCommentsProfile}   
 
 </div>
 {/if}

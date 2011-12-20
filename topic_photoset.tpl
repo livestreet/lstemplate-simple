@@ -10,7 +10,7 @@ jQuery(window).load(function($) {
 
 {if $sAction=='index'}
 
-    {include file='topic_main_photoset.tpl'}
+    {include file='topic_main.tpl'}
 
 {else}
 

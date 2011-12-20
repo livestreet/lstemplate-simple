@@ -1,4 +1,4 @@
-{include file='header.tpl'}
+{include file='header.tpl' menu='profile'}
 
 {assign var="oSession" value=$oUserProfile->getSession()}
 {assign var="oVote" value=$oUserProfile->getVote()}
@@ -21,7 +21,9 @@
 
 	<img src="{$oUserProfile->getProfileAvatarPath(48)}" alt="avatar" class="avatar" />
 	<h2>{$oUserProfile->getLogin()}</h2>
-    <p class="last">{$aLang.last_visit}:&nbsp;&nbsp;<span>{date_format date=$oSession->getDateLast()}</span></p>
+	{if $oSession}
+    	<p class="last">{$aLang.last_visit}:&nbsp;&nbsp;<span>{date_format date=$oSession->getDateLast()}</span></p>
+	{/if}
 </div>
 
 <div class="user-profile-content">

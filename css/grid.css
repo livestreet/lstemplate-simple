@@ -12,6 +12,7 @@
 #header .top-header { height:47px; overflow:hidden; margin-bottom:27px; }
 #header .top-header .pages { float:left }
 #header .top-header .pages li { float:left; font-size:14px; line-height:47px; padding:0px 26px 0px 12px }
+#header .top-header .pages li.active a { color:#f70000 }
 #header .top-header .pages li a { color:#525252 }
 #header .top-header .pages li a:hover { color:#fc0000 }
 
@@ -59,6 +60,7 @@
 #header .btm-header .left-menu .top-menu .navigate { float:left }
 #header .btm-header .left-menu .top-menu .navigate li { float:left; padding:17px 36px 0px 19px; font-size:16px }
 #header .btm-header .left-menu .top-menu .navigate li.last { padding-right:0px }
+#header .btm-header .left-menu .top-menu .navigate li.active a { color:#f70000; }
 
 /* Social Buttons */
 #header .btm-header .left-menu .top-menu .social-buttons { float:right; width:230px; height:60px; background:url(../images/borders-social.png) no-repeat }

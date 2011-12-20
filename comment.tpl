@@ -19,7 +19,10 @@
         		    <li class="username"><a href="{$oUser->getUserWebPath()}">{$oUser->getLogin()}</a></li>
         		    <li class="date">{date_format date=$oComment->getDate()}</li>
             	    <li><a href="{if $oConfig->GetValue('module.comment.nested_per_page')}{router page='comments'}{else}#comment{/if}{$oComment->getId()}" class="comment-link" title="{$aLang.link_to_comment}"></a></li>
-        		    {if $oUserCurrent and !$oComment->getDelete() and !$bAllowNewComment}
+					{if $oUserCurrent and !$bNoCommentFavourites}
+						<li><a href="#" onclick="return ls.favourite.toggle({$oComment->getId()},this,'comment');" class="comment-favourite {if $oComment->getIsFavourite()}active{/if}"></a></li>
+					{/if}
+					{if $oUserCurrent and !$oComment->getDelete() and !$bAllowNewComment}
             			<li><a href="#" onclick="ls.comments.toggleCommentForm({$oComment->getId()}); return false;" class="reply-link">{$aLang.comment_answer}</a></li>
             		{/if}
                     {if $oUserCurrent and !$bNoCommentFavourites}

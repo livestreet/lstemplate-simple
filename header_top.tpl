@@ -3,6 +3,7 @@
     <div class="top-header">
         <ul class="pages">
     		<li {if $sMenuHeadItemSelect=='people'}class="active"{/if}><a href="{router page='people'}">{$aLang.people}</a></li>
+			<li {if $sMenuHeadItemSelect=='blogs'}class="active"{/if}><a href="{router page='blogs'}">{$aLang.blogs}</a></li>
     		{if $oUserCurrent}
     			<li {if $sMenuItemSelect=='stream'}class="active"{/if}>
     				<a href="{router page='stream'}">{$aLang.stream_personal_title}</a>
@@ -48,10 +49,16 @@
             <div class="top-menu">
 
                 <ul class="navigate">
-                    <li {if $sMenuHeadItemSelect=='blog'}class="active"{/if}><a href="{cfg name='path.root.web'}">{$aLang.topic_title}</a></li>
-		            <li {if $sMenuHeadItemSelect=='blogs'}class="active"{/if}><a href="{router page='blogs'}">{$aLang.blogs}</a></li>
-                    <li {if $sMenuItemSelect=='top'}class="active"{/if}><a href="{router page='top'}">{$aLang.best}</a></li>
-                    <li {if $sMenuSubItemSelect=='new'}class="active"{/if}><a href="{router page='new'}">{$aLang.new}</a></li>
+                    <li {if $sMenuHeadItemSelect=='blog' and $sMenuSubItemSelect!='new'}class="active"{/if}><a href="{cfg name='path.root.web'}">{$aLang.topic_title}</a></li>
+					<li {if $sMenuItemSelect=='top'}class="active"{/if}><a href="{router page='top'}">{$aLang.best}</a></li>
+					{if $iCountTopicsNew>0}
+                    	<li {if $sMenuSubItemSelect=='new'}class="active"{/if}><a href="{router page='new'}">{$aLang.new} +{$iCountTopicsNew}</a></li>
+					{/if}
+					{if $oUserCurrent}
+						<li {if $sMenuItemSelect=='feed'}class="active"{/if}>
+							<a href="{router page='feed'}">{$aLang.userfeed_title}</a>
+						</li>
+					{/if}
                 </ul>
 
                 <div class="social-buttons">
