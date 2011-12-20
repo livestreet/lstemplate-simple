@@ -16,7 +16,7 @@
 */
 
 /**
- * Обработка блока с архивом
+ * Обработка блока с лучшими топиками на главной странице
  *
  */
 class PluginSimpletpl_BlockSimpleTopicsTop extends Block {

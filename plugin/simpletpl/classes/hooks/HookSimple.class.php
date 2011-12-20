@@ -31,6 +31,9 @@ class PluginSimpletpl_HookSimple extends Hook {
 		$this->AddHook('topic_edit_show', 'TopicEdit', __CLASS__);
 	}
 
+	/**
+	 * Обработка превью после сохранения топика
+	 */
 	public function SaveTopic($aParams) {
 		$oTopic=$aParams['oTopic'];
 		/**
@@ -80,24 +83,39 @@ class PluginSimpletpl_HookSimple extends Hook {
 		$this->Topic_UpdateTopic($oTopic);
 	}
 
+	/**
+	 * Прогружаем на все страницы число новых топиков
+	 */
 	public function InitAction() {
 		$this->Viewer_Assign('iCountTopicsNew',$this->Topic_GetCountTopicsCollectiveNew()+$this->Topic_GetCountTopicsPersonalNew());
 	}
 
+	/**
+	 * Добавляем в стандартную админку ссылку на конвертер фото-сетов
+	 */
 	public function InjectAdmin() {
 		return $this->Viewer_Fetch(Plugin::GetTemplatePath(__CLASS__).'inject.admin.menu.tpl');
 	}
-    
+
+	/**
+	 * Увеличиваем число просмотра топиков при его открытии
+	 */
     public function TopicShow($aParams) {
     	$oTopic=$aParams['oTopic'];
     	$oTopic->setCountRead($oTopic->getCountRead()+1);
     	$this->Topic_UpdateTopic($oTopic);
     }
 
+	/**
+	 * Добавляем форму загружки/удаления превью на страницу редактирования топика
+	 */
 	public function AddTopicPreviewForm() {
 		return $this->Viewer_Fetch(Plugin::GetTemplatePath(__CLASS__).'inject.topic.form.tpl');
 	}
 
+	/**
+	 * Прогружаем редактируемый топик в шаблон
+	 */
 	public function TopicEdit($aVars) {
 		$oTopic=$aVars['oTopic'];
 		$this->Viewer_Assign('oTopicEdit',$oTopic);

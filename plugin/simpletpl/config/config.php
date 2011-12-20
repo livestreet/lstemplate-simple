@@ -15,6 +15,9 @@
 ---------------------------------------------------------
 */
 
+/**
+ * Адрес конвертера фото-сетов
+ */
 Config::Set('router.page.simpletpl', 'PluginSimpletpl_ActionSimple');
 
 /**

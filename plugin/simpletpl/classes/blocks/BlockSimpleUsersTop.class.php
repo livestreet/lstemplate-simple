@@ -16,7 +16,7 @@
 */
 
 /**
- * Обработка блока с архивом
+ * Обработка блока с популярными пользователями на главной странице
  *
  */
 class PluginSimpletpl_BlockSimpleUsersTop extends Block {

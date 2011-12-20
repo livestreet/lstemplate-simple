@@ -16,7 +16,7 @@
 */
 
 /**
- * Обработка блока с архивом
+ * Обработка блока с тегами
  *
  */
 class PluginSimpletpl_BlockSimpleTags extends BlockTags {
