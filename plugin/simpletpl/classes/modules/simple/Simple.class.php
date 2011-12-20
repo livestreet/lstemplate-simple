@@ -197,6 +197,7 @@ class PluginSimpletpl_ModuleSimple extends Module {
 	 * @return string | bool
 	 */
 	public function UploadImage($oTopic,$sFileTmp) {
+		require_once Config::Get('path.root.engine').'/lib/external/LiveImage/Image.php';
 		$oImage = new LiveImage($sFileTmp);
 		$aParams=$this->Image_BuildParams('topic');
 		/**
