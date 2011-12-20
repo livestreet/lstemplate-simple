@@ -26,7 +26,7 @@
 
 #header .top-header .profile li.message { padding:19px 22px 0px 15px; margin-left:8px; border-right:1px solid #f6f6f6; position:relative }
 #header .top-header .profile li.message a { width:16px; height:11px; background:url(../images/message-icon.jpg) no-repeat; display:block }
-#header .top-header .profile li.message .new { width:13px; height:13px; background:url(../images/new-message-icon.png) no-repeat; text-align:center; line-height:13px; color:#fff; font-size:10px; position:absolute; top:11px; left:8px; display:block }
+#header .top-header .profile li.message .new { width:16px; height:16px; background:url(../images/new-message-icon.png) no-repeat; text-align:center; line-height:16px; color:#fff; font-size:10px; position:absolute; top:8px; left:5px; display:block }
 
 #header .top-header .profile li.myprofile { padding:6px 2px 0px 11px; border-left:1px solid #e4e4e4 }
 #header .top-header .profile li.myprofile a { background:#fff; display:block; height:30px; padding:3px }
