@@ -16,6 +16,7 @@ return array(
     'block_tags_h2' => 'Теги',
     'forward' => 'Вперед',
     'back' => 'Назад',
+    'open_close' => 'Открыть/Закрыть',
     'registration' => 'Регистрация',
     'voiti' => 'Войти',
     'make' => 'Создать',

@@ -22,7 +22,12 @@
                     {/if}
                     <a href="{router page='talk'}" title="{$aLang.messages}"></a>
                 </li>
-                <li class="myprofile"><a href="login" class="signin" title="Открыть/Закрыть"><img src="{$oUserCurrent->getProfileAvatarPath(48)}" alt="{$oUserCurrent->getLogin()}" class="avatar" /></a></li>
+                <li class="myprofile">
+                    <a href="#" title="{$aLang.open_close}" class="signin">
+                        <img src="{$oUserCurrent->getProfileAvatarPath(48)}" alt="{$oUserCurrent->getLogin()}" class="avatar" />
+                        <img src="{cfg name='path.static.skin'}/images/drop-profile.jpg" />
+                    </a>
+                </li>
 
                 {hook run='userbar_item'}
             </ul>
@@ -34,6 +39,7 @@
             </ul>
         {/if}
 
+        {if $oUserCurrent}
         <ul id="signin_menu">
             <li><a href="{$oUserCurrent->getUserWebPath()}">{$aLang.profile}</a></li>
             <li><a href="{router page='topic'}saved/">{$aLang.saved}</a></li>
@@ -42,6 +48,7 @@
             <li class="settings"><a href="{router page='settings'}profile/">{$aLang.settings}</a></li>
             <li><a href="{router page='login'}exit/?security_ls_key={$LIVESTREET_SECURITY_KEY}">{$aLang.quit}</a></li>
         </ul>
+        {/if}
     </div>
 
     <div class="btm-header">
