@@ -1,6 +1,5 @@
 {if $simpletpl_aTopicsTop and count($simpletpl_aTopicsTop)}
 
-<script type="text/javascript" src="{cfg name="path.static.skin"}/js/simple.js"></script>
 <script type="text/javascript">
 	jQuery(document).ready(function($){
 		ls.plugin.simpletpl.init({$simpletpl_iCountSlide});

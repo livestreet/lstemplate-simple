@@ -53,7 +53,7 @@ class PluginSimpletpl extends Plugin {
 	 * Инициализация плагина
 	 */
 	public function Init() {
-
+		$this->Viewer_AppendScript(Config::Get('path.static.skin').'/js/simple.js');
 	}
 }
 ?>
