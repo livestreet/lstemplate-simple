@@ -8,10 +8,10 @@
 .block.account .friend-list li { display:inline-block; *display:inline; margin-right:7px; margin-bottom:5px }
 .block.account .friend-list li img { width:30px; height:30px }
 
-.block.account .blog-list li { padding-bottom:12px; position:relative; clear:both; height:30px; line-height:30px; overflow:hidden }
+.block.account .blog-list li { padding:9px 0px; position:relative; border-top:1px solid #e4e4e4; clear:both; height:30px; line-height:30px; overflow:hidden }
 .block.account .blog-list li img { width:30px; height:30px; float:left; margin-right:10px }
 .block.account .blog-list li .infa { display:table; line-height:16px }
-.block.account .blog-list li span { position:absolute; right:0px; top:-8px; font-weight:bold }
+.block.account .blog-list li span { position:absolute; right:0px; top:0px; font-weight:bold }
 
 .block .stream-settings-userlist ul,
 .block .stream-settings-friends,
@@ -82,11 +82,10 @@
 .block.blogs ul.list li .rating { float: right; font-weight: bold; margin-left: 10px; }
 
 .block.blogs .blog-list { padding-top:10px }
-.block.blogs .blog-list li { padding-bottom:12px; position:relative; clear:both; height:30px; line-height:30px; overflow:hidden }
+.block.blogs .blog-list li { padding:9px 0px; position:relative; border-top:1px solid #e4e4e4; clear:both; height:30px; line-height:30px; overflow:hidden }
 .block.blogs .blog-list li img { width:30px; height:30px; float:left; margin-right:10px }
 .block.blogs .blog-list li .infa { display:table; line-height:16px }
-.block.blogs .blog-list li span { position:absolute; right:0px; top:-8px; font-weight:bold }
-
+.block.blogs .blog-list li span { position:absolute; right:0px; top:0px; font-weight:bold }
 
 /* Tags */
 .block .cloud { text-align: center; }

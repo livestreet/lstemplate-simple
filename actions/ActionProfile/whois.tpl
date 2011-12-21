@@ -32,7 +32,7 @@
         {if $oUserProfile->getProfileFoto()}
 		    <img src="{$oUserProfile->getProfileFoto()}" alt="photo" />
         {else}
-            <img src="{cfg name='path.static.skin'}/images/nofoto.png" alt="photo" />
+            <img src="{cfg name='path.static.skin'}/images/nofoto.jpg" alt="photo" />
 	    {/if}
 
         {if $oUserCurrent && $oUserCurrent->getId()!=$oUserProfile->getId()}

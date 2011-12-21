@@ -19,7 +19,7 @@
 
         <ul class="blog-list">
 		    {foreach from=$aBlogsOwner item=oBlog name=blog_owner}
-		        <li>
+		        <li {if $smarty.foreach.blog_owner.iteration == 1}style="border-top:0px; padding-top:0px"{/if}>
                     <a href="{router page='blog'}{$oBlog->getUrl()}/"><img src="{$oBlog->getAvatarPath(48)}" alt="avatar" class="avatar" title="{$oBlog->getTitle()|escape:'html'}" /></a>
                     <div class="infa"><a href="{router page='blog'}{$oBlog->getUrl()}/">{$oBlog->getTitle()|escape:'html'}</a></div>
                     <span>{$oBlog->getRating()}</span>
@@ -36,7 +36,7 @@
         <ul class="blog-list">
           {foreach from=$aBlogUsers item=oBlogUser name=blog_user}
               {assign var="oBlog" value=$oBlogUser->getBlog()}
-		        <li>
+		        <li {if $smarty.foreach.blog_user.iteration == 1}style="border-top:0px; padding-top:0px"{/if}>
                     <a href="{router page='blog'}{$oBlog->getUrl()}/"><img src="{$oBlog->getAvatarPath(48)}" alt="avatar" class="avatar" title="{$oBlog->getTitle()|escape:'html'}" /></a>
                     <div class="infa"><a href="{router page='blog'}{$oBlog->getUrl()}/">{$oBlog->getTitle()|escape:'html'}</a></div>
                     <span>{$oBlog->getRating()}</span>
