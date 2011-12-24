@@ -1,6 +1,6 @@
 <div class="block1">
 	<span>{hook run='copyright'}</span><br />
-	Y9 &mdash; <a href="http://y9.ru" target="_blank">разработка социальных сетей</a>
+	<span>Y9 &mdash; <a href="http://y9.ru" target="_blank">разработка социальных сетей</a></span>
 </div>
 <div class="block4">
 {if $oUserCurrent}
