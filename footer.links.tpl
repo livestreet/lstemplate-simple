@@ -1,6 +1,6 @@
 <div class="block1">
 	<span>{hook run='copyright'}</span><br />
-	Design by <a href="http://twitter.com/fuck_you_two" target="_blank">mindfreak</a>
+	Y9 &mdash; <a href="http://y9.ru" target="_blank">разработка социальных сетей</a>
 </div>
 <div class="block4">
 {if $oUserCurrent}
