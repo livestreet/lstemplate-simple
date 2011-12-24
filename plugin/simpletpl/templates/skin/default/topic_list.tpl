@@ -1,6 +1,6 @@
 {if count($aTopics)>0}
 	{foreach from=$aTopics item=oTopic}
-		{if $sAction=='index' or !Config::Get('plugin.simpletpl.show_thumbs_only_index')}
+		{if Config::Get('view.skin')=='simple' and ($sAction=='index' or !Config::Get('plugin.simpletpl.show_thumbs_only_index'))}
 			{include file="topic_main.tpl" bTopicList=true}
 		{else}
 			{assign var="sTopicTemplateName" value="topic_`$oTopic->getType()`.tpl"}
