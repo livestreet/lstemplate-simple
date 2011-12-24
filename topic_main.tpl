@@ -2,7 +2,7 @@
 {assign var="oUser" value=$oTopic->getUser()}
 {assign var="oVote" value=$oTopic->getVote()}
 
-<div class="topicshort {if $oTopic->getType()=='photoset' or $oTopic->getPreviewImage()}photo1{else}news{/if}">
+<div class="topicshort {if $oTopic->getType()=='photoset' or $oTopic->getPreviewImage()}photo1{else}news{/if} {if Config::Get('plugin.simpletpl.show_titletwo')}titletwo{/if}">
 
     <div class="inform">
 

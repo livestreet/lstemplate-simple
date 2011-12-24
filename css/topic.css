@@ -178,3 +178,10 @@
 }
 #photoset-upload-form p { margin-bottom: 10px; }
 #photoset-upload-form .input-text { width: 262px; border: 1px solid #ccc; margin: 0; padding: 3px; font-family: Arial, sans-serif; font-size: 12px; }
+
+/* Fix Preview */
+.topicshort.news.titletwo { overflow:hidden; display:inline-block; *display:inline; width:207px; vertical-align:top; height:198px; padding:13px 11px 12px 11px; margin:0px 15px 15px 0px; border:1px solid #e2e2e2; border-right:1px solid #d1d1d1; border-bottom:1px solid #c4c3c4; position: relative; zoom: 1;}
+.topicshort.news.titletwo .inform { height:159px; overflow:hidden }
+.topicshort.photo1.titletwo { padding:0px 0px 12px 0px; height:210px; width:229px; }
+.topicshort.photo1.titletwo .title { padding:10px 12px 0px 12px; overflow:hidden; height:42px; line-height:20px }
+.topicshort.photo1.titletwo .inform { height:172px }
