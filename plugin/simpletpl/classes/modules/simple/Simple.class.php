@@ -85,18 +85,21 @@ class PluginSimpletpl_ModuleSimple extends Module {
 	 */
 	public function AnalysisTopic($oTopic) {
 		/**
-		 * Анализируем текст на наличие видео с youtube.com
-		 * Проверям старый и новый код вставки
+		 * Анализируем текст на наличие видео
 		 */
 		if (!Config::Get('plugin.simpletpl.make_preview_video')) {
 			return;
 		}
-		$sImage=null;
-		if (preg_match('#<\s*param[^>]+value\s*=\s*"https?://(?:www\.|)youtube.com/v/([a-zA-Z0-9_\-]+)[^"]*"#i',$oTopic->getText(),$aMatch)) {
-			$sImage="http://i3.ytimg.com/vi/{$aMatch[1]}/hqdefault.jpg";
-		} elseif (preg_match('#<\s*iframe[^>]+src\s*=\s*"https?://(?:www\.|)youtube.com/embed/([a-zA-Z0-9_\-]+)[^"]*"#i',$oTopic->getText(),$aMatch)) {
-			$sImage="http://i3.ytimg.com/vi/{$aMatch[1]}/hqdefault.jpg";
+
+		$sImage=$this->AnalysisTopicYoutube($oTopic);
+		if (!$sImage) {
+			$sImage=$this->AnalysisTopicVimeo($oTopic);
 		}
+		if (!$sImage) {
+			$sImage=$this->AnalysisTopicRutube($oTopic);
+		}
+
+
 		if (!is_null($sImage)) {
 			// удаляем старую превьюшку на основе анализа текста топика
 			if ($oTopic->getPreviewImage()) {
@@ -110,6 +113,70 @@ class PluginSimpletpl_ModuleSimple extends Module {
 				$oTopic->setPreviewImageIsAuto(true);
 			}
 		}
+	}
+
+	/**
+	 * Чтение данных из XML файла
+	 *
+	 * @param $sFile
+	 * @param $sPath
+	 * @return null|string
+	 */
+	public function GetDataFromXml($sFile,$sPath) {
+		if($oXml = @simplexml_load_file($sFile)) {
+			$data=$oXml->xpath($sPath);
+			return trim((string)array_shift($data));
+		}
+		return null;
+	}
+
+	/**
+	 * Поиск видео с YouTube
+	 *
+	 * @param $oTopic
+	 * @return null|string
+	 */
+	public function AnalysisTopicYoutube($oTopic) {
+		$sImage=null;
+		if (preg_match('#<\s*param[^>]+value\s*=\s*"https?://(?:www\.|)youtube\.com/v/([a-zA-Z0-9_\-]+)[^"]*"#i',$oTopic->getText(),$aMatch)) {
+			$sImage="http://i3.ytimg.com/vi/{$aMatch[1]}/hqdefault.jpg";
+		} elseif (preg_match('#<\s*iframe[^>]+src\s*=\s*"https?://(?:www\.|)youtube\.com/embed/([a-zA-Z0-9_\-]+)[^"]*"#i',$oTopic->getText(),$aMatch)) {
+			$sImage="http://i3.ytimg.com/vi/{$aMatch[1]}/hqdefault.jpg";
+		}
+		return $sImage;
+	}
+
+	/**
+	 * Поиск видео с Vimeo
+	 *
+	 * @param $oTopic
+	 * @return null|string
+	 */
+	public function AnalysisTopicVimeo($oTopic) {
+		$sImage=null;
+		if (preg_match('#<\s*iframe[^>]+src\s*=\s*"https?://player\.vimeo\.com/video/([0-9]+)[^"]*"#i',$oTopic->getText(),$aMatch)) {
+			$sXmlFile="http://vimeo.com/api/v2/video/{$aMatch[1]}.xml";
+			if ($sImage=$this->GetDataFromXml($sXmlFile,"video/thumbnail_large")) {
+				return $sImage;
+			}
+		}
+		return $sImage;
+	}
+
+	/**
+	 * Поиск видео с RuTube
+	 *
+	 * @param $oTopic
+	 * @return null|string
+	 */
+	public function AnalysisTopicRutube($oTopic) {
+		$sImage=null;
+		if (preg_match('#<\s*param[^>]+value\s*=\s*"https?://video\.rutube\.ru/([a-zA-Z0-9_\-]+)[^"]*"#i',$oTopic->getText(),$aMatch)) {
+			$sImage="http://tub.rutube.ru/thumbs/".preg_replace("#((.{2})(.{2}))#U","\\2/\\3/\\1",$aMatch[1],1)."-1.jpg";
+		} elseif (preg_match('#<\s*embed[^>]+src\s*=\s*"https?://video\.rutube\.ru/([a-zA-Z0-9_\-]+)[^"]*"#i',$oTopic->getText(),$aMatch)) {
+			$sImage="http://tub.rutube.ru/thumbs/".preg_replace("#((.{2})(.{2}))#U","\\2/\\3/\\1",$aMatch[1],1)."-1.jpg";
+		}
+		return $sImage;
 	}
 
 	/**

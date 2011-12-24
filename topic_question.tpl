@@ -3,10 +3,6 @@
 {assign var="oVote" value=$oTopic->getVote()}
 
 
-{if $sAction=='index'}
-    {include file='topic_main.tpl'}
-{else}
-
 <div class="topic">
 
     <div class="date">{date_format date=$oTopic->getDateAdd() format="d F Y"}</div>
@@ -101,4 +97,3 @@
 		{hook run='topic_show_end' topic=$oTopic}
 	{/if}
 </div>
-{/if}

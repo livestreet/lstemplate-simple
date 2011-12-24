@@ -1,9 +1,9 @@
 {if count($aTopics)>0}
-	{foreach from=$aTopics item=oTopic}   
+	{foreach from=$aTopics item=oTopic}
 	   {assign var="sTopicTemplateName" value="topic_`$oTopic->getType()`.tpl"}
 	   {include file=$sTopicTemplateName bTopicList=true}
-	{/foreach}	
-		
+	{/foreach}
+
     {include file='paging.tpl' aPaging="$aPaging"}
 {else}
 	<div class="padding">&nbsp;&nbsp;{$aLang.blog_no_topic}</div>

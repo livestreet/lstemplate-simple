@@ -25,9 +25,9 @@ if (!class_exists('Plugin')) {
 class PluginSimpletpl extends Plugin {
 	
 	protected $aInherits=array(
-		'block'  =>array('BlockSimpleUsersTop','BlockSimpleTopicsTop','BlockSimpleTags','BlockSimpleProfileTopics','BlockSimpleProfileComments'),
-		'module'  =>array('ModuleTopic'),
-		'entity'  =>array('ModuleTopic_EntityTopic'),
+		'block' =>array('BlockSimpleUsersTop','BlockSimpleTopicsTop','BlockSimpleTags','BlockSimpleProfileTopics','BlockSimpleProfileComments'),
+		'module' =>array('ModuleTopic'),
+		'entity' =>array('ModuleTopic_EntityTopic'),
 	);
 
 
@@ -38,8 +38,12 @@ class PluginSimpletpl extends Plugin {
 		 * Небольшой хак, который позволяет переопредеить шаблон плагина
 		 */
 		$this->aDelegates=array(
-			'template'  =>array(Config::Get('path.root.server').'/plugins/page/templates/skin/default/actions/ActionPage/add.tpl'=>'_actions/ActionPage/add.tpl'),
+			'template'  =>array(
+				Config::Get('path.root.server').'/plugins/page/templates/skin/default/actions/ActionPage/add.tpl'=>'_actions/ActionPage/add.tpl',
+				'topic_list.tpl'
+			),
 		);
+
 	}
 
 	/**

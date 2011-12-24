@@ -51,7 +51,7 @@ return array(
     'social_profile' => 'Я в сети',
     'block_blogs' => 'Топ блогов',
     'my_comments' => 'Мои комментарии',
-    'go_to_comment' => 'Перейти к комментаирю',
+    'go_to_comment' => 'Перейти к комментарию',
     'settings_nav' => 'Настройки',
     'settings_profile' => 'Профиля',
     'settings_tuning' => 'Уведомлений',

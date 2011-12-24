@@ -2,9 +2,6 @@
 {assign var="oUser" value=$oTopic->getUser()}
 {assign var="oVote" value=$oTopic->getVote()}
 
-{if $sAction=='index'}
-    {include file='topic_main.tpl'}
-{else}
 
 <div class="topic">
 
@@ -67,5 +64,3 @@
 		{hook run='topic_show_end' topic=$oTopic}
 	{/if}
 </div>
-
-{/if}

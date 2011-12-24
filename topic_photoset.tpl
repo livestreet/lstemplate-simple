@@ -8,12 +8,6 @@ jQuery(window).load(function($) {
 });
 </script>
 
-{if $sAction=='index'}
-
-    {include file='topic_main.tpl'}
-
-{else}
-
 <div class="topic photo">
 
     <div class="date">{date_format date=$oTopic->getDateAdd() format="d F Y"}</div>
@@ -121,4 +115,3 @@ jQuery(window).load(function($) {
 		{hook run='topic_show_end' topic=$oTopic}
 	{/if}
 </div>
-{/if}

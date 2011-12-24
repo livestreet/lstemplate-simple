@@ -18,9 +18,6 @@
  * Настройки для шаблона.
  */
 
-// Модуль Topic
-$config['module']['topic']['per_page']   = 9;          // Число топиков на одну страницу
 
-
-return $config;
+return array();
 ?>
