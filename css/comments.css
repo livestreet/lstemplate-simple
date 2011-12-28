@@ -44,6 +44,7 @@
 /* Comment Highlights */
 .comment .content, 						.comment .content:before					{ background-color: #ffffff; }
 .comment.deleted .content, 				.comment.deleted .content:before 			{ background-color: #c5c5c5; }
+.comment.deleted .content .arrow, 		.comment.deleted .content .arrow:before 	    { background: url(../images/bg-comments-left-delete.png) no-repeat }
 .comment.deleted.not-admin .content, 	.comment.deleted.not-admin .content:before 	{ padding: 5px 10px; min-height: 0; background-color: #f7f7f7; color: #888; }
 .comment.self .content, 				.comment.self .content:before 				{ background-color: #fffff1; }
 .comment.self .content .arrow, 			.comment.self .content .arrow:before 	    { background: url(../images/bg-comments-left-self.png) no-repeat }
