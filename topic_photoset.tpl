@@ -8,7 +8,7 @@ jQuery(window).load(function($) {
 });
 </script>
 
-<div class="topic photo">
+<div class="topic photo" style="margin-left:-26px">
 
     <div class="date">{date_format date=$oTopic->getDateAdd() format="d F Y"}</div>
 

@@ -1,8 +1,8 @@
 {assign var="oBlog" value=$oTopic->getBlog()}
 {assign var="oUser" value=$oTopic->getUser()}
 {assign var="oVote" value=$oTopic->getVote()}
-
 <div class="topicshort {if $oTopic->getType()=='photoset' or $oTopic->getPreviewImage()}photo1{else}news{/if} {if Config::Get('plugin.simpletpl.show_titletwo')}titletwo{/if}">
+
 
     <div class="inform">
 
@@ -37,4 +37,4 @@
 		    <a href="{$oTopic->getUrl()}#comments">{$oTopic->getCountComment()}</a>
 		</li>
 	</ul>
-</div>
+</div>       

@@ -1,6 +1,6 @@
 {if in_array($sAction,array('top','feed','new'))}
 {else}
-	<div class="navigation" {if $sAction=='index'}style="margin-left:0px"{/if}>
+	<div class="navigation">
 		<h2>
 			{if $sMenuItemSelect=='index'}
 				{$aLang.blog_menu_all}

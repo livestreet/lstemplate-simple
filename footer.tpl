@@ -1,6 +1,5 @@
 			{hook run='content_end'}
-		    {if $sAction=='index'}</div>{/if}<!-- /content-inner -->
-		</div><!-- /content -->
+	   </div><!-- /content -->
 
 		{if !$noSidebar}
 			{include file='sidebar.tpl'}

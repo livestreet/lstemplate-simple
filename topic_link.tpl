@@ -3,7 +3,7 @@
 {assign var="oVote" value=$oTopic->getVote()}
 
 
-<div class="topic">
+<div class="topic" style="margin-left:-26px">
 
     <div class="date">{date_format date=$oTopic->getDateAdd() format="d F Y"}</div>
 

@@ -3,7 +3,7 @@
 #container 	{ margin:0 auto; width:1006px; min-height:100%; position:relative }
 #header 	{ height: 192px; margin-left:26px; overflow: hidden; zoom: 1 }
 #wrapper 	{ overflow: hidden; zoom: 1; margin-top:30px }
-#content 	{ width: 730px; float: left; overflow:hidden; }
+#content 	{ width: 730px; float: left; overflow:hidden; padding-left:26px; }
 #sidebar	{ width: 230px; float: right; }
 #footer 	{ overflow: hidden; zoom: 1; height:164px; margin-top:-164px; background:#f1f1f1; position:relative; }
 
@@ -105,7 +105,7 @@
 .topic-slider .topicshort.news .inform { height:209px; overflow:hidden }
 
 /* Navigation */
-.navigation { padding-bottom:20px; margin-left:26px; overflow:hidden; }
+.navigation { padding-bottom:20px; overflow:hidden; }
 .navigation h2 { float:left; margin-right:16px; font-weight:bold; font-size:22px }
 .navigation ul { margin-top:6px }
 .navigation ul li { display:inline-block; *display:inline; font-size:11px; padding:1px 6px; text-transform: lowercase }
@@ -118,7 +118,7 @@
 -------------------- */
 
 /* Blog profile */
-.blog { margin-left:26px; margin-bottom: 20px; color: #666; position: relative; }
+.blog { margin-right:21px; margin-bottom: 20px; color: #666; position: relative; }
 
 .blog .voting { position: absolute; top: 0px; right: 0px; z-index: 100; }
 .blog .voting .total { font-weight: normal; font-size:30px; color:#000; margin-top:5px; height:20px }
@@ -238,7 +238,7 @@
 
 .user-profile-topics .zagolovok { margin-bottom:20px; background: url(../images/grey-line.png) repeat-x 0px 9px; height:29px; clear: both; color: #B9B9B9;}
 .user-profile-topics .zagolovok h2 { font-weight:bold; font-size:22px; background: #fff; float: left; margin: -6px 0 0 -2px; padding: 0 8px 0 0;}
-.user-profile-topics .zagolovok a { float:right; padding:0px 0px 0px 8px; color:#fb8282; text-decoration:underline; margin-right:10px; background:#fff; }
+.user-profile-topics .zagolovok a { float:right; padding:0px 0px 0px 8px; color:#fb8282; text-decoration:underline; margin-right:20px; background:#fff; }
 .user-profile-topics .zagolovok a:hover { color:#f70000 }
 
 .user-profile-topics { width: 100%; clear:both; overflow:hidden; margin-top:60px; display:inline-block; *display:inline }
@@ -289,11 +289,7 @@
 
 .userfield-add { text-decoration: none; border-bottom: 1px dashed #70AAE0; }
 .userfield-add:hover { color: #333; border-color: #333; }
-
-/* Other
--------------------- */
-.content-inner { margin-right:-21px}
-
+                          
 /* Tags
 -------------------- */
 .tags { clear:both; margin:22px 0px 50px 26px }

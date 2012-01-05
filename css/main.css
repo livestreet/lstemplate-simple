@@ -20,7 +20,7 @@ a.dashed { text-decoration: none; border-bottom: 1px dashed #70AAE0; }
 p { margin-bottom: 18px; }
 
 
-.inside { margin:0 0 40px 26px; overflow:hidden }
+.inside { margin:0 0px 40px 0; overflow:hidden }
 .inside h2 { font-size:22px; font-weight:bold; margin-bottom:16px; }
 
 
