@@ -6,7 +6,7 @@
 			<span>{$aLang.by_rating}</span>
 		</li>
 		{foreach from=$simpletpl_aUsersTop item=oUser}
-			<li><a href="{$oUser->getUserWebPath()}" title="{$oUser->getLogin()}"><img src="{$oUser->getProfileAvatarPath(24)}" /></a></li>
+			<li><a href="{$oUser->getUserWebPath()}" title="{$oUser->getLogin()}"><img src="{$oUser->getProfileAvatarPath(48)}" /></a></li>
 		{/foreach}
 	</ul>
 </div>

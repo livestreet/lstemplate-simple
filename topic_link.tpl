@@ -9,6 +9,7 @@
 
 	<h3 class="title">
 	    <a href="{router page='link'}go/{$oTopic->getId()}/" class="title-topic">{$oTopic->getTitle()|escape:'html'}</a>
+		<img src="{cfg name='path.static.skin'}/images/topic_link_big.gif" title="{$aLang.topic_link}" alt="{$aLang.topic_link}" />
 	</h3>
 
 	<a href="#" onclick="return ls.favourite.toggle({$oTopic->getId()},this,'topic');" class="favourite {if $oUserCurrent && $oTopic->getIsFavourite()}active{/if}"></a>

@@ -3,7 +3,7 @@
 		<ul>
             <li class="side">
 			{if $aPaging.iPrevPage}
-				<a href="{$aPaging.sBaseUrl}/page{$aPaging.iPrevPage}/{$aPaging.sGetParams}" style="margin-right:-10px">&larr; {$aLang.back}</a>
+				<a href="{$aPaging.sBaseUrl}/page{$aPaging.iPrevPage}/{$aPaging.sGetParams}">&larr; {$aLang.back}</a>
 			{else}
 				&larr; {$aLang.back}
 			{/if}
