@@ -138,18 +138,18 @@ ls.swfupload = (function ($) {
 	}
 	
 	this.loadSwf = function() {
-		if(!window.SWFUpload){
-			$.getScript(DIR_ROOT_ENGINE_LIB+'/external/swfupload/swfupload.swfobject.js',function(){
-
+		if(window.SWFUpload){
+			this.initOptions();
+			$(this).trigger('load');
+		}else{
+			$.getScript(DIR_ROOT_ENGINE_LIB+'/external/swfupload/swfupload.swfobject.js',function(data,textStatus){
+				
 			}.bind(this));
-
-			$.getScript(DIR_ROOT_ENGINE_LIB+'/external/swfupload/swfupload.js',function(){
+			
+			$.getScript(DIR_ROOT_ENGINE_LIB+'/external/swfupload/swfupload.js',function(data,textStatus){
 				this.initOptions();
 				$(this).trigger('load');
 			}.bind(this));
-		}else{
-			this.initOptions();
-			$(this).trigger('load');
 		}
 	}
 	
