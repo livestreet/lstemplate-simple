@@ -230,7 +230,7 @@ ls.tools = (function ($) {
 		var text =(BLOG_USE_TINYMCE) ? tinyMCE.activeEditor.getContent()  : $('#'+textId).val();
 		var ajaxUrl = aRouter['ajax']+'preview/text/';
 		var ajaxOptions = {text: text, save: save};
-		/*textPreviewAjaxBefore*/ //-textPreviewAjaxBefore
+		'*textPreviewAjaxBefore*'; '*/textPreviewAjaxBefore*';
 		ls.ajax(ajaxUrl, ajaxOptions, function(result){
 			if (!result) {
 				ls.msg.error('Error','Please try again later');
@@ -241,10 +241,10 @@ ls.tools = (function ($) {
 				if (!divPreview) {
 					divPreview = 'text_preview';
 				}
-				/*textPreviewDisplayBefore*/ //-textPreviewDisplayBefore
+				'*textPreviewDisplayBefore*'; '*/textPreviewDisplayBefore*';
 				if ($('#'+divPreview).length) {
 					$('#'+divPreview).html(result.sText);
-					/*textPreviewDisplayAfter*/ //-textPreviewDisplayAfter
+					'*textPreviewDisplayAfter*'; '*/textPreviewDisplayAfter*';
 				}
 			}
 		});
@@ -362,7 +362,7 @@ ls = (function ($) {
 	* Загрузка изображения
 	*/
 	this.ajaxUploadImg = function(form, sToLoad) {
-		/*ajaxUploadImgBefore*/ //-ajaxUploadImgBefore
+		'*ajaxUploadImgBefore*'; '*/ajaxUploadImgBefore*';
 		ls.ajaxSubmit('upload/image/',form,function(data){
 			if (data.bStateError) {
 				ls.msg.error(data.sMsgTitle,data.sMsg);
@@ -370,7 +370,7 @@ ls = (function ($) {
 				$.markItUp({ replaceWith: data.sText} );
 				$('#form_upload_img').find('input[type="text"], input[type="file"]').val('');
 				$('#form_upload_img').jqmHide();
-				/*ajaxUploadImgAfter*/ //-ajaxUploadImgAfter
+				'*ajaxUploadImgAfter*'; '*/ajaxUploadImgAfter*';
 			}
 		});
 	}
