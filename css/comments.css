@@ -103,6 +103,8 @@
 .comment .content .padding { padding: 10px 17px; }
 .comment .content .arrow { position:absolute; top:0px; left:85px; display:block; width:13px; height:30px; background: url(../images/bg-comments-left.png) 0 0 no-repeat; }
 .comment .content .text-style { color: #232323; line-height:21px; }
+.comment .content .text-style a { text-decoration:underline }
+.comment .content .text-style a:hover { color:#F70000; text-decoration:none }
 .comment pre, .comment-preview pre { overflow: auto; width: 95%; padding: 5px 2%; margin-bottom: 10px; background: #f8f8f8 url(../images/code.gif); border: 1px solid #dce6f0; clear: both; }
 .comment blockquote, .comment-preview blockquote {font-style: italic; padding: 5px 10px; background: #ffffff; border: 1px solid #ddd;}
 

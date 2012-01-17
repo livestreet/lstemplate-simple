@@ -33,7 +33,8 @@ ls.user = (function ($) {
 				ls.msg.notice(null,result.sMsg);
 				$('#add_friend_form').jqmHide();
 				$('#add_friend_item').remove();
-				$('#profile_actions').prepend($(result.sToggleText));
+				$('#add_friend_show').before('<span class="send-friend"></span>');
+				$('#add_friend_show').remove();
 			}
 		});
 		return false;

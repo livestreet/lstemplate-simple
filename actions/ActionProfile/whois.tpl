@@ -92,15 +92,27 @@
 			{if $oUserProfile->getProfileIcq()}
 				<li class="social-profile"><span>{$aLang.social_profile}:</span>
 					{if $oUserProfile->getProfileIcq()}
-						<a class="icq" href="http://www.icq.com/people/about_me.php?uin={$oUserProfile->getProfileIcq()|escape:'html'}" target="_blank"></a></li>
+						<a class="icq" href="http://www.icq.com/people/about_me.php?uin={$oUserProfile->getProfileIcq()|escape:'html'}" target="_blank"></a>
 					{/if}
 				</li>
 			{/if}
 
+			{if count($aUserFields)}
+				{foreach from=$aUserFields item=oField}
+					<li>
+						<span>{$oField->getTitle()|escape:'html'}:</span>
+						{$oField->getValue(true,true)}
+					</li>
+				{/foreach}
+			{/if}
+
             {if $oUserProfile->getProfileAbout()}<li class="about"><span>{$aLang.profile_about}:</span><b>{$oUserProfile->getProfileAbout()|escape:'html'}</b></li>{/if}
 
-        {hook run='profile_whois_item' oUserProfile=$oUserProfile}
-        </ul>
+		</ul>
+
+		{hook run='profile_whois_privat_item' oUserProfile=$oUserProfile}
+		{hook run='profile_whois_item' oUserProfile=$oUserProfile}
+		{hook run='profile_whois_activity_item' oUserProfile=$oUserProfile}
     </div>
 </div>
 
