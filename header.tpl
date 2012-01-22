@@ -59,7 +59,7 @@
 </head>
 
 
-<body onload="prettyPrint()" class="ls-template-simple">
+<body onload="prettyPrint()">
 	{hook run='body_begin'}
 
 	<div id="container">
