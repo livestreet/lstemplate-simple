@@ -7,6 +7,7 @@
 <script type="text/javascript" src="{cfg name='path.root.engine_lib'}/external/tinymce-jq/tiny_mce.js"></script>
 	{literal}
 	<script type="text/javascript">
+	jQuery(function($){
 		tinyMCE.init({
 			mode : "textareas",
 			theme : "advanced",
@@ -29,6 +30,7 @@
 			extended_valid_elements : "embed[src|type|allowscriptaccess|allowfullscreen|width|height]",
 			language : TINYMCE_LANG
 		});
+	});
 	</script>
 	{/literal}
 
