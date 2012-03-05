@@ -43,7 +43,7 @@
         <ul id="signin_menu">
             <li><a href="{$oUserCurrent->getUserWebPath()}">{$aLang.profile}</a></li>
             <li><a href="{router page='topic'}saved/">{$aLang.saved}</a></li>
-            <li><a href="{router page='profile'}{$oUserCurrent->getLogin()}/favourites/">{$aLang.favourites}</a></li>
+            <li><a href="{$oUserCurrent->getUserWebPath()}favourites/">{$aLang.favourites}</a></li>
             <li><a href="{router page='my'}{$oUserCurrent->getLogin()}/">{$aLang.my_topics}</a></li>
             <li class="settings"><a href="{router page='settings'}profile/">{$aLang.settings}</a></li>
             <li><a href="{router page='login'}exit/?security_ls_key={$LIVESTREET_SECURITY_KEY}">{$aLang.quit}</a></li>

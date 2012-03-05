@@ -41,7 +41,7 @@
 	</table>
 
     <div class="button2">
-        <em></em><span></span><input type="submit" name="submit_plugins_del" value="{$aLang.plugins_submit_delete}" onclick="return ($$('.form_plugins_checkbox:checked').length==0)?false:confirm('{$aLang.plugins_delete_confirm}');" />
+        <em></em><span></span><input type="submit" name="submit_plugins_del" value="{$aLang.plugins_submit_delete}" onclick="return (jQuery('.form_plugins_checkbox:checked').size()==0)?false:confirm('{$aLang.plugins_delete_confirm}');" />
     </div>
 	<input type="hidden" name="security_ls_key" value="{$LIVESTREET_SECURITY_KEY}" />
 

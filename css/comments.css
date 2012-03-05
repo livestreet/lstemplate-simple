@@ -12,7 +12,8 @@
 	border-bottom: 1px solid #e4e4e4;
 	border-left: 1px solid #e4e4e4;
 	_position: absolute; 
-	_top: expression( eval(document.documentElement.scrollTop) + 220 +"px" ); 
+	_top: expression( eval(document.documentElement.scrollTop) + 220 +"px" );
+	border-radius: 6px 0 0 6px;
 }
 .update .update-comments { width: 26px; height: 26px; cursor: pointer; background: url(../images/update.gif) no-repeat; }
 .update .update-comments.active { background: url(../images/update_act.gif) no-repeat; }

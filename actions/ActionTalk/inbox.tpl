@@ -51,7 +51,7 @@
 	</table>
 
     <div class="button2">
-        <em></em><span></span><input type="submit" name="submit_talk_del" value="{$aLang.talk_inbox_delete}" onclick="return ($('.form_talks_checkbox:checked').length==0)?false:confirm('{$aLang.talk_inbox_delete_confirm}');" />
+        <em></em><span></span><input type="submit" name="submit_talk_del" value="{$aLang.talk_inbox_delete}" onclick="return (jQuery('.form_talks_checkbox:checked').size()==0)?false:confirm('{$aLang.talk_inbox_delete_confirm}');" />
     </div>
 
 </form>
