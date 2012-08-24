@@ -1,17 +1,18 @@
 {assign var="noSidebar" value=true}
-{include file='header.light.tpl' noShowSystemMessage=true}
+{include file='header.tpl' noShowSystemMessage=true}
 
 
-<div class="inside">
-<div class="center">
+<div class="content-error">
 	{if $aMsgError[0].title}
-		<h2>{$aLang.error}: {$aMsgError[0].title}</h2>
+		<h2 class="page-header">{$aLang.error}: <span>{$aMsgError[0].title}</span></h2>
 	{/if}
 
 	<p>{$aMsgError[0].msg}</p>
-	<p><a href="javascript:history.go(-1);">{$aLang.site_history_back}</a>, <a href="{cfg name='path.root.web'}">{$aLang.site_go_main}</a></p>
-</div>
+	<br />
+	<br />
+	<p><a href="javascript:history.go(-1);">&larr; {$aLang.site_history_back}</a>&nbsp;&nbsp;&nbsp;&nbsp;
+	<a href="{cfg name='path.root.web'}">{$aLang.site_go_main}</a></p>
 </div>
 
 
-{include file='footer.light.tpl'}
+{include file='footer.tpl'}

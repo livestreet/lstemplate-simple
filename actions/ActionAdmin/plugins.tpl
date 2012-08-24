@@ -2,32 +2,44 @@
 {include file='header.tpl'}
 
 
-<div class="inside">
+<h2 class="page-header"><a href="{router page='admin'}">{$aLang.admin_header}</a> <span>&raquo;</span> {$aLang.admin_list_plugins}</h2>
+
+
 <form action="{router page='admin'}plugins/" method="post" id="form_plugins_list">
-	<table class="table">
+	<table class="table table-plugins">
 		<thead>
 			<tr>
-				<td width="20"><input type="checkbox" name="" onclick="ls.tools.checkAll('form_plugins_checkbox', this, true);" /></td>
-				<td>{$aLang.plugins_plugin_name}</td>
-				<td>{$aLang.plugins_plugin_version}</td>
-				<td>{$aLang.plugins_plugin_author}</td>
-                                    <td>{$aLang.plugins_plugin_settings}</td>
-				<td>{$aLang.plugins_plugin_action}</td>
+				<th class="cell-checkbox"><input type="checkbox" name="" onclick="ls.tools.checkAll('form_plugins_checkbox', this, true);" /></th>
+				<th>{$aLang.plugins_plugin_name}</th>
+				<th>{$aLang.plugins_plugin_version}</th>
+				<th>{$aLang.plugins_plugin_author}</th>
+                <th>{$aLang.plugins_plugin_settings}</th>
+				<th></th>
 			</tr>
 		</thead>
 		
 		<tbody>
 			{foreach from=$aPlugins item=aPlugin}
 				<tr {if $aPlugin.is_active}class="active"{/if}>
-					<td><input type="checkbox" name="plugin_del[{$aPlugin.code}]" class="form_plugins_checkbox" /></td>
+					<td class="cell-checkbox"><input type="checkbox" name="plugin_del[{$aPlugin.code}]" class="form_plugins_checkbox" /></td>
 					<td>
-						<h3>{$aPlugin.property->name->data|escape:'html'}</h3>
-						{$aPlugin.property->description->data}<br />
-						{$aPlugin.property->homepage}
+						<h3>{$aPlugin.property->name->data}</h3>
+						{$aPlugin.property->description->data}
 					</td>
 					<td>{$aPlugin.property->version|escape:'html'}</td>
-					<td>{$aPlugin.property->author->data|escape:'html'}</td>				
-                                             <td>{if $aPlugin.is_active}<a href="{$aPlugin.property->settings}">{$aPlugin.property->settings}</a>{else}{$aPlugin.property->settings}{/if}</td>
+					<td>
+						{$aPlugin.property->author->data}<br />
+						{$aPlugin.property->homepage}
+					</td>				
+                    <td>
+						{if $aPlugin.property->settings != ""}
+							{if $aPlugin.is_active}
+								<a href="{$aPlugin.property->settings}">{$aLang.plugins_plugin_settings}</a>
+							{else}
+
+							{/if}
+						{/if}
+					</td>
 					<td>
 						{if $aPlugin.is_active}
 							<a href="{router page='admin'}plugins/?plugin={$aPlugin.code}&action=deactivate&security_ls_key={$LIVESTREET_SECURITY_KEY}">{$aLang.plugins_plugin_deactivate}</a>
@@ -40,13 +52,15 @@
 		</tbody>
 	</table>
 
-    <div class="button2">
-        <em></em><span></span><input type="submit" name="submit_plugins_del" value="{$aLang.plugins_submit_delete}" onclick="return ($$('.form_plugins_checkbox:checked').length==0)?false:confirm('{$aLang.plugins_delete_confirm}');" />
-    </div>
 	<input type="hidden" name="security_ls_key" value="{$LIVESTREET_SECURITY_KEY}" />
-
+     <div class="button2 button-primary l-b">
+        <em></em><span></span>
+	<input type="submit"
+		   name="submit_plugins_del"
+		   value="{$aLang.plugins_submit_delete}"
+		   onclick="return (jQuery('.form_plugins_checkbox:checked').length==0)?false:confirm('{$aLang.plugins_delete_confirm}');" />
+     </div>
 </form>
-</div>
 				
 
 {include file='footer.tpl'}

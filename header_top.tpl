@@ -1,4 +1,5 @@
 <div id="header">
+	{hook run='header_banner_begin'}
 
     <div class="top-header">
         <ul class="pages">
@@ -6,16 +7,22 @@
 			<li {if $sMenuHeadItemSelect=='blogs'}class="active"{/if}><a href="{router page='blogs'}">{$aLang.blogs}</a></li>
     		{if $oUserCurrent}
     			<li {if $sMenuItemSelect=='stream'}class="active"{/if}>
-    				<a href="{router page='stream'}">{$aLang.stream_personal_title}</a>
+    				<a href="{router page='stream'}">{$aLang.stream_menu}</a>
     			</li>
     		{/if}
-            
-    		{hook run='main_menu'}
+
+		    {hook run='main_menu_item'}
     	</ul>
+
+    	{hook run='main_menu'}
+
+
+	    {hook run='userbar_nav'}
 
         {if $oUserCurrent}
             <ul class="profile">
-                <li class="add"><a href="{router page='topic'}add/" class="button"><span>{$aLang.make}</span></a></li>
+                {hook run='userbar_item_first'}
+                <li class="add"><a href="{router page='topic'}add/" class="button js-write-window-show" id="modal_write_show"><span>{$aLang.make}</span></a></li>
                 <li class="message">
                     {if $iUserCurrentCountTalkNew}
                         <a href="{router page='talk'}" class="new" title="{$aLang.user_privat_messages_new}">{$iUserCurrentCountTalkNew}</a>
@@ -24,18 +31,18 @@
                 </li>
                 <li class="myprofile">
                     <a href="#" title="{$aLang.open_close}" class="signin">
-                        <img src="{$oUserCurrent->getProfileAvatarPath(48)}" alt="{$oUserCurrent->getLogin()}" class="avatar" />
+                        <img src="{$oUserCurrent->getProfileAvatarPath(48)}" alt="{$oUserCurrent->getLogin()}" class="avatar2" />
                         <img src="{cfg name='path.static.skin'}/images/drop-profile.jpg" />
                     </a>
                 </li>
-
-                {hook run='userbar_item'}
+				{hook run='userbar_item_last'}
             </ul>
         {else}
             <ul class="profile-guest">
-                <li><a href="{router page='login'}" id="login_form_show" class="voiti">{$aLang.voiti}</a></li>
+                <li><a href="{router page='login'}" id="login_form_show" class="js-login-form-show voiti">{$aLang.voiti}</a></li>
                 <li class="border">&nbsp;</li>
-                <li><a href="{router page='registration'}" class="reg">{$aLang.registration}</a></li>
+                <li><a href="{router page='registration'}" class="reg js-registration-form-show">{$aLang.registration}</a></li>
+			    {hook run='userbar_item'}
             </ul>
         {/if}
 
@@ -52,7 +59,6 @@
     </div>
 
     <div class="btm-header">
-
         <a href="{cfg name='path.root.web'}" class="logo">
             <ul>
                 <li class="title">Live<br />Street</li>
@@ -64,11 +70,13 @@
             <div class="top-menu">
 
                 <ul class="navigate">
-                    <li {if $sMenuHeadItemSelect=='blog' and $sMenuSubItemSelect!='new'}class="active"{/if}><a href="{cfg name='path.root.web'}">{$aLang.topic_title}</a></li>
-					<li {if $sMenuItemSelect=='top'}class="active"{/if}><a href="{router page='top'}">{$aLang.best}</a></li>
-					{if $iCountTopicsNew>0}
-                    	<li {if $sMenuSubItemSelect=='new'}class="active"{/if}><a href="{router page='new'}">{$aLang.new} +{$iCountTopicsNew}</a></li>
-					{/if}
+                    <li {if $sAction=='index' and $sEvent==''}class="active"{/if}><a href="{cfg name='path.root.web'}">{$aLang.topic_title}</a></li>
+					<li {if $sMenuItemSelect=='top'}class="active"{/if}><a href="{router page='index'}top">{$aLang.best}</a></li>
+					<li {if $sMenuSubItemSelect=='discussed'}class="active"{/if}><a href="{router page='index'}discussed/">{$aLang.blog_menu_all_discussed}</a></li>
+              		<li {if $sMenuSubItemSelect=='new'}class="active"{/if}>
+              			<a href="{router page='index'}newall/" title="{$aLang.blog_menu_top_period_all}">{$aLang.blog_menu_all_new}</a>
+              			{if $iCountTopicsNew>0}<a href="{router page='index'}new/" class="new" title="{$aLang.blog_menu_top_period_24h}">+{$iCountTopicsNew}</a>{/if}
+              		</li>
 					{if $oUserCurrent}
 						<li {if $sMenuItemSelect=='feed'}class="active"{/if}>
 							<a href="{router page='feed'}">{$aLang.userfeed_title}</a>
@@ -86,7 +94,24 @@
                 </div>
             </div>
             <div class="btm-menu">
-				{insert name="block" block=simpleUsersTop}
+                <div class="top-authors">
+                	<ul>
+                		<li class="title">
+                		{$aLang.best_authors}<br />
+                			<span>{$aLang.by_rating}</span>
+                		</li>
+                		<li><a href="#" title="admin"><img src="{cfg name='path.static.skin'}/images/foto.png" alt="ava"></a></li>
+                		<li><a href="#" title="admin"><img src="{cfg name='path.static.skin'}/images/foto.png" alt="ava"></a></li>
+                		<li><a href="#" title="admin"><img src="{cfg name='path.static.skin'}/images/foto.png" alt="ava"></a></li>
+                		<li><a href="#" title="admin"><img src="{cfg name='path.static.skin'}/images/foto.png" alt="ava"></a></li>
+                		<li><a href="#" title="admin"><img src="{cfg name='path.static.skin'}/images/foto.png" alt="ava"></a></li>
+                		<li><a href="#" title="admin"><img src="{cfg name='path.static.skin'}/images/foto.png" alt="ava"></a></li>
+                		<li><a href="#" title="admin"><img src="{cfg name='path.static.skin'}/images/foto.png" alt="ava"></a></li>
+                		<li><a href="#" title="admin"><img src="{cfg name='path.static.skin'}/images/foto.png" alt="ava"></a></li>
+                		<li><a href="#" title="admin"><img src="{cfg name='path.static.skin'}/images/foto.png" alt="ava"></a></li>
+                		<li><a href="#" title="admin"><img src="{cfg name='path.static.skin'}/images/foto.png" alt="ava"></a></li>
+                	</ul>
+                </div>
 
                 <div class="search">
                     <form action="{router page='search'}topics/" method="GET">
@@ -96,8 +121,7 @@
                 </div>
             </div>
         </div>
-
-
     </div>
 
+	{hook run='header_banner_end'}
 </div>

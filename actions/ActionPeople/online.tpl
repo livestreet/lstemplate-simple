@@ -1,35 +1,55 @@
 {include file='header.tpl' menu='people'}
 
+<table class="table table-users">
+	<thead>
+	<tr>
+		<th class="cell-name cell-tab"><div class="cell-tab-inner">{$aLang.user}</div></th>
+		<th>&nbsp;</th>
+		<th class="cell-date cell-tab"><div class="cell-tab-inner active"><span>{$aLang.user_date_last}</span></div></th>
+		<th class="cell-rating cell-tab">{$aLang.user_rating}</th>
+	</tr>
+	</thead>
 
-<div class="inside">           
+	<tbody>
+	{if $aUsersLast}
+		{foreach from=$aUsersLast item=oUserList}
+			{assign var="oSession" value=$oUserList->getSession()}
+			{assign var="oUserNote" value=$oUserList->getUserNote()}
+			<tr>
+				<td class="cell-name">
+					<a href="{$oUserList->getUserWebPath()}"><img src="{$oUserList->getProfileAvatarPath(48)}" alt="avatar" class="avatar" /></a>
+					<div class="name {if !$oUserList->getProfileName()}no-realname{/if}">
+						<p class="username word-wrap"><a href="{$oUserList->getUserWebPath()}">{$oUserList->getLogin()}</a></p>
+						{if $oUserList->getProfileName()}<p class="realname">{$oUserList->getProfileName()}</p>{/if}
+					</div>
+				</td>
+				<td>
+					{if $oUserCurrent}
+						{if $oUserNote}
+							<button type="button" class="button button-action button-action-note js-infobox" title="{$oUserNote->getText()|escape:'html'}"><i class="icon-synio-comments-green"></i></button>
+						{/if}
+						<a href="{router page='talk'}add/?talk_users={$oUserList->getLogin()}"><button type="submit"  class="button button-action button-action-send-message"><i class="icon-synio-send-message"></i><span>{$aLang.user_write_prvmsg}</span></button></a>
+					{/if}
+				</td>
+				<td>
+					{if $oSession}
+						{date_format date=$oSession->getDateLast() hours_back="12" minutes_back="60" now="60" day="day H:i" format="j F, H:i"}
+					{/if}
+				</td>
+				<td class="cell-rating {if $oUserList->getRating() < 0}negative{/if}"><strong>{$oUserList->getRating()}</strong></td>
+			</tr>
+		{/foreach}
+	{else}
+	<tr>
+		<td colspan="4">
+			{$aLang.user_empty}
+		</td>
+	</tr>
+	{/if}
+	</tbody>
+</table>
 
-{if $aUsersLast}
-	<table class="table table-people">
-		<thead>
-			<tr>
-				<td>{$aLang.user}</td>													
-				<td align="center" width="170">{$aLang.user_date_last}</td>
-				<td align="center" width="80">{$aLang.user_skill}</td>
-				<td align="center" width="80">{$aLang.user_rating}</td>
-			</tr>
-		</thead>
-		
-		<tbody class="ludi">
-		{foreach from=$aUsersLast item=oUser}
-			{assign var="oSession" value=$oUser->getSession()}
-			<tr>
-				<td><a href="{$oUser->getUserWebPath()}"><img src="{$oUser->getProfileAvatarPath(24)}" alt="" class="avatar" /></a><a href="{$oUser->getUserWebPath()}" class="username">{$oUser->getLogin()}</a></td>
-				<td align="center" class="date">{date_format date=$oSession->getDateLast()}</td>
-				<td align="center" class="strength">{$oUser->getSkill()}</td>							
-				<td align="center" class="rating"><strong>{$oUser->getRating()}</strong></td>
-			</tr>
-		{/foreach}						
-		</tbody>
-	</table>
-{else}
-	{$aLang.user_empty}
-{/if}
-</div>
-			
-{include file='paging.tpl' aPaging="$aPaging"}		
+
+{include file='paging.tpl' aPaging=$aPaging}
+
 {include file='footer.tpl'}

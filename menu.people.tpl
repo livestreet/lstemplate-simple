@@ -1,16 +1,14 @@
 
-<div class="navigation">
-    <h2>
-        {if $sMenuItemSelect=='people'}
-            {$aLang.people_page}
-        {/if}
-    </h2>
+	<div class="navigation">
+		<h2>{$aLang.people}</h2>
 
-    <ul>
-        <li {if $sEvent=='' || $sEvent=='good'}class="active"{/if}><a href="{router page='people'}">{$aLang.people_all}</a></li>
-        <li {if $sEvent=='new'}class="active"{/if}><a href="{router page='people'}new/">{$aLang.people_new}</a></li>
-        <li {if $sEvent=='online'}class="active"{/if}><a href="{router page='people'}online/">{$aLang.people_online}</a></li>
+		<ul>
+        	<li {if $sMenuItemSelect=='all'}class="active"{/if}><a href="{router page='people'}">{$aLang.people_menu_users_all}</a></li>
+        	<li {if $sMenuItemSelect=='online'}class="active"{/if}><a href="{router page='people'}online/">{$aLang.people_menu_users_online}</a></li>
+        	<li {if $sMenuItemSelect=='new'}class="active"{/if}><a href="{router page='people'}new/">{$aLang.people_menu_users_new}</a></li>
 
-		{hook run='menu_people_people_item'}
-    </ul>
-</div>
+        	{hook run='menu_people_people_item'}
+		</ul>
+	</div>
+
+{hook run='menu_people'}

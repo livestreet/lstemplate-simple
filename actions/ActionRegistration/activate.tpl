@@ -1,12 +1,9 @@
-{include file='header.light.tpl'}
+{include file='header.tpl'}
 
 
-<div class="inside">
-<div class="center">
-	<h2>{$aLang.registration_activate_ok}</h2>
-	<a href="{cfg name='path.root.web'}">{$aLang.site_go_main}</a>
-</div>
+<div class="content-error">
+<h2 class="page-header">{$aLang.registration_activate_ok}</h2>
+<a href="{cfg name='path.root.web'}">{$aLang.site_go_main}</a>
 </div>
 
-
-{include file='footer.light.tpl'}
+{include file='footer.tpl'}

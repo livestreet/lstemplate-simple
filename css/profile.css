@@ -1,0 +1,87 @@
+/* --------------------------------------------
+	СТРАНИЦА ПОЛЬЗОВАТЕЛЯ
+-------------------------------------------- */
+
+.user-profile { margin-bottom: 14px; border-bottom:1px solid #e4e4e4; padding-bottom:16px; overflow: hidden; zoom: 1; position: relative; }
+.user-profile .avatar { float: left; margin-right: 15px; }
+.user-profile h2 { font-size:22px; font-weight:bold; line-height:1em; border-bottom:0px }
+.user-profile .last { margin-top:-5px }
+.user-profile .last span { color:#9d9d9d; font-style:italic; font-family:Georgia }
+
+.user-profile .voting { float:right; margin-left:30px; margin-right:10px }
+.user-profile .voting .vote-count { font-weight: normal; font-size:30px; float:left; height:20px; margin:5px 10px 0 10px; color:#000 }
+.user-profile .voting .text { font-size: 11px; color: #9d9d9d; text-align: center; clear: both; }
+.user-profile .voting.vote-count-positive .vote-count { color:#339900 }
+.user-profile .voting.vote-count-negative .vote-count { color:#f70000 }
+
+.user-profile .voting .vote-up,
+.user-profile .voting .vote-down 			{ display:block; width: 18px; height: 18px; float: left; cursor:pointer; background: url(../images/voting-comments.png) no-repeat; outline: none; margin-top:4px }
+.user-profile .voting .vote-up 			{ background-position: -18px 0; }
+.user-profile .voting .vote-down 			{ background-position: 0 0 }
+.user-profile .voting .vote-up:hover 	    { background-position: -18px -17px }
+.user-profile .voting .vote-down:hover 	    { background-position: 0px -17px }
+
+.user-profile .voting.voted.vote-up .vote-up 			{ background-position: -18px -17px !important }
+.user-profile .voting.voted.vote-down .vote-down 		{ background-position: 0px -17px }
+.user-profile .voting.voted.vote-up .vote-down:hover 	{ background-position: 0 0 }
+.user-profile .voting.voted.vote-down .vote-up:hover 	{ background-position: -18px 0 }
+
+.user-profile .voting.guest .vote-up:hover 	    { background-position: -18px 0; }
+.user-profile .voting.guest .vote-down:hover 	{ background-position: 0 0 }
+
+.user-profile .strength { float: right; }
+.user-profile .strength .count { font-weight: normal; font-size:30px; height:20px; margin-top:5px; color:#000 }
+.user-profile .strength .text { font-size: 11px; color: #9d9d9d; text-align: center; }
+
+.user-profile-content { clear:both; overflow:hidden }
+.user-profile-content .foto-profile { float:left; width:230px; margin-right:20px }
+.user-profile-content .foto-profile img { border-radius:4px; width:230px }
+.user-profile-content .foto-profile .friend { width:206px; height:46px; padding:24px 0px 0px 24px; margin-top:-10px; background:url(../images/friend-bg.png) no-repeat }
+.user-profile-content .foto-profile .friend .add-friend { width:178px; height:30px; background:url(../images/friend-button.png) no-repeat; display:block }
+.user-profile-content .foto-profile .friend .add-friend:hover { background-position:0 -30px }
+.user-profile-content .foto-profile .friend .delete-friend { width:178px; height:30px; background:url(../images/friend-button.png) no-repeat 0px -60px; display:block }
+.user-profile-content .foto-profile .friend .delete-friend:hover { background-position:0 -90px }
+.user-profile-content .foto-profile .friend .send-friend { width:178px; height:30px; background:url(../images/friend-button2.png) no-repeat; display:block }
+.user-profile-content .foto-profile .friend .reject-friend { width:178px; height:30px; background:url(../images/friend-button2.png) no-repeat 0px -30px; display:block }
+
+.user-profile-content .about-profile { float:left; position:relative; width:474px }
+.user-profile-content .about-profile h2 { margin-left:2px; font-size:22px; color:#232323; font-weight:bold; margin-bottom:0px; padding-bottom:15px }
+.user-profile-content .about-profile .where { margin-top:2px; margin-bottom:8px; background:url(../images/where-icon.png) no-repeat 0px 2px; color:#888; padding-left:20px }
+.user-profile-content .about-profile .where a { color:#888 }
+.user-profile-content .about-profile .where a:hover { color:#f70000 }
+.user-profile-content .about-profile .where strong { font-weight:normal }
+.user-profile-content .about-profile .send-message { position:absolute; top:0px; right:0px }
+
+.user-profile-content .about-profile .list-about li { color:#232323; padding-bottom:5px; clear:both; position:relative; }
+.user-profile-content .about-profile .list-about li span { color:#9d9d9d; float:left; position:relative; top:3px }
+.user-profile-content .about-profile .list-about li strong { display:table; margin-left:130px; font-weight:normal; line-height:24px; }
+.user-profile-content .about-profile .list-about li i { margin-right:4px }
+.user-profile-content .about-profile .list-about li a { color:#f70000; text-decoration:underline }
+.user-profile-content .about-profile .list-about li a:hover { color:#888; text-decoration:underline }
+
+.user-profile-content .about-profile .list-about li.social-profile { padding-top:9px }
+.user-profile-content .about-profile .list-about li.social-profile a { width:24px; height:24px; display:inline-block; *display:inline; margin-right:15px; background:url(../images/social-profile.png) no-repeat; text-decoration:none }
+.user-profile-content .about-profile .list-about li.social-profile a.fb { background-position:0px 0px }
+.user-profile-content .about-profile .list-about li.social-profile a.tw { background-position:0px -24px }
+.user-profile-content .about-profile .list-about li.social-profile a.vk { background-position:0px -48px }
+.user-profile-content .about-profile .list-about li.social-profile a.icq { background: url("../images/icons-contacts.gif") no-repeat scroll 0 2px transparent; }
+
+.user-profile-topics .zagolovok { margin-bottom:20px; background: url(../images/grey-line.png) repeat-x 0px 9px; height:29px; clear: both; color: #B9B9B9;}
+.user-profile-topics .zagolovok h2 { font-weight:bold; font-size:22px; background: #fff; float: left; margin: -6px 0 0 -2px; padding: 0 8px 0 0;}
+.user-profile-topics .zagolovok a { float:right; padding:0px 0px 0px 8px; color:#fb8282; text-decoration:underline; margin-right:20px; background:#fff; }
+.user-profile-topics .zagolovok a:hover { color:#f70000 }
+
+.user-profile-topics { width: 100%; clear:both; overflow:hidden; margin-top:60px; display:inline-block; *display:inline }
+.user-profile-topics-inner { margin-right:-10px }
+.user-profile-topics .topicshort { margin-right:10px }
+
+.user-profile-comments { clear:both; overflow:hidden; margin-top:50px }
+.user-profile-comments .zagolovok { margin-bottom:20px; background: url(../images/grey-line.png) repeat-x 0px 9px; height:29px; clear: both; color: #B9B9B9;}
+.user-profile-comments .zagolovok h2 { font-weight:bold; font-size:22px; background: #fff; float: left; margin: -6px 0 0 -2px; padding: 0 8px 0 0;}
+.user-profile-comments .zagolovok a { float:right; padding:0px 0px 0px 8px; color:#fb8282; text-decoration:underline; margin-right:10px; background:#fff; }
+.user-profile-comments .zagolovok a:hover { color:#f70000 }
+
+.user-profile-table { width: 100%; }
+.user-profile-table td { vertical-align: top; padding: 0 0 5px; }
+.user-profile-table td.var { width: 150px; font-weight: bold; color: #999; }
+.user-profile-table td .user { margin-right: 7px; }

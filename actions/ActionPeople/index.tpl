@@ -1,39 +1,25 @@
-{include file='header.tpl' menu='people'}
+{include file='header.tpl' menu='people'}    
+
+<form action="" method="POST" id="form-users-search" onsubmit="return false;" class="search-item search-item-abc">
+	<div class="search-input-wrapper">
+		<input id="search-user-login" type="text" placeholder="{$aLang.user_search_title_hint}" autocomplete="off" name="user_login" value="" class="input-text" onkeyup="ls.timer.run(ls.user.searchUsers,'users_search',['form-users-search'],1000);">
+		<div class="input-submit" onclick="jQuery('#form-users-search').submit()"></div>
+	</div>
+	
+	<ul id="user-prefix-filter" class="search-abc">
+		<li class="active"><a href="#" onclick="return ls.user.searchUsersByPrefix('',this);"><span>{$aLang.user_search_filter_all}</span></a></li>
+		{foreach from=$aPrefixUser item=sPrefixUser}
+			<li><a href="#" onclick="return ls.user.searchUsersByPrefix('{$sPrefixUser}',this);"><span>{$sPrefixUser}</span></a></li>
+		{/foreach}
+	</ul>
+</form>
 
 
+<div id="users-list-search" style="display:none;"></div>
 
-<div class="inside" style="margin-top:-20px">
-
-<ul class="switcher" style="margin-bottom:20px">
-	<li {if $sEvent=='good'}class="active"{/if}><a href="{router page='people'}good/">{$aLang.user_good}</a></li>
-	<li {if $sEvent=='bad'}class="active"{/if}><a href="{router page='people'}bad/">{$aLang.user_bad}</a></li>
-</ul>
-
-{if $aUsersRating}
-	<table class="table table-people">
-		<thead>
-			<tr>
-				<td>{$aLang.user}</td>													
-				<td align="center" width="60">{$aLang.user_skill}</td>
-				<td align="center" width="80">{$aLang.user_rating}</td>
-			</tr>
-		</thead>
-		
-		<tbody class="ludi">
-		{foreach from=$aUsersRating item=oUser}
-			<tr>
-				<td><a href="{$oUser->getUserWebPath()}"><img src="{$oUser->getProfileAvatarPath(24)}" alt="" class="avatar" /></a><a href="{$oUser->getUserWebPath()}" class="username">{$oUser->getLogin()}</a></td>														
-				<td align="center" class="strength">{$oUser->getSkill()}</td>
-				<td align="center" class="rating"><strong>{$oUser->getRating()}</strong></td>
-			</tr>
-		{/foreach}						
-		</tbody>
-	</table>
-{else}
-	{$aLang.user_empty}	
-{/if}
+<div id="users-list-original">
+	{router page='people' assign=sUsersRootPage}
+	{include file='user_list.tpl' aUsersList=$aUsersRating bUsersUseOrder=true sUsersRootPage=$sUsersRootPage}
 </div>
 
-
-{include file='paging.tpl' aPaging="$aPaging"}
 {include file='footer.tpl'}

@@ -1,14 +1,11 @@
-{include file='header.light.tpl'}
+{include file='header.tpl'}
 
 
-<div class="inside">
-<div class="center">
-	<h2>{$aLang.registration_confirm_header}</h2>
-	{$aLang.registration_confirm_text}<br /><br />
+<div class="content-error">
+<h2>{$aLang.registration_confirm_header}</h2>
+{$aLang.registration_confirm_text}<br /><br />
 
-	<a href="{cfg name='path.root.web'}">{$aLang.site_go_main}</a>
-</div>
+<a href="{cfg name='path.root.web'}">{$aLang.site_go_main}</a>
 </div>
 
-
-{include file='footer.light.tpl'}
+{include file='footer.tpl'}

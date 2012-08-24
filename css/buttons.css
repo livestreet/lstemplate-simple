@@ -1,0 +1,167 @@
+/* -------------------------------------------------------------------
+	
+	КНОПКИ
+	
+	
+	Примеры использования:
+	
+	<button class="button">Preview</button>
+	<a href="#" class="button">Preview</a>
+	
+	<button class="button button-primary">Save</button>
+	
+------------------------------------------------------------------- */
+
+.button {
+	display: inline-block;
+	
+	padding: 3px 10px 6px;
+	*padding: 3px 10px 4px;
+	text-align: center;
+	
+	font-size: 12px;
+	line-height: 15px;
+    font-family:Arial, sans-serif !important;
+
+	cursor: pointer;
+	text-decoration: none;
+	
+	*margin-right: 5px;
+}
+.button:hover { text-decoration: none; background: #f0f2f5; }
+.button:active { position:relative; top:1px }
+.button.fl-r { *margin-right: 0; }
+
+.opera .button { padding-top: 4px; padding-bottom: 5px; }
+
+
+/* Button Icon (Without text) */
+.button.button-icon 			{ padding: 7px 10px; }
+
+
+/* Button Write */
+.button.button-write { 
+	background: #66cfff;
+	background: -moz-linear-gradient(top,  #66cfff 0%, #2abcfe 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#66cfff), color-stop(100%,#2abcfe));
+	background: -webkit-linear-gradient(top,  #66cfff 0%,#2abcfe 100%);
+	background: -o-linear-gradient(top,  #66cfff 0%,#2abcfe 100%);
+	background: -ms-linear-gradient(top,  #66cfff 0%,#2abcfe 100%);
+	background: linear-gradient(top,  #66cfff 0%,#2abcfe 100%);
+	
+	border: 1px solid #27ace8;
+	
+	padding: 2px 15px 4px;
+	border-radius: 15px;
+	line-height: 17px;
+	
+	color: #fff;
+	font-size: 11px;
+}
+.button.button-write:hover { 
+	background: #4ec4ff;
+	background: -moz-linear-gradient(top,  #4ec4ff 0%, #22b3fe 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#4ec4ff), color-stop(100%,#22b3fe));
+	background: -webkit-linear-gradient(top,  #4ec4ff 0%,#22b3fe 100%);
+	background: -o-linear-gradient(top,  #4ec4ff 0%,#22b3fe 100%);
+	background: -ms-linear-gradient(top,  #4ec4ff 0%,#22b3fe 100%);
+	background: linear-gradient(top,  #4ec4ff 0%,#22b3fe 100%);
+
+	-webkit-box-shadow: 0 -1px 0 rgba(255, 255, 255, .5) inset; box-shadow: 0 -1px 0 rgba(255, 255, 255, .5) inset;  
+}
+
+
+/* Button Small */
+.button.button-small { font-size: 11px; padding: 1px 7px 3px; }
+
+
+/* Button Action */
+.button.button-action {
+	border: none;
+	padding: 4px 4px 3px;
+	
+	background: #c8f5ff;
+	background: -moz-linear-gradient(top,  #c8f5ff 0%, #88c4ea 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#c8f5ff), color-stop(100%,#88c4ea));
+	background: -webkit-linear-gradient(top,  #c8f5ff 0%,#88c4ea 100%);
+	background: -o-linear-gradient(top,  #c8f5ff 0%,#88c4ea 100%);
+	background: -ms-linear-gradient(top,  #c8f5ff 0%,#88c4ea 100%);
+	background: linear-gradient(top,  #c8f5ff 0%,#88c4ea 100%);
+}
+.button.button-action span { display: none; }
+.button.button-action:hover span { display: inline; padding: 0 5px 0 5px; position: relative; top: -2px; color: #fff; }
+.button.button-action.active, 
+.button.button-action:hover { 
+	border: 1px solid #2770e8;
+	-webkit-box-shadow: 0 -1px 0 #128af3 inset, 0 2px 2px #ddd; box-shadow: 0 -1px 0 #128af3 inset, 0 2px 2px #ddd;
+	color: #fff;
+	padding: 3px 3px 2px;
+
+	background: #228dfa;
+	background: -moz-linear-gradient(top,  #228dfa 0%, #0362eb 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#228dfa), color-stop(100%,#0362eb));
+	background: -webkit-linear-gradient(top,  #228dfa 0%,#0362eb 100%);
+	background: -o-linear-gradient(top,  #228dfa 0%,#0362eb 100%);
+	background: -ms-linear-gradient(top,  #228dfa 0%,#0362eb 100%);
+	background: linear-gradient(top,  #228dfa 0%,#0362eb 100%);
+}
+.button.button-action:hover i { vertical-align: top; position: relative; top: -1px; }
+
+.button.button-action.button-action-add-friend:hover i { background-position: -147px -39px; }
+.button.button-action.button-action-send-message:hover i { background-position: -163px -39px; }
+.button.button-action.button-action-join.active i,
+.button.button-action.button-action-join:hover i { background-position: -179px -39px; }
+
+.button.button-action.button-action-note {
+	background: #ccf4d0;
+	background: -webkit-linear-gradient(top,  #e9fdea 0%,#ccf4d0 100%);
+	background: -moz-linear-gradient(top,  #e9fdea 0%,#ccf4d0 100%);
+	background: -o-linear-gradient(top,  #e9fdea 0%,#ccf4d0 100%);
+	background: -ms-linear-gradient(top,  #e9fdea 0%,#ccf4d0 100%);
+	background: linear-gradient(top,  #e9fdea 0%,#ccf4d0 100%);
+	padding: 6px 6px 6px 7px;
+}
+.button.button-action.button-action-note:hover {
+	background: #4ace56;
+	background: -webkit-linear-gradient(top,  #6ce777 0%,#4ace56 100%);
+	background: -moz-linear-gradient(top,  #6ce777 0%,#4ace56 100%);
+	background: -o-linear-gradient(top,  #6ce777 0%,#4ace56 100%);
+	background: -ms-linear-gradient(top,  #6ce777 0%,#4ace56 100%);
+	background: linear-gradient(top,  #6ce777 0%,#4ace56 100%);
+	border: none;
+	box-shadow: none; -webkit-box-shadow: none;
+	padding: 6px 6px 6px 7px;
+	cursor: default;
+}
+.button.button-action.button-action-note i { display: block; }
+.button.button-action.button-action-note:hover i { top: 0; background-position: -46px -65px; }
+
+#header .button {
+  height:29px;
+  line-height:28px;
+  padding:0px 20px;
+  background:#fff url(../images/bg-button.png) repeat-x bottom;
+  border:1px solid #e3e3e3;
+  border-right:1px solid #dadada;
+  border-bottom:1px solid #c3c3c3;
+  cursor: pointer;
+  text-transform: uppercase;
+  border-radius:0;
+}
+
+.button2 { float:right; margin-left:8px; display:table }
+.button2 em { background:url(../images/bg-button2.png) no-repeat 0px -66px; width:6px; height:33px; float:left }
+.button2 input { background:url(../images/bg-button2.png) repeat-x 0px -33px; height:33px; float:left; line-height:32px; padding:0px 10px; border:0px; margin:0px; cursor:pointer; color:#646464; text-shadow:0px 1px 0px #fff; font-weight:bold }
+.button2 button { background:url(../images/bg-button2.png) repeat-x 0px -33px; height:33px; float:left; line-height:32px; padding:0px 10px; border:0px; margin:0px; cursor:pointer; color:#646464; text-shadow:0px 1px 0px #fff; font-weight:bold }
+.button2 a { background:url(../images/bg-button2.png) repeat-x 0px -33px; height:33px; float:left; line-height:32px; line-height:32px; padding:0px 10px; border:0px; margin:0px; cursor:pointer; color:#646464; text-shadow:0px 1px 0px #fff; font-weight:bold }
+.button2 span { background:url(../images/bg-button2.png) no-repeat; width:6px; height:33px; float:right }
+
+.button2:hover em { background:url(../images/bg-button2-hover.png) no-repeat 0px -66px }
+.button2:hover input { background:url(../images/bg-button2-hover.png) repeat-x 0px -33px; color:#b0b0b0 }
+.button2:hover button { background:url(../images/bg-button2-hover.png) repeat-x 0px -33px; color:#b0b0b0 }
+.button2:hover a { background:url(../images/bg-button2-hover.png) repeat-x 0px -33px; color:#b0b0b0 }
+.button2:hover span { background:url(../images/bg-button2-hover.png) no-repeat }
+
+.button2:active { position:relative; top:1px }
+
+.button2.l-b { float:none; margin-bottom:20px; margin-left:0 }

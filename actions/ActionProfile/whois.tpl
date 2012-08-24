@@ -1,30 +1,16 @@
-{include file='header.tpl' menu='profile'}
+{assign var="sidebarPosition" value='left'}
+{assign var="sMenuItemSelect" value='profile'}
+{include file='header.tpl'}
 
 {assign var="oSession" value=$oUserProfile->getSession()}
 {assign var="oVote" value=$oUserProfile->getVote()}
+{assign var="oGeoTarget" value=$oUserProfile->getGeoTarget()}
 
-<div class="inside">
 
-<div class="user-profile">
 
-	<div id="vote_area_user_{$oUserProfile->getId()}" class="voting {if $oUserProfile->getRating()>=0}positive{else}negative{/if} {if !$oUserCurrent || $oUserProfile->getId()==$oUserCurrent->getId()}guest{/if} {if $oVote} voted {if $oVote->getDirection()>0}plus{elseif $oVote->getDirection()<0}minus{/if}{/if}">
-		<div class="text">{$aLang.blog_rating}</div>
-		<a href="#" class="plus" onclick="return ls.vote.vote({$oUserProfile->getId()},this,1,'user');"></a>
-		<div id="vote_total_user_{$oUserProfile->getId()}" class="total" title="{$aLang.user_vote_count}: {$oUserProfile->getCountVote()}">{$oUserProfile->getRating()}</div>
-        <a href="#" class="minus" onclick="return ls.vote.vote({$oUserProfile->getId()},this,-1,'user');"></a>
-	</div>
+{include file='actions/ActionProfile/profile_top.tpl'}
+{include file='menu.profile_whois.tpl'}
 
-	<div class="strength">
-		<div class="text">{$aLang.user_skill}</div>
-		<div class="total" id="user_skill_{$oUserProfile->getId()}">{$oUserProfile->getSkill()}</div>
-	</div>
-
-	<img src="{$oUserProfile->getProfileAvatarPath(48)}" alt="avatar" class="avatar" />
-	<h2>{$oUserProfile->getLogin()}</h2>
-	{if $oSession}
-    	<p class="last">{$aLang.last_visit}:&nbsp;&nbsp;<span>{date_format date=$oSession->getDateLast()}</span></p>
-	{/if}
-</div>
 
 <div class="user-profile-content">
 
@@ -44,30 +30,48 @@
 
     <div class="about-profile">
         {if $oUserCurrent && $oUserCurrent->getId()!=$oUserProfile->getId()}
+          	<script type="text/javascript">
+          		jQuery(function($){
+          			ls.lang.load({lang_load name="profile_user_unfollow,profile_user_follow"});
+          		});
+          	</script>
             <div class="send-message button2"><em></em><span></span><a href="{router page='talk'}add/?talk_users={$oUserProfile->getLogin()}">{$aLang.write_message}</a></div>
+            <div class="send-message button2" style="right:158px"><em></em><span></span>
+					<a href="#" onclick="ls.user.followToggle(this, {$oUserProfile->getId()}); return false;" class="{if $oUserProfile->isFollow()}followed{/if}">
+						{if $oUserProfile->isFollow()}{$aLang.profile_user_unfollow}{else}{$aLang.profile_user_follow}{/if}
+					</a>
+            </div>
         {/if}
 
         <h2>{if $oUserProfile->getProfileName()}{$oUserProfile->getProfileName()}{else}{$oUserProfile->getLogin()}{/if}</h2>
-        <p class="where">
-        {if $oUserProfile->getProfileCountry()}
-            <a href="{router page='people'}country/{$oUserProfile->getProfileCountry()|escape:'html'}/">{$oUserProfile->getProfileCountry()|escape:'html'}</a>{if $oUserProfile->getProfileCity()},{/if}
+
+		{if $oGeoTarget}
+            <p class="where">
+				<strong itemprop="address" itemscope itemtype="http://data-vocabulary.org/Address">
+					{if $oGeoTarget->getCountryId()}
+						<a href="{router page='people'}country/{$oGeoTarget->getCountryId()}/" itemprop="country-name">{$oUserProfile->getProfileCountry()|escape:'html'}</a>{if $oGeoTarget->getCityId()},{/if}
+					{/if}
+
+					{if $oGeoTarget->getCityId()}
+						<a href="{router page='people'}city/{$oGeoTarget->getCityId()}/" itemprop="locality">{$oUserProfile->getProfileCity()|escape:'html'}</a>
+					{/if}
+				</strong>
+            </p>
         {/if}
-        {if $oUserProfile->getProfileCity()}
-            <a href="{router page='people'}city/{$oUserProfile->getProfileCity()|escape:'html'}/">{$oUserProfile->getProfileCity()|escape:'html'}</a>
-        {/if}
-        </p>
 
         <ul class="list-about">
-            <li><span>{$aLang.profile_date_registration}:</span>{date_format date=$oUserProfile->getDateRegister()}</li>
+            {assign var="aUserFieldValues" value=$oUserProfile->getUserFieldValues(true,array(''))}
+            <li><span>{$aLang.profile_date_registration}:</span><strong>{date_format date=$oUserProfile->getDateRegister()}</strong></li>
 
             {if $oUserProfile->getProfileSex()!='other'}
             <li>
                 <span>{$aLang.profile_sex}:</span>
+                <strong>
                 {if $oUserProfile->getProfileSex()=='man'}
 				    {$aLang.profile_sex_man}
 				{else}
 				    {$aLang.profile_sex_woman}
-				{/if}
+				{/if}</strong>
             </li>
             {/if}
 
@@ -88,26 +92,42 @@
               </li>
             {/if}
 
+    		{if $aUserFieldValues}
+    			{foreach from=$aUserFieldValues item=oField}
+    				<li>
+    					<span><i class="icon-contact icon-contact-{$oField->getName()}"></i> {$oField->getTitle()|escape:'html'}:</span>
+    					<strong>{$oField->getValue(true,true)}</strong>
+    				</li>
+    			{/foreach}
+    		{/if}
 
-			{if $oUserProfile->getProfileIcq()}
-				<li class="social-profile"><span>{$aLang.social_profile}:</span>
-					{if $oUserProfile->getProfileIcq()}
-						<a class="icq" href="http://www.icq.com/people/about_me.php?uin={$oUserProfile->getProfileIcq()|escape:'html'}" target="_blank"></a>
-					{/if}
-				</li>
-			{/if}
+            <br />
+            {if $oUserProfile->getProfileAbout()}<li><span>{$aLang.profile_about}:</span><strong>{$oUserProfile->getProfileAbout()|escape:'html'}</strong></li>{/if}
+            <br />
 
-			{if count($aUserFields)}
-				{foreach from=$aUserFields item=oField}
-					<li>
-						<span>{$oField->getTitle()|escape:'html'}:</span>
-						{$oField->getValue(true,true)}
-					</li>
-				{/foreach}
-			{/if}
+    		{assign var="aUserFieldContactValues" value=$oUserProfile->getUserFieldValues(true,array('contact'))}
+    		{if $aUserFieldContactValues}
+                <li><span>{$aLang.profile_contacts}:</span>
+                  <strong class="soc">
+    				{foreach from=$aUserFieldContactValues item=oField}
+    					<p><i class="icon-contact icon-contact-{$oField->getName()}" title="{$oField->getName()}"></i> {$oField->getValue(true,true)}</p>
+    				{/foreach}
+                  </strong>
+                </li>
+    		{/if}
+            <br />
+    		{assign var="aUserFieldContactValues" value=$oUserProfile->getUserFieldValues(true,array('social'))}
+    		{if $aUserFieldContactValues}
+                <li><span>{$aLang.profile_soc}:</span>
+                  <strong class="soc">
+    				{foreach from=$aUserFieldContactValues item=oField}
+    					<p><i class="icon-contact icon-contact-{$oField->getName()}" title="{$oField->getName()}"></i> {$oField->getValue(true,true)}</p>
+    				{/foreach}
+                  </strong>
+                </li>
+    		{/if}
 
-            {if $oUserProfile->getProfileAbout()}<li class="about"><span>{$aLang.profile_about}:</span><b>{$oUserProfile->getProfileAbout()|escape:'html'}</b></li>{/if}
-
+    		{hook run='profile_whois_item' oUserProfile=$oUserProfile}
 		</ul>
 
 		{hook run='profile_whois_privat_item' oUserProfile=$oUserProfile}
@@ -116,14 +136,7 @@
     </div>
 </div>
 
-
-{$aBlockParams.user=$oUserProfile}
-{insert name="block" block=simpleProfileTopics params=$aBlockParams}
-
-{insert name="block" block=simpleProfileComments params=$aBlockParams}
-
-
-</div>
-
+{include file='block.simpleProfileTopics.tpl'}
+{include file='block.simpleProfileComments.tpl'}
 
 {include file='footer.tpl'}

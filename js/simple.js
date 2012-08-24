@@ -65,25 +65,7 @@ ls.plugin.simpletpl = (function ($) {
 		}
 		this.page(iPageNext);
 		return false;
-	}
-
-	this.initUserBar = function() {
-		$(".signin").click(function(e) {
-			e.preventDefault();
-			$("ul#signin_menu").toggle();
-			$(".signin").toggleClass("menu-open");
-		});
-
-		$("ul#signin_menu").mouseup(function() {
-			return false
-		});
-		$(document).mouseup(function(e) {
-			if($(e.target).parent(".signin").length==0) {
-				$(".signin").removeClass("menu-open");
-				$("ul#signin_menu").hide();
-			}
-		});
-	}
+	}   
 
 	return this;
 }).call(ls.plugin.simpletpl || {},jQuery);

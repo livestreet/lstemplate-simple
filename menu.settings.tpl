@@ -1,16 +1,19 @@
+	<div class="navigation">
+		<h2>{$aLang.settings_menu}</h2>
 
-<div class="navigation">
-    <h2>
-        {if $sMenuItemSelect=='settings'}
-            {$aLang.settings_nav}
-        {/if}
-    </h2>
+		<ul>
+        	<li {if $sMenuSubItemSelect=='profile'}class="active"{/if}><a href="{router page='settings'}profile/">{$aLang.settings_menu_profile}</a></li>
+        	<li {if $sMenuSubItemSelect=='account'}class="active"{/if}><a href="{router page='settings'}account/">{$aLang.settings_menu_account}</a></li>
+        	<li {if $sMenuSubItemSelect=='tuning'}class="active"{/if}><a href="{router page='settings'}tuning/">{$aLang.settings_menu_tuning}</a></li>
 
-    <ul>
-        <li {if $sMenuSubItemSelect=='profile'}class="active"{/if}><a href="{router page='settings'}profile/">{$aLang.settings_profile}</a></li>
-        <li {if $sMenuSubItemSelect=='tuning'}class="active"{/if}><a href="{router page='settings'}tuning/">{$aLang.settings_tuning}</a></li>
-        {if $oConfig->GetValue('general.reg.invite')}<li {if $sMenuItemSelect=='invite'}class="active"{/if}><a href="{router page='settings'}invite/">{$aLang.settings_invite}</a></li>{/if}
+        	{if $oConfig->GetValue('general.reg.invite')}
+        		<li {if $sMenuItemSelect=='invite'}class="active"{/if}>
+        			<a href="{router page='settings'}invite/">{$aLang.settings_menu_invite}</a>
+        		</li>
+        	{/if}
 
-        {hook run='menu_settings_settings_item'}
-    </ul>
-</div>
+        	{hook run='menu_settings_settings_item'}
+		</ul>
+	</div>
+
+{hook run='menu_settings'}       

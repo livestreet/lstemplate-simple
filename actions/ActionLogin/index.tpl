@@ -1,51 +1,59 @@
 {assign var="noSidebar" value=true}
-{include file='header.light.tpl'}
+{include file='header.tpl'}
+
+<script type="text/javascript">
+	jQuery(document).ready(function($){
+		$('#login-form').bind('submit',function(){
+			ls.user.login('login-form');
+			return false;
+		});
+		$('#login-form-submit').attr('disabled',false);
+	});
+</script>
+
+<div class="content-error">
+<h2 class="page-header">{$aLang.user_authorization}</h2>
+
+{hook run='login_begin'}
+
+<form action="{router page='login'}" method="POST" id="login-form">
+	{hook run='form_login_begin'}
+
+	<p><label for="login">{$aLang.user_login}</label>
+	<input type="text" id="login" name="login" class="input-text input-width-200" /></p>
+	
+	<p><label for="password">{$aLang.user_password}</label>
+	<input type="password" id="password" name="password" class="input-text input-width-200" />
+	<small class="validate-error-hide validate-error-login"></small></p>
+	
+	<p><label><input type="checkbox" name="remember" checked class="input-checkbox" /> {$aLang.user_login_remember}</label></p>
+	
+	{hook run='form_login_end'}
+
+     <div class="button2 button-primary l-b">
+        <em></em><span></span><button type="submit"  name="submit_login" id="login-form-submit" disabled="disabled">{$aLang.user_login_submit}</button>
+     </div>
+     
+	<a href="{router page='registration'}">{$aLang.user_registration}</a>&nbsp;&nbsp;&nbsp;&nbsp;
+	<a href="{router page='login'}reminder/">{$aLang.user_password_reminder}</a>
+</form>
 
 
-<div class="inside">
-<div class="center">
-	{if $bLoginError}
-		<p class="system-messages-error">{$aLang.user_login_bad}</p>
-	{/if}
+{if $oConfig->GetValue('general.reg.invite')}
+	<br /><br />
+	<form action="{router page='registration'}invite/" method="POST">
+		<h2>{$aLang.registration_invite}</h2>
 
-	<form action="{router page='login'}" method="POST">
-		<h2>{$aLang.user_authorization}</h2>
+		<p><label>{$aLang.registration_invite_code}<br />
+		<input type="text" name="invite_code" /></label></p>
 
-		{hook run='form_login_begin'}
-
-		<p><label>{$aLang.user_login}<br /><input type="text" name="login" class="input-text" /></label></p>
-		<p><label>{$aLang.user_password}<br /><input type="password" name="password" class="input-text" /></label></p>
-
-        <div class="button2">
-            <em></em><span></span><input type="submit" name="submit_login" value="{$aLang.user_login_submit}" />
-        </div>
-
-		<label><input type="checkbox" name="remember" checked class="checkbox" />{$aLang.user_login_remember}</label>
-		
-		<br /><br />
-		<p><a href="{router page='registration'}">{$aLang.user_registration}</a><br />
-		<a href="{router page='login'}reminder/">{$aLang.user_password_reminder}</a></p>
-
-		{hook run='form_login_end'}
+         <div class="button2 button-primary l-b">
+            <em></em><span></span><button type="submit"  name="submit_invite" id="login-form-submit">{$aLang.registration_invite_check}</button>
+         </div>
 	</form>
+{/if}
 
-
-	{if $oConfig->GetValue('general.reg.invite')}
-		<br /><br />
-		<form action="{router page='registration'}invite/" method="POST">
-			<h2>{$aLang.registration_invite}</h2>
-
-			<p><label>{$aLang.registration_invite_code}<br />
-			<input type="text" name="invite_code" /></label></p>
-
-            <div class="button2">
-                <em></em><span></span><input type="submit" name="submit_invite" value="{$aLang.registration_invite_check}" />
-            </div>
-
-		</form>
-	{/if}
-</div>
+{hook run='login_end'}
 </div>
 
-
-{include file='footer.light.tpl'}
+{include file='footer.tpl'}

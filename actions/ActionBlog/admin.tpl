@@ -1,48 +1,54 @@
 {include file='header.tpl'}
-
-<div class="inside">
 {include file='menu.blog_edit.tpl'}
 
+
+
 {if $aBlogUsers}
-	<form action="" method="POST" enctype="multipart/form-data">
+	<form method="post" enctype="multipart/form-data" class="mb-20">
 		<input type="hidden" name="security_ls_key" value="{$LIVESTREET_SECURITY_KEY}" />
-		<table class="table">
+		
+		<table class="table table-users">
 			<thead>
 				<tr>
-					<td>{$aLang.blog_admin_users}</td>
-					<td width="10%">{$aLang.blog_admin_users_administrator}</td>
-					<td width="10%">{$aLang.blog_admin_users_moderator}</td>
-					<td width="10%">{$aLang.blog_admin_users_reader}</td>
-					<td width="10%">{$aLang.blog_admin_users_bun}</td>
+					<th class="cell-name">{$aLang.blog_admin_users}</th>
+					<th class="ta-c">{$aLang.blog_admin_users_administrator}</th>
+					<th class="ta-c">{$aLang.blog_admin_users_moderator}</th>
+					<th class="ta-c">{$aLang.blog_admin_users_reader}</th>
+					<th class="ta-c">{$aLang.blog_admin_users_bun}</th>
 				</tr>
 			</thead>
+			
 			<tbody>
 				{foreach from=$aBlogUsers item=oBlogUser}
 					{assign var="oUser" value=$oBlogUser->getUser()}
+					
 					<tr>
-						<td><a href="{$oUser->getUserWebPath()}">{$oUser->getLogin()}</a></td>
+						<td class="cell-name">
+							<a href="{$oUser->getUserWebPath()}"><img src="{$oUser->getProfileAvatarPath(24)}" alt="avatar" class="avatar" /></a>
+							<a href="{$oUser->getUserWebPath()}">{$oUser->getLogin()}</a>
+						</td>
+						
 						{if $oUser->getId()==$oUserCurrent->getId()}
-							<td colspan="3" align="center">{$aLang.blog_admin_users_current_administrator}</td>
+							<td colspan="3">{$aLang.blog_admin_users_current_administrator}</td>
 						{else}
-							<td align="center"><input type="radio" name="user_rank[{$oUser->getId()}]" value="administrator" {if $oBlogUser->getIsAdministrator()}checked{/if} /></td>
-							<td align="center"><input type="radio" name="user_rank[{$oUser->getId()}]" value="moderator" {if $oBlogUser->getIsModerator()}checked{/if} /></td>
-							<td align="center"><input type="radio" name="user_rank[{$oUser->getId()}]" value="reader" {if $oBlogUser->getUserRole()==$BLOG_USER_ROLE_USER}checked{/if} /></td>
-							<td align="center"><input type="radio" name="user_rank[{$oUser->getId()}]" value="ban" {if $oBlogUser->getUserRole()==$BLOG_USER_ROLE_BAN}checked{/if} /></td>
+							<td class="ta-c"><input type="radio" name="user_rank[{$oUser->getId()}]" value="administrator" {if $oBlogUser->getIsAdministrator()}checked{/if} /></td>
+							<td class="ta-c"><input type="radio" name="user_rank[{$oUser->getId()}]" value="moderator" {if $oBlogUser->getIsModerator()}checked{/if} /></td>
+							<td class="ta-c"><input type="radio" name="user_rank[{$oUser->getId()}]" value="reader" {if $oBlogUser->getUserRole()==$BLOG_USER_ROLE_USER}checked{/if} /></td>
+							<td class="ta-c"><input type="radio" name="user_rank[{$oUser->getId()}]" value="ban" {if $oBlogUser->getUserRole()==$BLOG_USER_ROLE_BAN}checked{/if} /></td>
 						{/if}
 					</tr>
 				{/foreach}
 			</tbody>
 		</table>
 
-        <div class="button2"><em></em><span></span><input type="submit" name="submit_blog_admin" value="{$aLang.blog_admin_users_submit}" /></div>
-
+		<button type="submit"  name="submit_blog_admin" class="button button-primary">{$aLang.blog_admin_users_submit}</button>
 	</form>
-	<br>
+
 	{include file='paging.tpl' aPaging=$aPaging}
 {else}
 	{$aLang.blog_admin_users_empty}
 {/if}
-</div>
+
 
 
 {include file='footer.tpl'}

@@ -14,7 +14,7 @@
 			<li class="active">{$aPaging.iCurrentPage}</li>
 			{foreach from=$aPaging.aPagesRight item=iPage}
 				<li><a href="{$aPaging.sBaseUrl}/page{$iPage}/{$aPaging.sGetParams}">{$iPage}</a></li>
-			{/foreach}     
+			{/foreach}
             <li class="side">
             {if $aPaging.iNextPage}
 				<a href="{$aPaging.sBaseUrl}/page{$aPaging.iNextPage}/{$aPaging.sGetParams}">{$aLang.forward} &rarr; </a>

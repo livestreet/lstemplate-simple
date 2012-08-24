@@ -1,19 +1,16 @@
 			{hook run='content_end'}
-	   </div><!-- /content -->
+		</div> <!-- /content -->
 
 		{if !$noSidebar}
 			{include file='sidebar.tpl'}
 		{/if}
 
-        {if $sAction=='index'}
-			{insert name="block" block=simpleTags}
-        {/if}
-
-	</div><!-- /wrapper -->
+        {if $sAction=='index'}{include file='block.tags.tpl'}{/if}
+	</div> <!-- /wrapper -->
 
     <div class="hFooter"></div>
 
-</div><!-- /container -->
+</div> <!-- /container -->
 
 <div id="footer">
 	<div class="footer-inner">
@@ -23,6 +20,9 @@
     </div>
 </div>
 
+{include file='toolbar.tpl'}
+
 {hook run='body_end'}
+
 </body>
 </html>

@@ -1,20 +1,26 @@
-{if $oUserCurrent}
-	<div class="update" id="update" style="{if $aPagingCmt and $aPagingCmt.iCountPage>1}display:none;{/if}">
-		<div class="update-comments" id="update-comments" onclick="ls.comments.load({$iTargetId},'{$sTargetType}'); return false;"></div>
-		<div class="new-comments" id="new_comments_counter" style="display: none;" onclick="ls.comments.goToNextComment();"></div>
-		<input type="hidden" id="comment_last_id" value="{$iMaxIdComment}" />
-		<input type="hidden" id="comment_use_paging" value="{if $aPagingCmt and $aPagingCmt.iCountPage>1}1{/if}" />
-	</div>
-{/if}
-	
-<div class="comments-header">
-	<h3>{$aLang.comment_title}:<span id="count-comments">{$iCountComment}</span></h3>
-</div>
+{add_block group='toolbar' name='toolbar_comment.tpl'
+	aPagingCmt=$aPagingCmt
+	iTargetId=$iTargetId
+	sTargetType=$sTargetType
+	iMaxIdComment=$iMaxIdComment
+}
 
-<a name="comments"></a>
-	
-	
+{hook run='comment_tree_begin' iTargetId=$iTargetId sTargetType=$sTargetType}
+
 <div class="comments" id="comments">
+	<header class="comments-header">
+		<h3><span id="count-comments">{$iCountComment}</span> {$iCountComment|declension:$aLang.comment_declension:'russian'}</h3>
+		
+		{if $bAllowSubscribe and $oUserCurrent}
+			<div class="subscribe">
+				<input {if $oSubscribeComment and $oSubscribeComment->getStatus()}checked="checked"{/if} type="checkbox" id="comment_subscribe" class="input-checkbox" onchange="ls.subscribe.toggle('{$sTargetType}_new_comment','{$iTargetId}','',this.checked);">
+				<label for="comment_subscribe">{$aLang.comment_subscribe}</label>
+			</div>
+		{/if}
+	
+		<a name="comments"></a>
+	</header>
+
 	{assign var="nesting" value="-1"}
 	{foreach from=$aComments item=oComment name=rublist}
 		{assign var="cmtlevel" value=$oComment->getLevel()}
@@ -32,105 +38,56 @@
 		
 		<div class="comment-wrapper" id="comment_wrapper_id_{$oComment->getId()}">
 		
-		{include file='comment.tpl'}
-		
+		{include file='comment.tpl'} 
 		{assign var="nesting" value=$cmtlevel}
 		{if $smarty.foreach.rublist.last}
 			{section name=closelist2 loop=$nesting+1}</div>{/section}    
 		{/if}
 	{/foreach}
-</div>
+</div>				
+	
 	
 {include file='comment_paging.tpl' aPagingCmt=$aPagingCmt}
+
+{hook run='comment_tree_end' iTargetId=$iTargetId sTargetType=$sTargetType}
 
 {if $bAllowNewComment}
 	{$sNoticeNotAllow}
 {else}
 	{if $oUserCurrent}
-		<div class="reply-area">
-			<h4 class="reply-header" id="add_comment_root"><a href="#" onclick="ls.comments.toggleCommentForm(0); return false;">{$aLang.your_comment}:</a></h4>
-						
-				{if $oConfig->GetValue('view.tinymce')}
-					<script type="text/javascript" src="{cfg name='path.root.engine_lib'}/external/tinymce/tiny_mce.js"></script>
-					{literal}
 
-					<script type="text/javascript">
-					tinyMCE.init({
-						mode : "textareas",
-						theme : "advanced",
-						theme_advanced_toolbar_location : "top",
-						theme_advanced_toolbar_align : "left",
-						theme_advanced_buttons1 : "bold,italic,underline,strikethrough,lslink,lsquote",
-						theme_advanced_buttons2 : "",
-						theme_advanced_buttons3 : "",
-						theme_advanced_statusbar_location : "bottom",
-						theme_advanced_resizing : true,
-						theme_advanced_resize_horizontal : 0,
-						theme_advanced_resizing_use_cookie : 0,
-						theme_advanced_path : false,
-						object_resizing : true,
-						force_br_newlines : true,
-						forced_root_block : '', // Needed for 3.x
-						force_p_newlines : false,    
-						plugins : "lseditor,safari,inlinepopups,media,pagebreak",
-						convert_urls : false,
-						extended_valid_elements : "embed[src|type|allowscriptaccess|allowfullscreen|width|height]",
-						pagebreak_separator :"<cut>",
-						media_strict : false,
-						language : TINYMCE_LANG,
-						inline_styles:false,
-						formats : {
-							 underline : {inline : 'u', exact : true},
-							 strikethrough : {inline : 's', exact : true}
-						},
-						setup : function(ed) {
-							// Display an alert onclick
-							ed.onKeyPress.add(function(ed, e) {
-								key = e.keyCode || e.which;
-								if(e.ctrlKey && (key == 13)) {
-									$('#comment-button-submit').click();
-									return false;
-								}
-							});
-						 }
-					});
-					</script>
-					{/literal}
-				{else}
-					{include file='window_load_img.tpl' sToLoad='form_comment_text'}
-					<script type="text/javascript">
-					jQuery(document).ready(function($){
-						ls.lang.load({lang_load name="panel_b,panel_i,panel_u,panel_s,panel_url,panel_url_promt,panel_code,panel_video,panel_image,panel_cut,panel_quote,panel_list,panel_list_ul,panel_list_ol,panel_title,panel_clear_tags,panel_video_promt,panel_list_li,panel_image_promt,panel_user,panel_user_promt"});
-						// Подключаем редактор
-						$('#form_comment_text').markItUp(getMarkitupCommentSettings());
-					});
-					</script>
-				{/if}
+		{include file='editor.tpl' sImgToLoad='form_comment_text' sSettingsTinymce='ls.settings.getTinymceComment()' sSettingsMarkitup='ls.settings.getMarkitupComment()'}
+	
+		<h4 class="reply-header" id="comment_id_0">
+			<a href="#" class="link-dotted" onclick="ls.comments.toggleCommentForm(0); return false;">{$sNoticeCommentAdd}</a>
+		</h4>
+		
+		
+		<div id="reply" class="reply">		
+			<form method="post" id="form_comment" onsubmit="return false;" enctype="multipart/form-data">
+				{hook run='form_add_comment_begin'}
 				
-			<div id="reply_0" class="reply">
-				{if $oUserCurrent}
-					<div class="comment-preview" id="comment_preview_0" style="display: none;"><div class="comment-inner"><div class="content"></div></div></div>					
-				{/if}
+				<textarea name="comment_text" id="form_comment_text" class="mce-editor markitup-editor input-width-full" style="width:100%"></textarea>
 				
-				<form action="" method="POST" id="form_comment" onsubmit="return false;" enctype="multipart/form-data">
-					<textarea name="comment_text" id="form_comment_text" class="input-wide"></textarea>
+				{hook run='form_add_comment_end'}
 
-                    <div class="button2">
-                        <em></em><span></span><input type="submit" name="submit_comment" value="{$aLang.send}" id="comment-button-submit" onclick="ls.comments.add('form_comment',{$iTargetId},'{$sTargetType}'); return false;" />
+                    <div class="button2 button-primary l-b" style="float:left">
+                        <em></em><span></span>
+        				<button type="submit"  name="submit_comment"
+        						id="comment-button-submit"
+        						onclick="ls.comments.add('form_comment',{$iTargetId},'{$sTargetType}'); return false;">{$aLang.comment_add}</button>
                     </div>
-
-					<div class="button2">
-                        <em></em><span></span><input type="button" value="{$aLang.preview}" onclick="ls.comments.preview();" />
+                    <div class="button2 button-primary l-b" style="margin-left:10px">
+                        <em></em><span></span>
+				        <button type="button" onclick="ls.comments.preview();">{$aLang.comment_preview}</button>
                     </div>
-
-                     <input type="hidden" name="reply" value="0" id="form_comment_reply" />
-					<input type="hidden" name="cmt_target_id" value="{$iTargetId}" />
-				</form>
-			</div>
-            <br /><br />
+				
+				<input type="hidden" name="reply" value="0" id="form_comment_reply" />
+				<input type="hidden" name="cmt_target_id" value="{$iTargetId}" />
+			</form>
 		</div>
 	{else}
-		<div class="inside">{$aLang.comment_unregistered}</div>
+		{$aLang.comment_unregistered}
 	{/if}
 {/if}	
 

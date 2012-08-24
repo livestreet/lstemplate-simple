@@ -1,45 +1,71 @@
-/* Update button */
-.update { 
-	padding: 8px; 
-	float: right; 
-	position: fixed; 
-	top: 220px; 
-	right: 0; 
-	z-index: 100;
-	text-align: center; 
-	background: #FAFBFB;
-	border-top: 1px solid #e4e4e4;
-	border-bottom: 1px solid #e4e4e4;
-	border-left: 1px solid #e4e4e4;
-	_position: absolute; 
-	_top: expression( eval(document.documentElement.scrollTop) + 220 +"px" ); 
-}
-.update .update-comments { width: 26px; height: 26px; cursor: pointer; background: url(../images/update.gif) no-repeat; }
-.update .update-comments.active { background: url(../images/update_act.gif) no-repeat; }
-.update .new-comments { border-top: 1px solid #e4e4e4; color: #ba1b1b; padding-top: 7px; margin-top: 3px; cursor: pointer; }
+/* --------------------------------------------
+	КОММЕНТАРИИ
+-------------------------------------------- */
 
+/* Блок с комментариями */
+.comments-header { margin-bottom: 30px; position: relative; }
+.comments-header h3 { font-size: 22px; font-weight:bold }
+.comments-header .subscribe { position: absolute; top: 5px; right: 0; font-size: 11px; color: #7b848d; }
+.comments-header .subscribe input { top: 2px; }
 
-/* Comments */
-.comments { margin-bottom: 50px; overflow:hidden; }
-.comments .comment-wrapper { overflow: hidden; zoom: 1; position: relative; }
-.comments .comment-wrapper .comment-wrapper { padding-left: 30px; }
+.comments { margin-bottom: 30px; margin-left:26px }
 
-.comment-preview { padding: 5px 10px; margin-bottom: 5px; background: #fafafa; overflow: hidden; zoom: 1; }
-.comments-header { padding-left: 26px; margin-bottom: 20px; }
-.comments-header h3 { font-size: 22px; font-weight:bold; }
-.comments-header h3 span { font-size:11px; vertical-align:top; line-height:11px; color:#969696; font-weight:normal }
+.comment-wrapper { position: relative; }
+.comment-wrapper .comment-wrapper { padding-left: 48px; }
+
+.comment-preview { padding: 5px 10px 6px; margin-bottom: 10px; background: #fafafa; border: 1px solid #eee; border-radius: 3px; font-size: 13px; line-height: 1.6em; }
 
 .comment .avatar { float:left; margin-right:6px }
 .comment .avatar img { width:30px; height:30px; }
 
 .comment .border-comment { margin-left:49px }
 
-/* Comment */
-.comment { margin-bottom: 20px; position: relative; padding-left: 48px; zoom: 1; }
+/* Комментарий */
+.comment { min-height: 48px; margin-bottom: 25px; position: relative; }
 .comment .deleted { padding: 5px 10px; color: #777; background: #f4f4f4; }
-.comment .folding { width: 10px; height: 10px; position: absolute; top: 11px; left: 34px; background: url(../images/icons.gif) -20px -210px no-repeat; cursor: pointer; }
-.comment .folding.folded { background-position: 0 -210px; }
-.comment .goto-comment-child { display: none; }
+.comment .folding { width: 13px; height: 13px; position: absolute; top: 8px; left: -20px; background: url(../images/icons-synio.png) 0 -94px no-repeat; cursor: pointer; }
+.comment .folding.folded { background-position: -13px -94px; }
+
+
+/* Стили для списка комментариев на странице http://ваш_сайт/comments/ */
+.comments.comment-list .comment { margin-bottom: 50px; padding-left: 0; }
+.comments.comment-list .comment .comment-avatar { position: static; width: 16px; height: 16px; vertical-align: middle; }
+.comments.comment-list .comment .comment-content { margin-bottom: 5px; }
+.comments.comment-list .comment .comment-info li.vote .vote-count { margin-right: 0; }
+.comments.comment-list .comment .comment-content:after { top: -12px; left: 25px; border-color: transparent transparent #e7ebed; }
+.comments.comment-list .comment .comment-content:before { top: -11px; left: 25px; border-color: transparent transparent #fff; }
+.comments.comment-list .comment-path { font-size: 11px; color: #a2b6cd; }
+.comments.comment-list .comment-path .blog-name,
+.comments.comment-list .comment-path .comment-path-comments { color: #000; }
+.comments.comment-list .comment-path .comment-path-topic { color: #275ec2; }
+
+
+
+/* Типы комментариев
+ *
+ * deleted 	- 	удаленный комментарий
+ * self 	- 	ваш комментарий
+ * new 		- 	новый, непрочитанный комментарий
+ * current 	- 	активный комментарий, который выделяется при исползование кнопки обновления в тулбаре
+ *
+ */
+.comment 											{ background: #fff; }
+.comment.comment-deleted 	.comment-content 		{ background: #c5c5c5; border-color: #C8A8A8; }
+.comment.comment-deleted	.comment-content:after 	{ border-color: #C8A8A8 transparent transparent; }
+.comment.comment-deleted 	.comment-content:before { border-color: #c5c5c5 transparent transparent; }
+.comment.comment-self		.comment-content		{ background: #fefef1; border-color: #e6e6bd; }
+.comment.comment-self		.comment-content:after 	{ border-color: #e6e6bd transparent transparent; }
+.comment.comment-self 		.comment-content:before { border-color: #fefef1 transparent transparent; }
+.comment.comment-new 		.comment-content		{ background: #fff; border-color: #dddb5c; box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1); }
+.comment.comment-new		.comment-content:after 	{ border-color: #dddb5c transparent transparent; }
+.comment.comment-new 		.comment-content:before { border-color: #fff transparent transparent; }
+.comment.comment-current 	.comment-content		{ background: #cdf5a6; border-color: #bae48e; }
+.comment.comment-current	.comment-content:after 	{ border-color: #bae48e transparent transparent; }
+.comment.comment-current 	.comment-content:before { border-color: #cdf5a6 transparent transparent; }
+.comment.comment-bad 		.comment-content		{ opacity: 0.3; filter: alpha(opacity=30); }
+.comment.comment-bad:hover 	.comment-content		{ opacity: 1; filter: alpha(opacity=100); }
+
+.ls-user-role-not-admin .comment.comment-deleted 	{ padding: 10px 15px; min-height: 0; background: #f7f7f7; color: #888; }
 
 /* Comment Highlights */
 .comment .content, 						.comment .content:before					{ background-color: #ffffff; }
@@ -61,69 +87,65 @@
 .comment .info li .comment-link { margin-top:4px; background:url(../images/comment-link.png) no-repeat; width:7px; height:9px; display:block }
 .comment .info li .reply-link { color:#0090ff; border-bottom:1px dotted }
 .comment .info li .reply-link:hover { color:#f70000 }
-.comment .info li a.favourite { margin-top:2px; width: 11px; height: 11px; background: url(../images/like-icon2.png) no-repeat }
-.comment .info li a.favourite.active { background-position: 0px -11px }
-.comment .info li a.favourite:hover { background-position: 0px -11px }
-.comment .info li .comment-favourite { margin-top:4px; background:url(../images/comment-fav-gray.png) no-repeat; width:10px; height:10px; display:block }
-.comment .info li .comment-favourite.active {  background:url(../images/comment-fav.png) no-repeat; }
-.comment .info li .comment-favourite:hover {  background:url(../images/comment-fav.png) no-repeat; }  
+.comment .info li.comment-favourite { color:#999; font-size:11px; }
+.comment .info li.comment-favourite span { position:relative; top:1px }
+.comment .info li.comment-favourite .favourite { margin-top:2px; width: 11px; height: 11px; background: url(../images/like-icon2.png) no-repeat }
+.comment .info li.comment-favourite .favourite:hover { background-position: 0px -11px }
+.comment .info li.comment-favourite .favourite.active { background-position: 0px -11px }
 
 .comment .info li.voting { overflow: hidden; zoom: 1; float:right; margin-right:0px }
 
-.comment .info li.voting .total { float: left; padding:0px 6px 0px 5px; font-weight:bold; color: #000; }
-.comment .info li.voting .total a { text-decoration: none; color: #000; outline: none; }
+.comment .info li.voting .vote-count { float: left; padding:0px 6px 0px 5px; font-weight:bold; color: #000; }
+.comment .info li.voting .vote-count a { text-decoration: none; color: #000; outline: none; }
 
-.comment .info li.voting.positive .total { color: #5eb600 }
-.comment .info li.voting.negative .total { color: #cf0000; }
+.comment .info li.voting.vote-count-positive .vote-count { color: #5eb600 }
+.comment .info li.voting.vote-count-negative .vote-count { color: #cf0000; }
 
-.comment .info li.voting .plus,
-.comment .info li.voting .minus 			{ display:none; width: 18px; height: 18px; float: left; background: url(../images/voting-comments.png) no-repeat; outline: none; margin-top:-5px }
-.comment .info li.voting .plus 			    { background-position: -18px 0; }
-.comment .info li.voting .minus 			{ background-position: 0 0 }
+.comment .info li.voting .vote-up,
+.comment .info li.voting .vote-down 			{ display:none; width: 18px; height: 18px; float: left; cursor:pointer; background: url(../images/voting-comments.png) no-repeat; outline: none }
+.comment .info li.voting .vote-up 			    { background-position: -18px 0; }
+.comment .info li.voting .vote-down 			{ background-position: 0 0 }
 
-.comment:hover .info li.voting .plus,
-.comment:hover .info li.voting .minus 		{ display:block }
+.comment:hover .info li.voting.voted .vote-up,
+.comment:hover .info li.voting.voted .vote-down { display:none }
 
-.comment:hover .info li.voting.voted .plus,
-.comment:hover .info li.voting.voted .minus { display:none }
+.comment:hover .info li.voting .vote-up,
+.comment:hover .info li.voting .vote-down 		{ display:block }
 
-.comment .info li.voting .plus:hover 	    { background-position: -18px -17px }
-.comment .info li.voting .minus:hover 	    { background-position: 0px -17px }
+.comment .info li.voting .vote-up:hover 	    { background-position: -18px -17px }
+.comment .info li.voting .vote-down:hover 	    { background-position: 0px -17px }
 
-.comment .info li.voting.voted.plus .plus 			{ display:block; background-position: -18px -17px !important }
-.comment .info li.voting.voted.minus .minus 		{ display:block; background-position: 0px -17px }
-.comment .info li.voting.voted.plus .minus:hover 	{ background-position: 0 0 }
-.comment .info li.voting.voted.minus .plus:hover 	{ background-position: 0 0 }
+.comment .info li.voting.voted.vote-up .vote-up 			{ display:block; background-position: -18px -17px !important }
+.comment .info li.voting.voted.vote-down .vote-down 		{ display:block; background-position: 0px -17px }
+.comment .info li.voting.voted.vote-up .vote-down:hover 	{ background-position: 0 0 }
+.comment .info li.voting.voted.vote-down .vote-up:hover 	{ background-position: 0 0 }
 
-.comment .info li.voting.guest .plus:hover 	    { background-position: -18px 0; }
-.comment .info li.voting.guest .minus:hover 	{ background-position: 0 0 }
+.comment .info li.voting.guest .vote-up:hover 	    { background-position: -18px 0; }
+.comment .info li.voting.guest .vote-down:hover 	{ background-position: 0 0 }
+
+.comment .comment-info li.goto-comment-child { display: none; }
+
 
 /* Content */
 .comment .content { margin-bottom:10px; border: 1px solid #e8e8e6; overflow: hidden; zoom: 1; }
 .comment .content .padding { padding: 10px 17px; }
-.comment .content .arrow { position:absolute; top:0px; left:85px; display:block; width:13px; height:30px; background: url(../images/bg-comments-left.png) 0 0 no-repeat; }
+.comment .content .arrow { position:absolute; top:0px; left:37px; display:block; width:13px; height:30px; background: url(../images/bg-comments-left.png) 0 0 no-repeat; }
 .comment .content .text-style { color: #232323; line-height:21px; }
 .comment .content .text-style a { text-decoration:underline }
-.comment .content .text-style a:hover { color:#F70000; text-decoration:none }
-.comment pre, .comment-preview pre { overflow: auto; width: 95%; padding: 5px 2%; margin-bottom: 10px; background: #f8f8f8 url(../images/code.gif); border: 1px solid #dce6f0; clear: both; }
-.comment blockquote, .comment-preview blockquote {font-style: italic; padding: 5px 10px; background: #ffffff; border: 1px solid #ddd;}
+.comment .content blockquote { background: #fff; border-color: #ccc; padding: 5px 10px; margin-bottom: 5px; }
 
 /* Actions */
-.comment .actions { font-size: 11px; }
-.comment .actions a { text-decoration: none; }
+.comment .comment-actions li { display: inline; margin-right: 10px; }
 
-/* Comment List */
-.comments.comment-list .path { padding-bottom: 3px; font-size: 11px; font-weight: bold; color: #aaa; }
-.comments.comment-list .path .blog-name { color: #999; }
-.comments.comment-list .path .comments-total { color: #78C658; background: url(../images/comment-total.gif) no-repeat 0 4px; padding-left: 10px; margin-left: 10px; font-weight: normal; text-decoration: none; }
-.comments.comment-list .comment { padding-left: 0; }
 
-/* Reply Form */
-.reply-area { padding-left: 26px; }
+/* Форма комментирования */
+.reply-header { font-size: 20px; line-height: 1.3em; margin-bottom: 15px; margin-left:26px }
 
-.reply { padding:10px 0px 10px 26px }
-.reply-area h4 a { font-size:16px; font-weight:bold }
-.reply .markItUp { width: 100%; }
-.reply .markItUpHeader { width: 100%; }
-.reply textarea { height: 100px; width: 100%; }
+.reply { margin-left:26px }
+.reply textarea { height: 100px; }
 .reply textarea.loader { background: #f7f7f7 url(../images/loader.gif) no-repeat center;}
+
+.reply .mceEditor { display: block; margin-bottom: 10px; }
+
+.wall-submit.wall-submit-reply.wall-submit-comment { -webkit-box-shadow: none; box-shadow: none; margin-top: 0; margin-bottom: 50px; }
+.wall-submit.wall-submit-reply.wall-submit-comment:after { display: none; }

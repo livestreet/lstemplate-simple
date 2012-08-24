@@ -1,1 +1,0 @@
-<li><a href="{router page="simpletpl"}convert">{$aLang.simpletpl_admin_list_convert}</a></li>

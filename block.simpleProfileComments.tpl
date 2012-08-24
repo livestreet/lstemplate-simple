@@ -1,4 +1,4 @@
-{if $simpletpl_aCommentsProfile and count($simpletpl_aCommentsProfile)}
+
 <div class="user-profile-comments">
 
 	<div class="zagolovok">
@@ -7,7 +7,45 @@
 	</div>
 
 
-	{include file='comment_list.tpl' aComments=$simpletpl_aCommentsProfile}   
+	<div class="comments" style="margin-left:0">
 
+		<div class="comment">
+            <div class="avatar"><a href="#" title="#"><img src="{cfg name='path.static.skin'}/images/foto.png" alt="avatar"></a></div>
+            <div class="border-comment">
+            	<div class="content">
+                    <div class="arrow"></div>
+                    <div class="padding">
+
+                        <ul class="info">
+                		    <li class="username"><a href="#">Admincheg</a></li>
+                		    <li class="date">16.06.12</li>
+                    	    <li><a href="#" class="reply-link">{$aLang.go_to_comment}</a></li>
+                		</ul>
+
+                        <div class="text-style">Some text. Bla bla bla....</div>
+                    </div>
+            	</div>
+            </div>
+        </div>
+
+		<div class="comment">
+            <div class="avatar"><a href="#" title="#"><img src="{cfg name='path.static.skin'}/images/foto.png" alt="avatar"></a></div>
+            <div class="border-comment">
+            	<div class="content">
+                    <div class="arrow"></div>
+                    <div class="padding">
+
+                        <ul class="info">
+                		    <li class="username"><a href="#">Ne admincheg</a></li>
+                		    <li class="date">16.06.12</li>
+                    	    <li><a href="#" class="reply-link">{$aLang.go_to_comment}</a></li>
+                		</ul>
+
+                        <div class="text-style">Some text. Bla bla bla....</div>
+                    </div>
+            	</div>
+            </div>
+        </div>
 </div>
-{/if}
+
+</div>       

@@ -1,103 +1,168 @@
-.topic { margin-bottom: 50px; padding-left: 26px; position: relative; zoom: 1;}
+/* --------------------------------------------
+	ТОПИК
+-------------------------------------------- */
+
+.topic { margin-bottom: 50px; padding-left: 26px; position: relative; zoom: 1; margin-left:-26px }
+.topic:last-child { margin-bottom: 0; }
 
 /* Title */
-.topic .date { color:#6e6e6e; margin-bottom:3px; font-family:Georgia; font-style:Italic }
-.topic .title { font-size: 22px; margin-bottom:2px; font-weight:bold }
-
-/* Content */
-.topic .content { overflow: hidden; zoom: 1; font-size: 12px; color:#232323; line-height: 21px; margin:0px 0px 22px 22px }
-.topic .content a { color:#0090ff; text-decoration:underline }
-.topic .content a:hover { color:#f70000; }
-.topic .content p { margin-bottom: 18px; }
-.topic .content h4 { font-size: 22px; line-height: 1.3em; margin-bottom: 10px; }
-.topic .content h5 { font-size: 20px; line-height: 1.3em; margin-bottom: 10px; }
-.topic .content h6 { font-size: 18px; line-height: 1.3em; margin-bottom: 10px; }
-.topic .content blockquote { background: #fafafa; padding: 10px 15px; color: #555; margin-bottom: 5px; clear: both; }
-.topic .content pre, .comment .content pre { overflow: auto; width: 95%; padding: 5px 2%; margin-bottom: 10px; background: #f8f8f8 url(../images/code.gif); border: 1px solid #dce6f0; clear: both; }
-.topic .content ul { list-style-type: disc; margin-left: 17px; }
-.topic .content ol { list-style-type: decimal; margin-left: 30px; }
-.topic .content img[align="right"] { margin: 4px 0 5px 15px; }
-.topic .content img[align="left"] { margin: 4px 15px 10px 0; }
-.topic .content img.image-center { display: block; margin: 0 auto; }
-
-/* Tags */
-.topic .tags { clear:both; overflow:hidden; color:#999; margin-bottom:20px; margin-left:22px; padding-left:20px; background:url(../images/tags-icon.png) no-repeat }
-.topic .tags a { font-size:11px; text-decoration:underline; color:#999 }
-.topic .tags a:hover { color:#353535 }
-
-/* Info */
-.topic .info-top { margin-bottom: 15px; }
-.topic .info-top li { display:inline-block; color:#6e6e6e; font-family:Georgia; font-style:Italic; margin-right:10px }
-.topic .info-top li.writer a { font-family:Arial; font-style:normal }
-.topic .info-top li.view { color:#000; background:url(../images/view-icon.png) no-repeat 0px 5px; padding-left:14px }
-.topic .info-top li.comments-link a { background: url(../images/stream-comment-icon.png) no-repeat 0px 4px; padding-left: 14px; }
-.topic .info-top li.comments-link a:hover { background: url(../images/stream-comment-icon-hover.png) no-repeat 0px 4px; color:#f70000 }
-.topic .info-top li.delete a { color:#fc0000 }     
-
-.topic .info { background: url(../images/grey-line.png) repeat-x 0px 9px; height:29px; clear: both; color: #B9B9B9;}
-
-.topic .info ul { background: #fff; float: left; margin: -1px 0 0 -2px; padding: 0 4px 0 0; }
-.topic .info ul li { font-size:11px; margin-right:5px; color:#383838; float:left; }
-.topic .info ul li a { float:left; display:block }
-.topic .info ul li.share { margin-right:10px }
-.topic .info ul li.vk a { background:url(../images/vk-icon.png) no-repeat; width:17px; height:17px }
-.topic .info ul li.fb a { margin-top:1px; background:url(../images/fb-icon.png) no-repeat; width:15px; height:15px }
-.topic .info ul li.tw a { margin-top:3px; background:url(../images/tw-icon.png) no-repeat; width:16px; height:13px }
-.topic .info ul li.lj a { margin-top:1px; background:url(../images/lj-icon.png) no-repeat; width:17px; height:17px }
-
-.topic .info .rating { float:left; margin-left:160px; background:#fff; padding:0px 8px }
-
-/* Voting */
-.topic .info .rating .voting { overflow: hidden; zoom: 1; height:26px; margin-top:-4px; border:1px solid #d6d6d6; border-radius:3px; box-shadow:0px 1px 0px #a3a3a3 }
-
-.topic .info .rating .voting .total { float: left; font-weight:bold; line-height:26px; font-size:14px; color: #000; }
-.topic .info .rating .voting .total a { text-decoration: none; color: #000; outline: none; }
-
-.topic .info .rating .voting.positive .total { color: #5eb600 }
-.topic .info .rating .voting.negative .total { color: #cf0000; }
-
-.topic .info .rating .voting .plus,
-.topic .info .rating .voting .minus 			{ width: 9px; height: 8px; float: left; margin:0px 10px;  display: block; background: url(../images/voting-topic.png) no-repeat; position: relative; top: 9px; outline: none; }
-.topic .info .rating .voting .plus 			    { background-position: 0 0; }
-.topic .info .rating .voting .minus 			{ background-position: -9px 0; }
-.topic .info .rating .voting .plus:hover 	    { background-position: 0px -8px }
-.topic .info .rating .voting .minus:hover 	    { background-position: -9px -8px }
-
-.topic .info .rating .voting.voted.plus 	.plus 			{ background-position: 0px -8px }
-.topic .info .rating .voting.voted.minus .minus 			{ background-position: -9px -8px }
-.topic .info .rating .voting.voted.plus 	.minus:hover 	{ background-position: -9px 0; }
-.topic .info .rating .voting.voted.minus .plus:hover 	    { background-position: 0 0; }
-
-.topic .info .rating .voting.guest .plus:hover 	            { background-position: 0 0; }
-.topic .info .rating .voting.guest .minus:hover 	        { background-position: -9px 0; }
+.topic .topic-header .date { color:#6e6e6e; margin-bottom:3px; font-family:Georgia; font-style:Italic }
+.topic .topic-header .topic-title { font-size: 22px; margin-bottom:2px; font-weight:bold }
+.topic .topic-header .topic-title i { position: relative; top: 2px; cursor: help; margin-right: 5px; }
 
 /* Favourite */
-.topic .favourite { position: absolute; top: 26px; left:0px; height: 18px; width: 18px; background: url(../images/like-icon.png) no-repeat }
-.topic .favourite:hover { background-position:0px -18px }
-.topic .favourite.active { background-position:0px -18px }
+.topic .topic-header .topic-info-favourite { position: absolute; top: 26px; left:0px; }
+.topic .topic-header .topic-info-favourite i { height: 18px; width: 18px; background: url(../images/like-icon.png) no-repeat; display:block }
+.topic .topic-header .topic-info-favourite i:hover { background-position:0px -18px }
+.topic .topic-header .topic-info-favourite i.active { background-position:0px -18px }
+.topic .topic-header .topic-info-favourite span { display:table; margin:2px auto 0 auto; color:#666 }
+
+/* Info */
+.topic .topic-header  .info-top { margin-bottom: 15px; }
+.topic .topic-header  .info-top li { display:inline-block; color:#6e6e6e; font-family:Georgia; font-style:Italic; margin-right:10px }
+.topic .topic-header  .info-top li.writer a { font-family:Arial; font-style:normal }
+.topic .topic-header  .info-top li.view { color:#000; background:url(../images/view-icon.png) no-repeat 0px 5px; padding-left:14px }
+.topic .topic-header  .info-top li.comments-link a { background: url(../images/stream-comment-icon.png) no-repeat 0px 4px; padding-left: 14px; }
+.topic .topic-header  .info-top li.comments-link a:hover { background: url(../images/stream-comment-icon-hover.png) no-repeat 0px 4px; color:#f70000 }
+.topic .topic-header  .info-top li.delete a { color:#fc0000 }
+
+/* Content */
+.topic .topic-content 		{ line-height: 21px; margin:0px 0px 22px 26px }
+.topic .topic-content.text 	{ color:#232323; }
+
+/* Tags */
+.topic .topic-footer .topic-tags { clear:both; overflow:hidden; color:#999; margin-bottom:20px; margin-left:26px; padding-left:20px; background:url(../images/tags-icon.png) no-repeat }
+.topic .topic-footer .topic-tags li { float:left }
+.topic .topic-footer .topic-tags li a { font-size:11px; text-decoration:underline; color:#999 }
+.topic .topic-footer .topic-tags li a:hover { color:#353535 }
+.topic .topic-footer .topic-tags .link-dotted { text-decoration:none }
+.topic .topic-footer .topic-tags .topic-tags-edit { position:relative; top:-1px; left:15px }
+.topic .topic-footer .topic-tags .topic-tags-edit a { border-bottom:1px dotted #999 }
+
+/* Info */
+.topic .topic-footer .topic-info{ background: url(../images/grey-line.png) repeat-x 0px 9px; height:29px; clear: both; color: #B9B9B9;}
+
+.topic .topic-footer .topic-info ul { background: #fff; float: left; margin: -1px 0 0 -2px; padding: 0 4px 0 0; }
+.topic .topic-footer .topic-info ul li { font-size:11px; margin-right:5px; color:#383838; float:left; }
+.topic .topic-footer .topic-info ul li a { float:left; display:block }
+.topic .topic-footer .topic-info ul li.share { margin-right:10px }
+.topic .topic-footer .topic-info ul li.vk a { background:url(../images/vk-icon.png) no-repeat; width:17px; height:17px }
+.topic .topic-footer .topic-info ul li.fb a { margin-top:1px; background:url(../images/fb-icon.png) no-repeat; width:15px; height:15px }
+.topic .topic-footer .topic-info ul li.tw a { margin-top:3px; background:url(../images/tw-icon.png) no-repeat; width:16px; height:13px }
+.topic .topic-footer .topic-info ul li.lj a { margin-top:1px; background:url(../images/lj-icon.png) no-repeat; width:17px; height:17px }
+
+/* Voting */
+.topic .topic-footer .topic-info .rating { float:left; margin-left:160px; background:#fff; padding:0px 8px }
+.topic .topic-footer .topic-info .rating .vote-topic { overflow: hidden; zoom: 1; height:26px; margin-top:-4px; border:1px solid #d6d6d6; background:#fff; border-radius:3px; box-shadow:0px 1px 0px #a3a3a3 }
+
+.topic .topic-footer .topic-info .rating .vote-topic .vote-count { float: left; font-weight:bold; line-height:26px; font-size:14px; color: #000; }
+.topic .topic-footer .topic-info .rating .vote-topic .vote-count a { text-decoration: none; color: #000; outline: none; }
+
+.topic .topic-footer .topic-info .rating .vote-topic.vote-count-positive .vote-count { color: #5eb600 }
+.topic .topic-footer .topic-info .rating .vote-topic.vote-count-negative .vote-count { color: #cf0000; }
+
+.topic .topic-footer .topic-info .rating .vote-topic .vote-up,
+.topic .topic-footer .topic-info .rating .vote-topic .vote-down 			{ width: 9px; height: 8px; float: left; margin:0 10px; display: block; background: url(../images/voting-topic.png) no-repeat; position: relative; top: 9px; outline: none; }
+.topic .topic-footer .topic-info .rating .vote-topic .vote-up 			    { background-position: 0 0;  }
+.topic .topic-footer .topic-info .rating .vote-topic .vote-down 			{ background-position: -9px 0; }
+.topic .topic-footer .topic-info .rating .vote-topic .vote-up:hover 	    { background-position: 0px -8px }
+.topic .topic-footer .topic-info .rating .vote-topic .vote-down:hover 	    { background-position: -9px -8px }
+
+.topic .topic-footer .topic-info .rating .vote-topic.voted.vote-up 	.vote-up 			{ background-position: 0px -8px }
+.topic .topic-footer .topic-info .rating .vote-topic.voted.vote-down .vote-down 		{ background-position: -9px -8px }
+.topic .topic-footer .topic-info .rating .vote-topic.voted.vote-up 	.vote-down:hover 	{ background-position: -9px 0; }
+.topic .topic-footer .topic-info .rating .vote-topic.voted.vote-down .vote-up:hover 	   { background-position: 0 0; }
+
+.topic .topic-footer .topic-info .rating .vote-topic.guest .vote-up:hover 	            { background-position: 0 0; }
+.topic .topic-footer .topic-info .rating .vote-topic.guest .vote-down:hover 	        { background-position: -9px 0; }
+
+/* Share */
+.topic .topic-share 				{ display: none; border: 3px solid #edf8fd; padding: 3px 35px 3px 3px; border-radius: 10px; margin-bottom: 10px; position: relative; }
+.topic .topic-share .close			{ content: ''; position: absolute; top: 7px; right: 7px; width: 19px; height: 22px; background: url(../images/icons-synio.png) -479px -26px no-repeat; cursor: pointer; opacity: .8; }
+.topic .topic-share .close:hover	{ opacity: 1; }
+.topic .topic-share .arrow 			{ position: absolute; border: none; width: 15px; height: 11px; background: url(../images/icons-synio.png) no-repeat; background-position: -53px -107px; bottom: -11px; }
 
 /* Poll */
-.topic .poll { margin-bottom: 15px; font-size: 14px; margin-left:22px; }
+.topic .poll { margin-bottom: 15px; margin-left:26px }
 
-.topic .poll .poll-vote { margin-bottom: 10px; margin-left: 0; list-style-type: none; }
-.topic .poll .poll-vote li { margin-bottom: 5px; }
+.topic .poll .poll-vote { margin-bottom: 20px; margin-left: 0; list-style-type: none;	}
+.topic .poll .poll-vote li { margin-bottom: 10px; }
+.topic .poll .poll-vote li:last-child { margin-bottom: 0; }
 .topic .poll .poll-vote li label { display: inline; }
+.topic .poll .poll-vote li input { position: relative; top: 1px; margin-right: 2px; }
 
-.topic .poll .poll-result { margin-bottom: 10px; margin-left: 0; list-style-type: none; font-family: Verdana, sans-serif; }
-.topic .poll .poll-result li { margin-bottom: 20px; font-size:12px; }
+.topic .poll .poll-result { margin-bottom: 10px; list-style-type: none; background: #fff; overflow: hidden; }
+.topic .poll .poll-result li { margin-bottom: 20px; }
 .topic .poll .poll-result li dl { overflow: hidden; zoom: 1; }
-.topic .poll .poll-result li dl dt { float: left; width: 50px; text-align: right; padding-right: 15px; }
-.topic .poll .poll-result li dl dt span { color: #aaa; }
+.topic .poll .poll-result li dl dt { float: left; width: 80px; }
+.topic .poll .poll-result li dl dt span { font-size: 11px; color: #aaa; }
 .topic .poll .poll-result li dl dd { float: left; width: 400px; }
-.topic .poll .poll-result li dl dd div { height: 5px; margin-top: 5px; background: #ccc; overflow: hidden; border-radius: 3px; box-shadow: 0 1px 0 #939393 inset; }
-.topic .poll .poll-result li.most dl dd div { color: #fff; background: #f70000; border-color: #83DC5F; box-shadow: 0 1px 0 #f80000 inset; border-radius: 3px; }
+.topic .poll .poll-result li dl dd div { height: 7px; margin-top: 3px; background: #ccc; overflow: hidden; border-radius: 4px; }
+.topic .poll .poll-result li.most dl dd div { background: #1999e2; background: url(../images/poll-most.png) repeat-x; -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.2); box-shadow: 0 1px 2px rgba(0,0,0,.2); }
+.topic .poll .poll-result li.most dl dt { color: #12aaeb; }
 
-.topic .poll .poll-total { color: #aaa; }
+.topic .poll .poll-total { position: relative; color: #818189; font-size: 11px; line-height: 16px; padding-left: 80px; margin-bottom: 30px; }
+.topic .poll .poll-total .poll-sort { position: absolute; top: 2px; left: 0; width: 23px; height: 23px; background: url(../images/icons-synio.png) -161px 0 no-repeat; cursor: pointer; }
+.topic .poll .poll-total .poll-sort.active { background-position: -184px 0; }
 
+/* Topic Photo */
+.topic.topic-type-photoset {  }
+.topic.topic-type-photoset .topic-photo-preview { margin-left:26px; position: relative; margin-bottom: 15px; cursor: pointer; }
+.topic.topic-type-photoset .topic-photo-preview img { vertical-align: top; }
+.topic.topic-type-photoset .topic-photo-preview .topic-photo-count { display: none; cursor: pointer; position: absolute; top: 5px; right: 5px; background: #000; color: #6bd24b; padding: 4px 7px; background: rgba(0,0,0,.6); }
+.topic.topic-type-photoset .topic-photo-preview .topic-photo-desc { display: none; width: 96%; padding: 7px 2%; position: absolute; bottom: 0; left: 0; background: #000; color: #6bd24b; color: #fff; line-height: 16px; background: rgba(0,0,0,.7); }
+
+.topic.topic-type-photoset .topic-photo-images { margin-left:26px; padding-top: 10px; margin-bottom: 15px; }
+.topic.topic-type-photoset .topic-photo-images h2 { border-bottom: 1px solid #ccc; padding-bottom: 4px; margin-bottom: 15px; font-size: 25px; }
+.topic.topic-type-photoset .topic-photo-images ul { overflow: hidden; zoom: 1; }
+.topic.topic-type-photoset .topic-photo-images ul li { float: left; margin: 0 9px 9px 0; position: relative; }
+.topic.topic-type-photoset .topic-photo-images ul li .image-number { display: none; position: absolute; top: 5px; right: 5px; background: #000; color: #6bd24b; padding: 1px 6px; font-size: 11px; background: rgba(0,0,0,.6); }
+.topic.topic-type-photoset .topic-photo-images ul li:hover .image-number { display: block; }
+.topic.topic-type-photoset .topic-photo-images ul li img { vertical-align: top; }
+.topic.topic-type-photoset .topic-photo-images .topic-photo-more { display: block; border-top: 1px solid #dbe6f0; text-align: center; padding: 10px 0; margin-bottom: 15px; text-decoration: none; background: #f3f7fa; color: #7b90a5; }
+.topic.topic-type-photoset .topic-photo-images .topic-photo-more:hover { background: #eaf2f8; }
+
+.topic-photo-upload { background: #F1F7FD; padding: 15px 15px 15px; margin-bottom: 20px; }
+.topic-photo-upload h2 { margin-bottom: 15px; }
+.topic-photo-upload ul { overflow: hidden; zoom: 1; }
+.topic-photo-upload ul li { min-height: 100px; _height: 100px; margin-bottom: 10px; padding-left: 110px; position: relative; }
+.topic-photo-upload ul li img { position: absolute; top: 0; left: 0; }
+.topic-photo-upload ul li label { color: #aaa; }
+.topic-photo-upload ul li textarea { border: 1px solid #ddd; width: 350px; height: 60px; padding: 3px; font-size: 12px; font-family: Arial, sans-serif; color: #333; }
+.topic-photo-upload ul li .image-delete { text-decoration: none; margin-right: 15px; }
+.topic-photo-upload ul li .image-delete:hover { color: #f00; }
+.topic-photo-upload ul li.marked-as-preview .mark-as-preview { display: inline; color: #43c70f; font-weight: bold; }
+.topic-photo-upload ul li .mark-as-preview { display: none; text-decoration: none; }
+.topic-photo-upload ul li:hover .mark-as-preview { display: inline; }
+.topic-photo-upload .topic-photo-upload-rules { color: #888; margin-bottom: 15px; }
+.topic-photo-upload .topic-photo-upload-input { margin-bottom: 20px; }
+.topic-photo-upload .topic-photo-upload-input input { margin-top: 3px; }
+
+/* Topic Talk */
+.topic.topic-type-talk header .topic-info 			{ background: #f8fbfe; font-size: 11px; padding: 15px; border-radius: 5px; margin-bottom: 0; }
+
+.topic.topic-type-talk .talk-recipients 			{ background:#fff; padding:5px 0 0 26px; border-top:1px solid #ddd }
+.topic.topic-type-talk .talk-recipients-header 		{ font-size: 11px; min-height: 0; }
+.topic.topic-type-talk .talk-recipients-content h3 	{ font-size: 16px; font-weight: normal; margin-bottom: 10px; }
+.topic.topic-type-talk .topic-footer .topic-info li.topic-info-favourite i		{ margin-right: 0; }
+
+/* Topic Link */
+.topic.topic-type-link {  }
+.topic.topic-type-link .topic-header .topic-title a { color: #27964C; }
+.topic.topic-type-link .topic-url { margin:10px 0 10px 26px }      
+
+/* Topic Preview */
+.topic-preview { margin-top: 30px; clear:both; }
+.topic-preview .profile-page-header { border-top: 1px solid #ddd; }
+.topic-preview .topic { margin-bottom: 20px; }
+
+.vote-topic-info li { margin-bottom: 3px; }
 
 /*
 ------------------------------------------------ */
-.topicshort { overflow:hidden; display:inline-block; *display:inline; width:207px; vertical-align:top; height:178px; padding:13px 11px 12px 11px; margin:0px 15px 15px 0px; border:1px solid #e2e2e2; border-right:1px solid #d1d1d1; border-bottom:1px solid #c4c3c4; position: relative; zoom: 1;}
+.topics-short { margin-right:-15px; overflow:hidden }
+.topics-short .topicshort  { overflow:hidden; display:inline-block; *display:inline; width:207px; vertical-align:top; height:178px; padding:13px 11px 12px 11px; margin:0px 15px 15px 0px; border:1px solid #e2e2e2; border-right:1px solid #d1d1d1; border-bottom:1px solid #c4c3c4; position: relative; zoom: 1; }
+
 .topicshort .title { font-weight:bold; font-size:16px }
 .topicshort .inform { height:139px; overflow:hidden }
 
@@ -128,7 +193,7 @@
 .topicshort.photo2 .info { margin:0px 13px 0px 12px; border-top:1px dashed #cfcfcf }
 .topicshort.photo2 .topic-photo-preview { position: relative; cursor: pointer; }
 .topicshort.photo2 .topic-photo-preview img { vertical-align: top; width:354px; height:186px; }
-.topicshort.photo2 .topic-photo-preview .topic-photo-count { cursor: pointer; position: absolute; bottom: 5px; right: 8px; background: #000; color: #fff; font-size:11px; padding:0px 4px; background: rgba(0,0,0,.4); }
+.topicshort.photo2 .topic-photo-preview .topic-photo-count { cursor: pointer; position: absolute; bottom: 5px; right: 8px; background: #000; color: #fff; font-size:11px; padding:2px 4px; background: rgba(0,0,0,.4); }
 .topicshort.photo2 .topic-photo-preview .topic-photo-count span { background:url(../images/photo-icon.png) no-repeat 0px 1px; padding-left:18px }
 
 .topic.photo .topic-photo-preview { margin-left:22px }
