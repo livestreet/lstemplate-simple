@@ -115,10 +115,10 @@
 .comment .info li.voting .vote-up:hover 	    { background-position: -18px -17px }
 .comment .info li.voting .vote-down:hover 	    { background-position: 0px -17px }
 
-.comment .info li.voting.voted.vote-up .vote-up 			{ display:block; background-position: -18px -17px !important }
-.comment .info li.voting.voted.vote-down .vote-down 		{ display:block; background-position: 0px -17px }
-.comment .info li.voting.voted.vote-up .vote-down:hover 	{ background-position: 0 0 }
-.comment .info li.voting.voted.vote-down .vote-up:hover 	{ background-position: 0 0 }
+.comment .info li.voting.voted.voted-up .vote-up 			{ display:block; background-position: -18px -17px !important }
+.comment .info li.voting.voted.voted-down .vote-down 		{ display:block; background-position: 0px -17px }
+.comment .info li.voting.voted.voted-up .vote-down:hover 	{ background-position: 0 0 }
+.comment .info li.voting.voted.voted-down .vote-up:hover 	{ background-position: 0 0 }
 
 .comment .info li.voting.guest .vote-up:hover 	    { background-position: -18px 0; }
 .comment .info li.voting.guest .vote-down:hover 	{ background-position: 0 0 }

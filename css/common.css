@@ -19,10 +19,10 @@
 .vote-topic .vote-up:hover 	    { background-position: -9px 0; }
 .vote-topic .vote-down:hover 	{ background-position: -27px 0; }
 
-.vote-topic.voted.vote-up 	.vote-up 			{ background-position: -9px 0; }
-.vote-topic.voted.vote-down .vote-down			{ background-position: -27px 0; }
-.vote-topic.voted.vote-up	.vote-down:hover 	{ background-position: -18px 0; }
-.vote-topic.voted.vote-down .vote-up:hover 	{ background-position: 0 0; }
+.vote-topic.voted.voted-up 	.vote-up 			{ background-position: -9px 0; }
+.vote-topic.voted.voted-down .vote-down			{ background-position: -27px 0; }
+.vote-topic.voted.voted-up	.vote-down:hover 	{ background-position: -18px 0; }
+.vote-topic.voted.voted-down .vote-up:hover 	{ background-position: 0 0; }
 
 .vote-topic.guest .vote-up:hover 	{ background-position: 0 0; }
 .vote-topic.guest .vote-down:hover 	{ background-position: -18px 0; }

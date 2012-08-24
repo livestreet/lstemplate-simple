@@ -21,10 +21,10 @@
 .user-profile .voting .vote-up:hover 	    { background-position: -18px -17px }
 .user-profile .voting .vote-down:hover 	    { background-position: 0px -17px }
 
-.user-profile .voting.voted.vote-up .vote-up 			{ background-position: -18px -17px !important }
-.user-profile .voting.voted.vote-down .vote-down 		{ background-position: 0px -17px }
-.user-profile .voting.voted.vote-up .vote-down:hover 	{ background-position: 0 0 }
-.user-profile .voting.voted.vote-down .vote-up:hover 	{ background-position: -18px 0 }
+.user-profile .voting.voted.voted-up .vote-up 			{ background-position: -18px -17px !important }
+.user-profile .voting.voted.voted-down .vote-down 		{ background-position: 0px -17px }
+.user-profile .voting.voted.voted-up .vote-down:hover 	{ background-position: 0 0 }
+.user-profile .voting.voted.voted-down .vote-up:hover 	{ background-position: -18px 0 }
 
 .user-profile .voting.guest .vote-up:hover 	    { background-position: -18px 0; }
 .user-profile .voting.guest .vote-down:hover 	{ background-position: 0 0 }

@@ -68,10 +68,10 @@
 .topic .topic-footer .topic-info .rating .vote-topic .vote-up:hover 	    { background-position: 0px -8px }
 .topic .topic-footer .topic-info .rating .vote-topic .vote-down:hover 	    { background-position: -9px -8px }
 
-.topic .topic-footer .topic-info .rating .vote-topic.voted.vote-up 	.vote-up 			{ background-position: 0px -8px }
-.topic .topic-footer .topic-info .rating .vote-topic.voted.vote-down .vote-down 		{ background-position: -9px -8px }
-.topic .topic-footer .topic-info .rating .vote-topic.voted.vote-up 	.vote-down:hover 	{ background-position: -9px 0; }
-.topic .topic-footer .topic-info .rating .vote-topic.voted.vote-down .vote-up:hover 	   { background-position: 0 0; }
+.topic .topic-footer .topic-info .rating .vote-topic.voted.voted-up 	.vote-up 			{ background-position: 0px -8px }
+.topic .topic-footer .topic-info .rating .vote-topic.voted.voted-down .vote-down 		{ background-position: -9px -8px }
+.topic .topic-footer .topic-info .rating .vote-topic.voted.voted-up 	.vote-down:hover 	{ background-position: -9px 0; }
+.topic .topic-footer .topic-info .rating .vote-topic.voted.voted-down .vote-up:hover 	   { background-position: 0 0; }
 
 .topic .topic-footer .topic-info .rating .vote-topic.guest .vote-up:hover 	            { background-position: 0 0; }
 .topic .topic-footer .topic-info .rating .vote-topic.guest .vote-down:hover 	        { background-position: -9px 0; }
