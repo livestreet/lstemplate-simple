@@ -1,7 +1,7 @@
 {if count($aTopics)>0}
 	{add_block group='toolbar' name='toolbar_topic.tpl' iCountTopic=count($aTopics)}
 
-    {if $sAction=='index' and $sEvent==''}
+    {if ($sAction=='index' and $sEvent=='') or !Config::Get('plugin.simpletpl.show_thumbs_only_index')}
         <ul class="topics-short">
             {foreach from=$aTopics item=oTopic}
         		{if $LS->Topic_IsAllowTopicType($oTopic->getType())}

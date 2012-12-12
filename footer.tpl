@@ -5,7 +5,9 @@
 			{include file='sidebar.tpl'}
 		{/if}
 
-        {if $sAction=='index'}{include file='block.tags.tpl'}{/if}
+        {if $sAction=='index'}
+			{insert name="block" block=simpleTags}
+        {/if}
 	</div> <!-- /wrapper -->
 
     <div class="hFooter"></div>

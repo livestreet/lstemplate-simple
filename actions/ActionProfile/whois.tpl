@@ -136,7 +136,8 @@
     </div>
 </div>
 
-{include file='block.simpleProfileTopics.tpl'}
-{include file='block.simpleProfileComments.tpl'}
+{$aBlockParams.user=$oUserProfile}
+{insert name="block" block=simpleProfileTopics params=$aBlockParams}
+{insert name="block" block=simpleProfileComments params=$aBlockParams}
 
 {include file='footer.tpl'}

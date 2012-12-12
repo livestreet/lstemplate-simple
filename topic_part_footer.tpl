@@ -31,7 +31,7 @@
 
 		<ul class="topic-info">
             {if !$bTopicList}
-        		{include file="block.addthis.tpl"}
+        		{include file="blocks/block.addthis.tpl"}
             {/if}
 
 			{if $oVote || ($oUserCurrent && $oTopic->getUserId() == $oUserCurrent->getId()) || strtotime($oTopic->getDateAdd()) < $smarty.now-$oConfig->GetValue('acl.vote.topic.limit_time')}

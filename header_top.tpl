@@ -94,24 +94,7 @@
                 </div>
             </div>
             <div class="btm-menu">
-                <div class="top-authors">
-                	<ul>
-                		<li class="title">
-                		{$aLang.best_authors}<br />
-                			<span>{$aLang.by_rating}</span>
-                		</li>
-                		<li><a href="#" title="admin"><img src="{cfg name='path.static.skin'}/images/foto.png" alt="ava"></a></li>
-                		<li><a href="#" title="admin"><img src="{cfg name='path.static.skin'}/images/foto.png" alt="ava"></a></li>
-                		<li><a href="#" title="admin"><img src="{cfg name='path.static.skin'}/images/foto.png" alt="ava"></a></li>
-                		<li><a href="#" title="admin"><img src="{cfg name='path.static.skin'}/images/foto.png" alt="ava"></a></li>
-                		<li><a href="#" title="admin"><img src="{cfg name='path.static.skin'}/images/foto.png" alt="ava"></a></li>
-                		<li><a href="#" title="admin"><img src="{cfg name='path.static.skin'}/images/foto.png" alt="ava"></a></li>
-                		<li><a href="#" title="admin"><img src="{cfg name='path.static.skin'}/images/foto.png" alt="ava"></a></li>
-                		<li><a href="#" title="admin"><img src="{cfg name='path.static.skin'}/images/foto.png" alt="ava"></a></li>
-                		<li><a href="#" title="admin"><img src="{cfg name='path.static.skin'}/images/foto.png" alt="ava"></a></li>
-                		<li><a href="#" title="admin"><img src="{cfg name='path.static.skin'}/images/foto.png" alt="ava"></a></li>
-                	</ul>
-                </div>
+				{insert name="block" block=simpleUsersTop}
 
                 <div class="search">
                     <form action="{router page='search'}topics/" method="GET">

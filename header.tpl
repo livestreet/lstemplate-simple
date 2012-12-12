@@ -120,7 +120,9 @@
 		<div id="wrapper" class="{if $noSidebar}no-sidebar{/if}{hook run='wrapper_class'}">
 			<div id="content" role="main" {if $sidebarPosition == 'left'}class="content-profile"{/if} {if $sMenuItemSelect=='profile'}itemscope itemtype="http://data-vocabulary.org/Person"{/if}>
 
-                {if $sAction=='index'}{include file='block.simpleTopicsTop.tpl'}{/if}
+                {if $sAction=='index'}
+					{insert name="block" block=simpleTopicsTop}
+                {/if}
 
 		        {include file='nav.tpl'}
 

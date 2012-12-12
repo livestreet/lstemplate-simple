@@ -1,4 +1,3 @@
-
 /*-------------------------------------------------------
  *
  *   LiveStreet Engine Social Networking

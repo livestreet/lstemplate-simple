@@ -4,11 +4,10 @@
 <li class="topicshort {if $oTopic->getType()=='photoset' or $oTopic->getPreviewImage()}photo1{else}news{/if} {if Config::Get('plugin.simpletpl.show_titletwo')}titletwo{/if}">
 
     <div class="inform">
-		{if $oTopic->getType()=='photoset'}
+		{if $oTopic->getType()=='photoset' and $oTopic->getPreviewImage()}
 			<div class="topic-photo-preview" onclick="window.location='{$oTopic->getUrl()}#photoset'" id="photoset-main-preview-{$oTopic->getId()}">
-				{assign var=oMainPhoto value=$oTopic->getPhotosetMainPhoto()}
 				<div class="topic-photo-count" id="photoset-photo-count-{$oTopic->getId()}"><span>{$oTopic->getPhotosetCount()}</span></div>
-				<img src="{$oMainPhoto->getWebPath(229)}" alt="image" id="photoset-main-image-{$oTopic->getId()}" />
+				<img src="{$oTopic->getPreviewImageWebPath('229crop')}" alt="image" id="photoset-main-image-{$oTopic->getId()}" />
 			</div>
 		{elseif $oTopic->getPreviewImage()}
 			<div class="topic-photo-preview" onclick="window.location='{$oTopic->getUrl()}'">
