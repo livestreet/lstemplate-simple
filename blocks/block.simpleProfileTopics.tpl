@@ -7,9 +7,11 @@
 			<a href="{$oUserProfile->getUserWebPath()}created/topics/">{$aLang.all_topics}</a>
 		</div>
 
-		{foreach from=$simpletpl_aTopicsProfile item=oTopic}
-			{include file='topic_main.tpl' }
-		{/foreach}
+        <ul class="topics-short">
+			{foreach from=$simpletpl_aTopicsProfile item=oTopic}
+				{include file='topic_main.tpl' }
+			{/foreach}
+        </ul>
 
 	</div>
 </div>
