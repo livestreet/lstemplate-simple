@@ -161,7 +161,7 @@
 /*
 ------------------------------------------------ */
 .topics-short { margin-right:-15px; overflow:hidden }
-.topics-short .topicshort  { overflow:hidden; display:inline-block; *display:inline; width:207px; vertical-align:top; height:178px; padding:13px 11px 12px 11px; margin:0px 15px 15px 0px; border:1px solid #e2e2e2; border-right:1px solid #d1d1d1; border-bottom:1px solid #c4c3c4; position: relative; zoom: 1; }
+.topicshort  { overflow:hidden; display:inline-block; *display:inline; width:207px; vertical-align:top; height:178px; padding:13px 11px 12px 11px; margin:0px 15px 15px 0px; border:1px solid #e2e2e2; border-right:1px solid #d1d1d1; border-bottom:1px solid #c4c3c4; position: relative; zoom: 1; }
 
 .topicshort .title { font-weight:bold; font-size:16px }
 .topicshort .inform { height:139px; overflow:hidden }
