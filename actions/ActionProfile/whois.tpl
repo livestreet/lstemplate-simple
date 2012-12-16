@@ -89,8 +89,8 @@
                   {else}
                       {$oUserProfile->getProfileSite()|escape:'html'}
                   {/if}
-		  </strong>
                   </a>
+		  </strong>
               </li>
             {/if}
 
