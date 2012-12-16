@@ -76,18 +76,20 @@
             {/if}
 
             {if $oUserProfile->getProfileBirthday()}
-                <li><span>{$aLang.profile_birthday}:</span>{date_format date=$oUserProfile->getProfileBirthday() format="j F Y"}</li>
+                <li><span>{$aLang.profile_birthday}:</span><strong>{date_format date=$oUserProfile->getProfileBirthday() format="j F Y"}</strong></li>
             {/if}
 
             {if $oUserProfile->getProfileSite()}
               <li>
                   <span>{$aLang.profile_site}:</span>
+		  <strong>
                   <a href="{$oUserProfile->getProfileSite(true)|escape:'html'}" rel="nofollow">
                   {if $oUserProfile->getProfileSiteName()}
                       {$oUserProfile->getProfileSiteName()|escape:'html'}
                   {else}
                       {$oUserProfile->getProfileSite()|escape:'html'}
                   {/if}
+		  </strong>
                   </a>
               </li>
             {/if}
@@ -127,7 +129,6 @@
                 </li>
     		{/if}
 
-    		{hook run='profile_whois_item' oUserProfile=$oUserProfile}
 		</ul>
 
 		{hook run='profile_whois_privat_item' oUserProfile=$oUserProfile}
