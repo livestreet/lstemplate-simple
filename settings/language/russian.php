@@ -18,7 +18,7 @@ return array(
 	'blog_expand_info' => 'О блоге',
 	'blog_fold_info' => 'Свернуть',
 	
-	'profile_about_empty' => 'Пока ничего не известно...',
+	'profile_about_empty' => 'Пока ничего неизвестно...',
 	'profile_about_edit' => 'Редактировать',
 	'profile_soc' => 'Соц. сети',
 
