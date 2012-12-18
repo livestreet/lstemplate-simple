@@ -37,12 +37,15 @@
 .user-profile-content .foto-profile { float:left; width:230px; margin-right:20px }
 .user-profile-content .foto-profile img { border-radius:4px; width:230px }
 .user-profile-content .foto-profile .friend { width:206px; height:46px; padding:24px 0px 0px 24px; margin-top:-10px; background:url(../images/friend-bg.png) no-repeat }
-.user-profile-content .foto-profile .friend .add-friend { width:178px; height:30px; background:url(../images/friend-button.png) no-repeat; display:block }
+.user-profile-content .foto-profile .friend .add-friend { width:146px; height:30px; background:url(../images/friend-button.png) no-repeat; display:block }
 .user-profile-content .foto-profile .friend .add-friend:hover { background-position:0 -30px }
-.user-profile-content .foto-profile .friend .delete-friend { width:178px; height:30px; background:url(../images/friend-button.png) no-repeat 0px -60px; display:block }
+.user-profile-content .foto-profile .friend .delete-friend { width:146px; height:30px; background:url(../images/friend-button.png) no-repeat 0px -60px; display:block }
 .user-profile-content .foto-profile .friend .delete-friend:hover { background-position:0 -90px }
-.user-profile-content .foto-profile .friend .send-friend { width:178px; height:30px; background:url(../images/friend-button2.png) no-repeat; display:block }
-.user-profile-content .foto-profile .friend .reject-friend { width:178px; height:30px; background:url(../images/friend-button2.png) no-repeat 0px -30px; display:block }
+.user-profile-content .foto-profile .friend .send-friend { width:146px; height:30px; background:url(../images/friend-button2.png) no-repeat; display:block }
+.user-profile-content .foto-profile .friend .reject-friend { width:146px; height:30px; background:url(../images/friend-button2.png) no-repeat 0px -30px; display:block }
+.user-profile-content .foto-profile .friend a { text-decoration:none; color:#757474; font-weight:bold; font-size:14px; padding-left:32px; line-height:28px; }
+.user-profile-content .foto-profile .friend a:hover { color:#b0afaf }
+.user-profile-content .foto-profile .friend .frim { color:#757474; font-weight:bold; font-size:14px; padding-left:32px; line-height:28px; }
 
 .user-profile-content .about-profile { float:left; position:relative; width:474px }
 .user-profile-content .about-profile h2 { margin-left:2px; font-size:22px; color:#232323; font-weight:bold; margin-bottom:0px; padding-bottom:15px }
