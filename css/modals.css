@@ -43,6 +43,7 @@
 
 /* Write */
 .modal.modal-write { top: 70px; width:610px; margin-left:-305px }
+.modal.modal-write .close { padding-left:0 !important }
 .modal.modal-write .modal-content { padding: 10px 20px 0 10px }
 .modal.modal-write .write-list { *overflow: hidden; *zoom: 1; }
 .modal.modal-write .write-list li { width: 120px; margin: 0 10px 20px; font-size: 19px; font-family:'PT Sans', sans-serif; text-align: center; display: inline-table; *float: left; }
