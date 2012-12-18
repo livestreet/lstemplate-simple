@@ -65,10 +65,12 @@
 					{if $oUserCurrent}
 						<td class="cell-join">
 							{if $oUserCurrent->getId() != $oBlog->getOwnerId() and $oBlog->getType() == 'open'}
-								<button type="submit"  onclick="ls.blog.toggleJoin(this, {$oBlog->getId()}); return false;" class="button button-action button-action-join {if $oBlog->getUserIsJoin()}active{/if}">
-									<i class="icon-synio-join"></i>
-									<span>{if $oBlog->getUserIsJoin()}{$aLang.blog_leave}{else}{$aLang.blog_join}{/if}</span>
-								</button>
+                                <div class="button2" style="float:none">
+                                    <em></em><span></span>
+    								<button type="submit" onclick="ls.blog.toggleJoin(this, {$oBlog->getId()}); return false;" class="button-action-join {if $oBlog->getUserIsJoin()}active{/if}">
+                                        {if $oBlog->getUserIsJoin()}{$aLang.blog_leave}{else}{$aLang.blog_join}{/if}
+    								</button>
+                                </div>
 							{else}
 								&mdash;
 							{/if}
