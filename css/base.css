@@ -126,7 +126,7 @@ h2.header-table span { color: #949aa1; }
 .slider-nav .switch li.arrowright a { width:9px; height:12px; background:url(../images/switch-arrow.png) no-repeat -9px 0px; display:block }
 .slider-nav .switch li.arrowright a:hover { background-position:-27px 0px }
 
-#slider { height: 300px;width: 729px;overflow: hidden; clear:both }
+#slider { height: 300px;width: 729px;overflow: hidden; position:relative; clear:both }
 #slider-hidden { height: 300px; width: 6000px; margin-left: 0; margin-right:-11px }
 .topic-slider_area { height: 330px; width: 356px; display: inline-block; *display:inline; zoom:1 }
 .topic-slider { height: 300px; width: 356px; margin-right:13px; display: inline-block; *display:inline; zoom:1 }
