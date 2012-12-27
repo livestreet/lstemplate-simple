@@ -111,9 +111,9 @@
 		<dl class="form-item">
 			<dt></dt>
 			<dd>
-     <div class="button2 button-primary l-b">
-        <em></em><span></span><button type="submit" name="submit_register" id="registration-form-submit" disabled="disabled">{$aLang.registration_submit}</button>
-     </div>
+        <button type="submit" class="button2" name="submit_register" id="registration-form-submit" disabled="disabled">
+            <div class="l"></div>
+            <div class="r"></div>{$aLang.registration_submit}</button>
 
 			</dd>
 		</dl>

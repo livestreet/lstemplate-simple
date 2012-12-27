@@ -77,9 +77,6 @@
 	<div class="fl-r" id="blog-mini-header">
 		<a href="#" class="link-dotted" onclick="ls.blog.toggleInfo(); return false;">{$aLang.blog_expand_info}</a>
 		<a href="{router page='rss'}blog/{$oBlog->getUrl()}/">RSS</a>
-		{if $oUserCurrent and $oUserCurrent->getId()!=$oBlog->getOwnerId()}
-			<button type="submit"  class="button button-small" id="button-blog-join-first-{$oBlog->getId()}" data-button-additional="button-blog-join-second-{$oBlog->getId()}" data-only-text="1" onclick="ls.blog.toggleJoin(this, {$oBlog->getId()}); return false;">{if $oBlog->getUserIsJoin()}{$aLang.blog_leave}{else}{$aLang.blog_join}{/if}</button>
-		{/if}
 	</div>
 </div>
 
@@ -156,7 +153,9 @@
 	
 	<footer class="blog-footer" id="blog-footer">
 		{if $oUserCurrent and $oUserCurrent->getId()!=$oBlog->getOwnerId()}
-			<button type="submit"  class="button button-small" id="button-blog-join-second-{$oBlog->getId()}" data-button-additional="button-blog-join-first-{$oBlog->getId()}" data-only-text="1" onclick="ls.blog.toggleJoin(this, {$oBlog->getId()}); return false;">{if $oBlog->getUserIsJoin()}{$aLang.blog_leave}{else}{$aLang.blog_join}{/if}</button>
+			<button type="submit" class="button2 left" style="margin-top:-8px" id="button-blog-join-second-{$oBlog->getId()}" data-button-additional="button-blog-join-first-{$oBlog->getId()}" data-only-text="1" onclick="ls.blog.toggleJoin(this, {$oBlog->getId()}); return false;">
+                        <div class="l"></div>
+                        <div class="r"></div>{if $oBlog->getUserIsJoin()}{$aLang.blog_leave}{else}{$aLang.blog_join}{/if}</button>
 		{/if}
 		<a href="{router page='rss'}blog/{$oBlog->getUrl()}/" class="rss">RSS</a>
 		

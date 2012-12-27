@@ -11,12 +11,13 @@
 
 			<p><input type="text" name="tags" value="" id="favourite-form-tags-tags" class="autocomplete-tags-sep input-text input-width-full"></p>
 
-            <div class="button2 button-primary l-b" style="float:left">
-                <em></em><span></span><button type="submit"  name="" />{$aLang.favourite_form_tags_button_save}</button>    
-            </div>
-            <div class="button2 button-primary l-b">
-                <em></em><span></span><button type="submit"  name="" class="jqmClose" />{$aLang.favourite_form_tags_button_cancel}</button>
-            </div>
+            <button type="submit" class="button2 left" name="" />
+                        <div class="l"></div>
+                        <div class="r"></div>{$aLang.favourite_form_tags_button_save}</button>
+
+            <button type="submit"  name="" class="button2 jqmClose" />
+                        <div class="l"></div>
+                        <div class="r"></div>{$aLang.favourite_form_tags_button_cancel}</button>
 		</form>
 	</div>
 {/if}

@@ -11,8 +11,10 @@
 	<p><label>{$aLang.registration_invite_code}:</label>
 	<input type="text" name="invite_code" class="input-text input-width-300" /></p>
 
-     <div class="button2 button-primary l-b">
-        <em></em><span></span><input type="submit" name="submit_invite" value="{$aLang.registration_invite_check}" />
+     <div class="button2">
+        <div class="l"></div>
+        <div class="r"></div>
+        <input type="submit" name="submit_invite" value="{$aLang.registration_invite_check}" />
      </div>
 
 </form>

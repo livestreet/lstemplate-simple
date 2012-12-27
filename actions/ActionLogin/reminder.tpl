@@ -19,9 +19,9 @@
 	<input type="text" name="mail" id="reminder-mail" class="input-text input-width-200" />
 	<small class="validate-error-hide validate-error-reminder"></small></p>
 
-     <div class="button2 button-primary l-b">
-        <em></em><span></span><button type="submit"  name="submit_reminder" id="reminder-form-submit" disabled="disabled">{$aLang.password_reminder_submit}</button>    
-     </div>
+     <button type="submit" class="button2" name="submit_reminder" id="reminder-form-submit" disabled="disabled">
+            <div class="l"></div>
+            <div class="r"></div>{$aLang.password_reminder_submit}</button>   
 
 </form>
 </div>

@@ -45,9 +45,11 @@
 	
 	{hook run='form_settings_account_end'}
 
-     <div class="button2 button-primary l-b">
-        <em></em><span></span><button type="submit" name="submit_account_edit" />{$aLang.settings_profile_submit}</button>
-     </div>
+    <button type="submit" class="button2" name="submit_account_edit" />
+            <div class="l"></div>
+            <div class="r"></div>
+            {$aLang.settings_profile_submit}
+    </button>                            
 
 </form>
 

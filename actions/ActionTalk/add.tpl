@@ -30,12 +30,18 @@
 	
 	{hook run='form_add_talk_end'}
 
-     <div class="button2 button-primary l-b" style="float:left">
-        <em></em><span></span><button type="submit" name="submit_talk_add">{$aLang.talk_create_submit}</button>
-     </div>
-     <div class="button2 button-primary l-b">
-        <em></em><span></span><button type="submit" name="submit_preview" onclick="jQuery('#text_preview').parent().show(); ls.tools.textPreview('talk_text',false); return false;">{$aLang.topic_create_submit_preview}</button>
-     </div>
+     <button type="submit" class="button2 left" name="submit_talk_add">
+            <div class="l"></div>
+            <div class="r"></div>
+            {$aLang.talk_create_submit}
+     </button>
+
+     <button type="submit" class="button2" name="submit_preview" onclick="jQuery('#text_preview').parent().show(); ls.tools.textPreview('talk_text',false); return false;">
+            <div class="l"></div>
+            <div class="r"></div>
+            {$aLang.topic_create_submit_preview}
+     </button>
+
 </form>
 
 {hook run='talk_add_end'}

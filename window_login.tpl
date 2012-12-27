@@ -26,7 +26,7 @@
 				<li class="js-block-popup-login-item" data-type="reminder"><a href="#">{$aLang.password_reminder}</a></li>
 			</ul>
 			
-			
+
 			<div class="tab-content js-block-popup-login-content" data-type="login">
 				{hook run='login_popup_begin'}
 				<form action="{router page='login'}" method="post" id="popup-login-form">
@@ -34,13 +34,14 @@
 
 					<p><input type="text" name="login" id="popup-login" placeholder="{$aLang.user_login}" class="input-text input-width-full"></p>
 
-					<p><input type="password" name="password" id="popup-password" placeholder="{$aLang.user_password}" class="input-text input-width-full">
+					<p><input type="password" name="password" id="popup-password" placeholder="{$aLang.user_password}" class="input-text input-width-full"></p>
 
-                    <div class="button2 button-primary">
-                        <em></em><span></span><button type="submit"  name="submit_login" id="popup-login-form-submit" disabled="disabled">{$aLang.user_login_submit}</button>
-                    </div>
-					</p>
-					
+                    <button type="submit" class="button2 right" name="submit_login" id="popup-login-form-submit" disabled="disabled">
+                        <div class="l"></div>
+                        <div class="r"></div>
+                        {$aLang.user_login_submit}
+                    </button>
+
 					<label class="remember-label"><input type="checkbox" name="remember" class="input-checkbox" checked /> {$aLang.user_login_remember}</label>
 
 					<small class="validate-error-hide validate-error-login"></small>
@@ -107,7 +108,7 @@
 
 					{hookb run="popup_registration_captcha"}
 					<p><label for="popup-registration-captcha">{$aLang.registration_captcha}</label>
-					<img src="{cfg name='path.root.engine_lib'}/external/kcaptcha/index.php?{$_sPhpSessionName}={$_sPhpSessionId}" 
+					<img src="{cfg name='path.root.engine_lib'}/external/kcaptcha/index.php?{$_sPhpSessionName}={$_sPhpSessionId}"
 						 onclick="this.src='{cfg name='path.root.engine_lib'}/external/kcaptcha/index.php?{$_sPhpSessionName}={$_sPhpSessionId}&n='+Math.random();"
 						 class="captcha-image" />
 					<input type="text" name="captcha" id="popup-registration-captcha" value="" maxlength="3" class="input-text input-width-100 js-ajax-validate" />
@@ -117,9 +118,13 @@
 					{hook run='form_registration_end' isPopup=true}
 
 					<input type="hidden" name="return-path" value="{$PATH_WEB_CURRENT|escape:'html'}">
-                    <div class="button2 button-primary l-b">
-                        <em></em><span></span><button type="submit"  name="submit_register" id="popup-registration-form-submit" disabled="disabled">{$aLang.registration_submit}</button>
-                    </div>
+
+                    <button type="submit" class="button2" name="submit_register" id="popup-registration-form-submit" disabled="disabled">
+                        <div class="l"></div>
+                        <div class="r"></div>
+                        {$aLang.registration_submit}
+                    </button>
+
 
 				</form>
 				{hook run='registration_end' isPopup=true}
@@ -142,9 +147,12 @@
 					<input type="text" name="mail" placeholder="{$aLang.password_reminder_email}" id="popup-reminder-mail" class="input-text input-width-300" />
 					<small class="validate-error-hide validate-error-reminder"></small></p>
 
-                    <div class="button2 button-primary l-b">
-                        <em></em><span></span><button type="submit" name="submit_reminder" id="popup-reminder-form-submit" disabled="disabled">{$aLang.password_reminder_submit}</button>
-                    </div>
+                    <button type="submit" class="button2" name="submit_reminder" id="popup-reminder-form-submit" disabled="disabled">
+                        <div class="l"></div>
+                        <div class="r"></div>
+                        {$aLang.password_reminder_submit}
+                    </button>
+
 				</form>
 			</div>
 		</div>

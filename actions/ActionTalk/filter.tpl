@@ -1,14 +1,13 @@
 <div class="talk-search" id="block_talk_search">
 	<header>
 
-        <div class="button2 button-primary l-b" style="float:left">
-            <em></em><span></span>
-            <button type="submit" onclick="ls.talk.makeReadTalks()">{$aLang.talk_inbox_make_read}</button>
-        </div>
-        <div class="button2 button-primary l-b">
-            <em></em><span></span>
-            <button type="submit"  onclick="if (confirm('{$aLang.talk_inbox_delete_confirm}')){ ls.talk.removeTalks() };">{$aLang.talk_inbox_delete}</button>
-        </div>
+        <button type="submit" class="button2 left" onclick="ls.talk.makeReadTalks()">
+        <div class="l"></div>
+        <div class="r"></div>{$aLang.talk_inbox_make_read}</button>
+
+        <button type="submit" class="button2" onclick="if (confirm('{$aLang.talk_inbox_delete_confirm}')){ ls.talk.removeTalks() };">
+        <div class="l"></div>
+        <div class="r"></div>{$aLang.talk_inbox_delete}</button>
 
 		<a href="#" class="link-dotted close" onclick="ls.talk.toggleSearchForm(); return false;">{$aLang.talk_filter_title}</a>
 	</header>

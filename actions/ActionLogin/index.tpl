@@ -30,9 +30,9 @@
 	
 	{hook run='form_login_end'}
 
-     <div class="button2 button-primary l-b">
-        <em></em><span></span><button type="submit"  name="submit_login" id="login-form-submit" disabled="disabled">{$aLang.user_login_submit}</button>
-     </div>
+     <button type="submit" class="button2" name="submit_login" id="login-form-submit" disabled="disabled">
+            <div class="l"></div>
+            <div class="r"></div>{$aLang.user_login_submit}</button>
      
 	<a href="{router page='registration'}">{$aLang.user_registration}</a>&nbsp;&nbsp;&nbsp;&nbsp;
 	<a href="{router page='login'}reminder/">{$aLang.user_password_reminder}</a>
@@ -47,9 +47,10 @@
 		<p><label>{$aLang.registration_invite_code}<br />
 		<input type="text" name="invite_code" /></label></p>
 
-         <div class="button2 button-primary l-b">
-            <em></em><span></span><button type="submit"  name="submit_invite" id="login-form-submit">{$aLang.registration_invite_check}</button>
-         </div>
+        <button type="submit" class="button2" name="submit_invite" id="login-form-submit">
+            <div class="l"></div>
+            <div class="r"></div>{$aLang.registration_invite_check}</button>
+
 	</form>
 {/if}
 

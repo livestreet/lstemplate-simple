@@ -68,9 +68,11 @@
 	
 	{hook run='form_add_blog_end'}
 
-     <div class="button2 button-primary l-b">
-        <em></em><span></span><button type="submit"  name="submit_blog_add">{$aLang.blog_create_submit}</button>
-     </div>
+     <button type="submit" class="button2" name="submit_blog_add">
+            <div class="l"></div>
+            <div class="r"></div>
+            {$aLang.blog_create_submit}
+     </button>
 </form>
 
 

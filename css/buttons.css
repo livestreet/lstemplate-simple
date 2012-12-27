@@ -149,19 +149,20 @@
   border-radius:0;
 }
 
-.button2 { float:right; margin-left:8px; display:table }
-.button2 em { background:url(../images/bg-button2.png) no-repeat 0px -66px; width:6px; height:33px; float:left }
-.button2 input { background:url(../images/bg-button2.png) repeat-x 0px -33px; height:33px; float:left; line-height:32px; padding:0px 10px; border:0px; margin:0px; cursor:pointer; color:#646464; text-shadow:0px 1px 0px #fff; font-weight:bold }
-.button2 button { background:url(../images/bg-button2.png) repeat-x 0px -33px; height:33px; float:left; line-height:32px; padding:0px 10px; border:0px; margin:0px; cursor:pointer; color:#646464; text-shadow:0px 1px 0px #fff; font-weight:bold }
-.button2 a { background:url(../images/bg-button2.png) repeat-x 0px -33px; height:33px; float:left; line-height:32px; line-height:32px; padding:0px 10px; border:0px; margin:0px; cursor:pointer; color:#646464; text-shadow:0px 1px 0px #fff; font-weight:bold }
-.button2 span { background:url(../images/bg-button2.png) no-repeat; width:6px; height:33px; float:right }
+.button2 { margin-left:8px; position:relative; display:table; zoom:1; line-height:32px; background:url(../images/bg-btn.png) repeat-x 0 -33px; height:33px; padding:0px 16px; border:0px; margin:0px; cursor:pointer; color:#646464; text-shadow:0px 1px 0px #fff; font-weight:bold }
+.button2 .l { width:6px; height:33px; background:url(../images/bg-btn.png) no-repeat 0 -66px; position:absolute; left:0; top:0 }
+.button2 .r { width:6px; height:33px; background:url(../images/bg-btn.png) no-repeat 0 0; position:absolute; right:0; top:0 }
 
-.button2:hover em { background:url(../images/bg-button2-hover.png) no-repeat 0px -66px }
-.button2:hover input { background:url(../images/bg-button2-hover.png) repeat-x 0px -33px; color:#b0b0b0 }
-.button2:hover button { background:url(../images/bg-button2-hover.png) repeat-x 0px -33px; color:#b0b0b0 }
-.button2:hover a { background:url(../images/bg-button2-hover.png) repeat-x 0px -33px; color:#b0b0b0 }
-.button2:hover span { background:url(../images/bg-button2-hover.png) no-repeat }
+.button2:hover { background-position:0 -132px }
+.button2:hover .l { background-position:0 -165px }
+.button2:hover .r { background-position:0 -99px }
 
+*+html .button2 {
+  line-height:28px
+}
 .button2:active { position:relative; top:1px }
 
-.button2.l-b { float:none; margin-bottom:20px; margin-left:0 }
+.button2 input { border:0; margin:0; background:none }
+
+.button2.left { float:left; margin-right:10px }
+.button2.right { float:right }

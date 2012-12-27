@@ -139,15 +139,24 @@
 	<input type="hidden" name="topic_type" value="photoset" />
 	
 	{hook run='form_add_topic_photoset_end'}
-     <div class="button2 button-primary">
-        <em></em><span></span><button type="submit"  name="submit_topic_publish" id="submit_topic_publish">{$aLang.topic_create_submit_publish}</button>
-     </div>
-     <div class="button2 button-primary l-b" style="float:left">
-        <em></em><span></span><button type="submit"  name="submit_preview" onclick="ls.topic.preview('form-topic-add','text_preview'); return false;">{$aLang.topic_create_submit_preview}</button>
-     </div>
-     <div class="button2 button-primary l-b">
-        <em></em><span></span><button type="submit"  name="submit_topic_save" id="submit_topic_save">{$aLang.topic_create_submit_save}</button>
-     </div>
+
+    <button type="submit" class="button2 right" name="submit_topic_publish" id="submit_topic_publish">
+        <div class="l"></div>
+        <div class="r"></div>
+        {$aLang.topic_create_submit_publish}
+    </button>
+
+    <button type="submit" class="button2 left" name="submit_preview" onclick="ls.topic.preview('form-topic-add','text_preview'); return false;">
+        <div class="l"></div>
+        <div class="r"></div>
+        {$aLang.topic_create_submit_preview}
+    </button>
+
+    <button type="submit" class="button2" name="submit_topic_save" id="submit_topic_save">
+        <div class="l"></div>
+        <div class="r"></div>
+        {$aLang.topic_create_submit_save}
+    </button>
 </form>
 
 <div class="topic-preview" id="text_preview"></div>

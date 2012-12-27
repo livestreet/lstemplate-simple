@@ -32,9 +32,12 @@
 
 	{hook run='form_settings_tuning_end'}
 	<br />
-         <div class="button2 button-primary l-b">
-            <em></em><span></span><button type="submit"  name="submit_settings_tuning">{$aLang.settings_profile_submit}</button>
-         </div>
+
+    <button type="submit"  class="button2" name="submit_settings_tuning">
+            <div class="l"></div>
+            <div class="r"></div>
+            {$aLang.settings_profile_submit}
+    </button>         
 
 </form>
 

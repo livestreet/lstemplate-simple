@@ -23,9 +23,11 @@
 
 		{hook run='form_settings_invite_end'}
 
-         <div class="button2 button-primary l-b">
-            <em></em><span></span><button type="submit" name="submit_invite" />{$aLang.settings_invite_submit}</button>
-         </div>
+        <button type="submit" class="button2" name="submit_invite" />
+            <div class="l"></div>
+            <div class="r"></div>
+            {$aLang.settings_invite_submit}
+        </button>
 
 	</form>
 </div>

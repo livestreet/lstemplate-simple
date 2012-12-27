@@ -3,6 +3,7 @@
 -------------------------------------------- */
 
 #container 	{ margin:0 auto; min-height:100%; position:relative }
+#header-bg  { position:absolute; top:0; left:0; right:0; max-width:100%; background:#f1f1f1; height:48px }
 #header 	{ height: 192px; margin-left:26px; overflow: hidden; zoom: 1 }
 #wrapper 	{ overflow: hidden; zoom: 1; margin-top:30px; padding-bottom:40px; }
 #content 	{ width: 730px; float: left; overflow:hidden; padding-left:26px; }

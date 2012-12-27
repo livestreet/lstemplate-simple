@@ -6,6 +6,9 @@
 	width: 150px;
 	padding: 6px;
 	border: 1px solid #c9c9c9;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
 }
 .input-text:focus 	{ outline: none; }
 .input-checkbox 	{ position: relative; top: 1px; margin: 0 2px 0 1px; }
@@ -21,7 +24,7 @@
 .input-width-500 	{ width: 500px; }
 
 .modal .input-width-full 	{ width: 97%; }
-input.input-width-full 	    { width: 98%; }
+input.input-width-full 	    { width: 100% }
 .block input.input-width-full 	    { width: 86%; }
 .content-error .input-width-250 { width:270px }
 

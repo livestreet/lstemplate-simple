@@ -31,13 +31,13 @@
 			
 			{hook run="uploadimg_additional"}
 
-            <div class="button2 button-primary l-b" style="float:left">
-                <em></em><span></span><button type="submit" onclick="ls.ajaxUploadImg('block_upload_img_content_pc','{$sToLoad}');">{$aLang.uploadimg_submit}</button>
-            </div>
-            <div class="button2 button-primary l-b">
-                <em></em><span></span><button type="submit"  class="jqmClose">{$aLang.uploadimg_cancel}</button>
-            </div>
+            <button type="submit" class="button2 left"onclick="ls.ajaxUploadImg('block_upload_img_content_pc','{$sToLoad}');">
+                        <div class="l"></div>
+                        <div class="r"></div>{$aLang.uploadimg_submit}</button>
 
+            <button type="submit" class="button2 jqmClose">
+                        <div class="l"></div>
+                        <div class="r"></div>{$aLang.uploadimg_cancel}</button>   
 		</form>
 
 		
@@ -61,15 +61,18 @@
 			{hook run="uploadimg_link_additional"}
 
 
-            <div class="button2 button-primary l-b" style="float:left">
-                <em></em><span></span><button type="submit" onclick="ls.topic.insertImageToEditor(jQuery('#img_url').val(),jQuery('#form-image-url-align').val(),jQuery('#form-image-url-title').val());">{$aLang.uploadimg_link_submit_paste}</button>
-            </div>
-            <div class="button2 button-primary l-b" style="float:left">
-                <em></em><span></span><button type="submit"  onclick="ls.ajaxUploadImg('block_upload_img_content_link','{$sToLoad}');">{$aLang.uploadimg_link_submit_load}</button>
-            </div>
-            <div class="button2 button-primary l-b">
-                <em></em><span></span><button type="submit"  class="jqmClose">{$aLang.uploadimg_cancel}</button> 
-            </div>
+            <button type="submit" class="button2 left" onclick="ls.topic.insertImageToEditor(jQuery('#img_url').val(),jQuery('#form-image-url-align').val(),jQuery('#form-image-url-title').val());">
+                        <div class="l"></div>
+                        <div class="r"></div>{$aLang.uploadimg_link_submit_paste}</button>
+
+            <button type="submit" class="button2 left" onclick="ls.ajaxUploadImg('block_upload_img_content_link','{$sToLoad}');">
+                        <div class="l"></div>
+                        <div class="r"></div>{$aLang.uploadimg_link_submit_load}</button>
+
+            <button type="submit" class="button2" class="jqmClose">
+                        <div class="l"></div>
+                        <div class="r"></div>{$aLang.uploadimg_cancel}</button>
+
 		</form>
 	</div>
 </div>
