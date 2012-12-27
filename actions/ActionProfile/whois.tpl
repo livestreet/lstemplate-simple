@@ -129,6 +129,26 @@
                 </li>
     		{/if}
 
+			{if $oConfig->GetValue('general.reg.invite') and $oUserInviteFrom}
+				<li>
+					<span>{$aLang.profile_invite_from}:</span>
+					<strong>
+						<a href="{$oUserInviteFrom->getUserWebPath()}">{$oUserInviteFrom->getLogin()}</a>&nbsp;
+					</strong>
+				</li>
+			{/if}
+
+
+			{if $oConfig->GetValue('general.reg.invite') and $aUsersInvite}
+				<li>
+					<span>{$aLang.profile_invite_to}:</span>
+					<strong>
+						{foreach from=$aUsersInvite item=oUserInvite}
+							<a href="{$oUserInvite->getUserWebPath()}">{$oUserInvite->getLogin()}</a>&nbsp;
+						{/foreach}
+					</strong>
+				</li>
+			{/if}
 		</ul>
 
 		{hook run='profile_whois_privat_item' oUserProfile=$oUserProfile}

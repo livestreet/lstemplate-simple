@@ -114,6 +114,8 @@
 		{include file='window_login.tpl'}
 	{/if}
 
+    <div id="header-bg"></div>
+
 	<div id="container" class="{hook run='container_class'}">
 		{include file='header_top.tpl'}
 

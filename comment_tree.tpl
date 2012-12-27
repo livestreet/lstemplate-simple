@@ -66,21 +66,22 @@
 		<div id="reply" class="reply">		
 			<form method="post" id="form_comment" onsubmit="return false;" enctype="multipart/form-data">
 				{hook run='form_add_comment_begin'}
-				
+
 				<textarea name="comment_text" id="form_comment_text" class="mce-editor markitup-editor input-width-full" style="width:100%"></textarea>
 				
 				{hook run='form_add_comment_end'}
 
-                    <div class="button2 button-primary l-b" style="float:left">
-                        <em></em><span></span>
-        				<button type="submit"  name="submit_comment"
-        						id="comment-button-submit"
-        						onclick="ls.comments.add('form_comment',{$iTargetId},'{$sTargetType}'); return false;">{$aLang.comment_add}</button>
-                    </div>
-                    <div class="button2 button-primary l-b" style="margin-left:10px">
-                        <em></em><span></span>
-				        <button type="button" onclick="ls.comments.preview();">{$aLang.comment_preview}</button>
-                    </div>
+                <button type="submit"  name="submit_comment" class="button2 left" id="comment-button-submit" onclick="ls.comments.add('form_comment',{$iTargetId},'{$sTargetType}'); return false;">
+                    <div class="l"></div>
+                    <div class="r"></div>
+                    {$aLang.comment_add}
+                </button>
+
+                <button type="button" onclick="ls.comments.preview();" class="button2">
+                    <div class="l"></div>
+                    <div class="r"></div>
+                    {$aLang.comment_preview}
+                </button>           
 				
 				<input type="hidden" name="reply" value="0" id="form_comment_reply" />
 				<input type="hidden" name="cmt_target_id" value="{$iTargetId}" />

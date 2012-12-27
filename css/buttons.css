@@ -166,3 +166,7 @@
 
 .button2.left { float:left; margin-right:10px }
 .button2.right { float:right }
+
+
+.button-action-join { border-radius:6px }
+.button-action-join i { display:none }

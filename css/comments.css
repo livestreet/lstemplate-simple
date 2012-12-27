@@ -132,7 +132,7 @@
 .comment .content .arrow { position:absolute; top:0px; left:37px; display:block; width:13px; height:30px; background: url(../images/bg-comments-left.png) 0 0 no-repeat; }
 .comment .content .text-style { color: #232323; line-height:21px; }
 .comment .content .text-style a { text-decoration:underline }
-.comment .content blockquote { background: #fff; border-color: #ccc; padding: 5px 10px; margin-bottom: 5px; }
+.comment .content blockquote { background: #fff; border:1px solid #ddd; font-style:italic; margin:0 0 5px 0; padding: 5px 10px; margin-bottom: 5px; }
 
 /* Actions */
 .comment .comment-actions li { display: inline; margin-right: 10px; }

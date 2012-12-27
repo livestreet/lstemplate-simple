@@ -1,7 +1,6 @@
 /* --------------------------------------------
 	СЕТКА
--------------------------------------------- */
-
+-------------------------------------------- */  
 #container 	{ margin:0 auto; min-height:100%; position:relative }
 #header-bg  { position:absolute; top:0; left:0; right:0; max-width:100%; background:#f1f1f1; height:48px }
 #header 	{ height: 192px; margin-left:26px; overflow: hidden; zoom: 1 }
