@@ -52,7 +52,7 @@
 /* Toolbar 
 ---------------------------------------------------- */
 .toolbar 					{ position: fixed; top: 136px; z-index: 20; display: none; }
-.toolbar section 			{ width: 25px; padding: 8px; overflow: hidden; line-height: 14px; background: #fff; border:1px solid #e4e4e4; margin-bottom: 10px }
+.toolbar section 			{ width: 25px; padding: 8px; overflow: hidden; line-height: 14px; margin-bottom: 10px }
 .toolbar section i			{ display: block; width: 25px; height: 25px; }
 
 /* Admin button */

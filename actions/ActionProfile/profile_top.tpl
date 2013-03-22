@@ -1,4 +1,6 @@
 <div class="user-profile">
+	{hook run='profile_top_begin' oUserProfile=$oUserProfile}
+    
 	<div class="vote-profile">
 		<div id="vote_area_user_{$oUserProfile->getId()}" class="voting
 																	{if $oUserProfile->getRating() > 0}
