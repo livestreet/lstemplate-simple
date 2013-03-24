@@ -53,5 +53,32 @@ $config['size_images_preview']=array(
 	)
 );
 
+/**
+ *  Список размеров превью, которые необходимо делать при загрузке фото
+ */
+/*
+$config['size_images']=array(
+  array(
+    'w' => 229,
+    'h' => 116,
+    'crop' => true,
+  ),
+  array(
+    'w' => 354,
+    'h' => 186,
+    'crop' => true,
+  )
+);
+*/
+/**
+ * Список размеров превью топика
+ * По умолчанию наследуется от $config['size_images'], но можно добавить и свои размеры, например 100х100
+ */
+/*
+$config['size_images_review']=array_merge(array(
+                   ),$config['size_images']);
+*/
+//Config::Set('module.topic.photoset.size',array_merge(Config::Get('module.topic.photoset.size'),$config['size_images']));
+
 return $config;
 ?>
