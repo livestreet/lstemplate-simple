@@ -16,7 +16,6 @@
 
     	{hook run='main_menu'}
 
-
 	    {hook run='userbar_nav'}
 
         {if $oUserCurrent}
@@ -59,15 +58,16 @@
     </div>
 
     <div class="btm-header">
-        <a href="{cfg name='path.root.web'}" class="logo">
-            <ul>
-                <li class="title">Live<br />Street</li>
-                <li>Your social engine</li>
-            </ul>
-        </a>
-
         <div class="left-menu">
             <div class="top-menu">
+                <div class="social-buttons">
+                    <ul>
+                        <li><a href="/" class="fb" title="Facebook"></a></li>
+                        <li><a href="/" class="tw" title="Twitter"></a></li>
+                        <li><a href="/" class="vk" title="Vkontakte"></a></li>
+                        <li><a href="{router page='rss'}" class="rss" title="RSS"></a></li>
+                    </ul>
+                </div>
 
                 <ul class="navigate">
                     <li {if $sAction=='index' and $sEvent==''}class="active"{/if}><a href="{cfg name='path.root.web'}">{$aLang.topic_title}</a></li>
@@ -83,27 +83,27 @@
 						</li>
 					{/if}
                 </ul>
-
-                <div class="social-buttons">
-                    <ul>
-                        <li><a href="/" class="fb" title="FACEBOOK"></a></li>
-                        <li><a href="/" class="tw" title="TWITTER"></a></li>
-                        <li><a href="/" class="vk" title="VKONTAKTE"></a></li>
-                        <li><a href="{router page='rss'}" class="rss" title="RSS"></a></li>
-                    </ul>
-                </div>
             </div>
             <div class="btm-menu">
-				{insert name="block" block=simpleUsersTop}
-
                 <div class="search">
                     <form action="{router page='search'}topics/" method="GET">
             			<input class="text" type="text" onblur="if (!value) value=defaultValue" onclick="if (value==defaultValue) value=''" value="{$aLang.search}" name="q" />
-            			<input class="search-submit" title="SEARCH" type="submit" value="" />
+            			<input class="search-submit" title="{$aLang.search_to}" type="submit" value="" />
             		</form>
                 </div>
+
+				{insert name="block" block=simpleUsersTop}
             </div>
         </div>
+
+        <h1 class="logo">
+            <a href="{cfg name='path.root.web'}">
+                <ul>
+                    <li class="title">Live<br />Street</li>
+                    <li>Your social engine</li>
+                </ul>
+            </a>
+        </h1>
     </div>
 
 	{hook run='header_banner_end'}

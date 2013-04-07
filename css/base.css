@@ -73,14 +73,14 @@ h2.header-table span { color: #949aa1; }
 #header .top-header .profile-guest li a.voiti { background:url(../images/strelka1.png) no-repeat right; padding-right:14px }
 #header .top-header .profile-guest li a.reg { background:url(../images/strelka2.png) no-repeat right; padding-right:17px }
 
-#header .btm-header a.logo { background:#f70000; color:#fff; float:left; width:135px; padding-top:19px; padding-left:30px; height:100px; display:block; text-decoration: none; }
-#header .btm-header a.logo li { font-size:12px; font-family:Tahoma; padding-bottom:5px }
-#header .btm-header a.logo li.title { font-size:36px; font-weight:bold; line-height:30px; }
+#header .btm-header .logo a { background:#f70000; color:#fff; float:left; width:135px; padding-top:19px; padding-left:30px; height:100px; display:block; text-decoration: none; }
+#header .btm-header .logo a li { font-size:12px; font-family:Tahoma; padding-bottom:5px }
+#header .btm-header .logo a li.title { font-size:36px; font-weight:bold; line-height:30px; }
 
-#header .btm-header .left-menu { float:left; margin-left:42px }
+#header .btm-header .left-menu { float:right; width:740px }
 
 /* top-menu */
-#header .btm-header .left-menu .top-menu { height:60px; width:771px; border-bottom:1px solid #e4e4e4; overflow:hidden }
+#header .btm-header .left-menu .top-menu { height:60px; border-bottom:1px solid #e4e4e4; overflow:hidden }
 #header .btm-header .left-menu .top-menu .navigate { float:left }
 #header .btm-header .left-menu .top-menu .navigate li { float:left; padding:17px 10px 0px 19px; font-size:16px }
 #header .btm-header .left-menu .top-menu .navigate li.last { padding-right:0px }
@@ -98,7 +98,7 @@ h2.header-table span { color: #949aa1; }
 
 /* btm-menu */
 #header .btm-header .left-menu .btm-menu { margin-top:26px; }
-#header .btm-header .left-menu .btm-menu .top-authors { float:left; }
+#header .btm-header .left-menu .btm-menu .top-authors { padding-left:22px; width:470px }
 #header .btm-header .left-menu .btm-menu .top-authors li { float:left; padding:1px 10px 0px 0px }
 #header .btm-header .left-menu .btm-menu .top-authors li img { width:30px; height:30px }
 #header .btm-header .left-menu .btm-menu .top-authors li.title { padding:0px 34px 0px 0px; line-height:15px }
@@ -126,11 +126,11 @@ h2.header-table span { color: #949aa1; }
 .slider-nav .switch li.arrowright a { width:9px; height:12px; background:url(../images/switch-arrow.png) no-repeat -9px 0px; display:block }
 .slider-nav .switch li.arrowright a:hover { background-position:-27px 0px }
 
-#slider { height: 300px;width: 729px;overflow: hidden; position:relative; clear:both }
+#slider { height: 300px;width: 669px;overflow: hidden; position:relative; clear:both }
 #slider-hidden { height: 300px; width: 6000px; margin-left: 0; margin-right:-11px }
-.topic-slider_area { height: 330px; width: 356px; display: inline-block; *display:inline; zoom:1 }
-.topic-slider { height: 300px; width: 356px; margin-right:13px; display: inline-block; *display:inline; zoom:1 }
-.topic-slider .topicshort.news { width:332px; height:249px; margin-right:14px }
+.topic-slider_area { height: 330px; width: 330px; display: inline-block; *display:inline; zoom:1 }
+.topic-slider { height: 300px; width: 330px; margin-right:13px; display: inline-block; *display:inline; zoom:1 }
+.topic-slider .topicshort.news { width:299px; height:249px; margin-right:14px }
 .topic-slider .topicshort.news .inform { height:209px; overflow:hidden }
 
 /* Футер

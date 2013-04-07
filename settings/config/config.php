@@ -23,7 +23,7 @@ $config['view']['grid']['fluid_min_width'] = 976; // Min - 976px
 $config['view']['grid']['fluid_max_width'] = 1300;  */
 
 /* Fixed settings */
-$config['view']['grid']['fixed_width'] = 1006;
+$config['view']['grid']['fixed_width'] = 950;
 
 
 $config['head']['default']['js'] = Config::Get('head.default.js');

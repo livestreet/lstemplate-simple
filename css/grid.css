@@ -5,7 +5,7 @@
 #header-bg  { position:absolute; top:0; left:0; right:0; max-width:100%; background:#f1f1f1; height:48px }
 #header 	{ height: 192px; margin-left:26px; overflow: hidden; zoom: 1 }
 #wrapper 	{ overflow: hidden; zoom: 1; margin-top:30px; padding-bottom:40px; }
-#content 	{ width: 730px; float: left; overflow:hidden; padding-left:26px; }
+#content 	{ width: 670px; float: left; overflow:hidden; padding-left:26px; }
 #sidebar	{ width: 230px; float: right; }
 #footer 	{ overflow: hidden; zoom: 1; height:164px; margin-top:-164px; background:#f1f1f1; position:relative; }
 
@@ -13,4 +13,5 @@
 #wrapper.no-sidebar #content 	{ width: 100%; margin-right: 0; }
 
 
+.static-page { width:924px !important }
 .static-page .topic-content { margin-left:0 !important }

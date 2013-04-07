@@ -94,6 +94,7 @@ return array(
     'users_blog' => 'Пользователей',
     'none_readers' => 'Нет читателей',
     'slider_title_best' => 'Лучшее',
+    'search_to' => 'Найти',
 
     'user_friend_reject' => 'Заявка отклонена',
     'user_friend_send' => 'Заявка отправлена',

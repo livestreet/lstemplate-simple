@@ -96,6 +96,7 @@ return array(
     'users_blog' => 'People',
     'none_readers' => 'no readers',
     'slider_title_best' => 'Best',
+    'search_to' => 'Find',
 
     'user_friend_reject' => 'Rejected',
     'user_friend_send' => 'Sent',
