@@ -30,11 +30,11 @@
 						{if $oTopic->getType()=='photoset' and $oTopic->getPreviewImage()}
 							<div class="topic-photo-preview" onclick="window.location='{$oTopic->getUrl()}#photoset'">
                                 <div class="topic-photo-count"><span>{$oTopic->getPhotosetCount()}</span></div>
-                                <img src="{$oTopic->getPreviewImageWebPath('354crop')}" alt="image" />
+                                <img src="{$oTopic->getPreviewImageWebPath('317crop')}" alt="image" />
                             </div>
 						{elseif $oTopic->getPreviewImage()}
                             <div class="topic-photo-preview" onclick="window.location='{$oTopic->getUrl()}'">
-                                <img src="{$oTopic->getPreviewImageWebPath('354crop')}" alt="image" />
+                                <img src="{$oTopic->getPreviewImageWebPath('317crop')}" alt="image" />
                             </div>
 						{/if}
                         <h3 class="title">

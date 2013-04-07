@@ -27,10 +27,10 @@ $config['count_profile_comments']   = 10;  // Число комментов на
 $config['show_thumbs_only_index']   = true;  // Показывать топики в виде превью только на главной странице, если сделать false - то будут на всех страницах
 $config['show_titletwo']   = false;  // Показывать заголовок в две строки
 
-$config['preview_size_w']=229;	// Ширина
+$config['preview_size_w']=208;	// Ширина
 $config['preview_size_h']=116;	// Высота, при crop=false используется как минимально возможная высота
 $config['preview_crop']=true;	// Делать из картинки кроп? false - если не нужно обрезать картинки по высоте
-$config['preview_big_size_w']=354;	// Ширина большого варианта
+$config['preview_big_size_w']=317;	// Ширина большого варианта
 $config['preview_big_size_h']=186;	// Высота большого варианта, при crop=false используется как минимально возможная высота
 $config['preview_big_crop']=true;	// Делать из картинки кроп для большого варианта? false - если не нужно обрезать картинки по высоте
 
@@ -59,12 +59,12 @@ $config['size_images_preview']=array(
 /*
 $config['size_images']=array(
   array(
-    'w' => 229,
+    'w' => 208,
     'h' => 116,
     'crop' => true,
   ),
   array(
-    'w' => 354,
+    'w' => 317,
     'h' => 186,
     'crop' => true,
   )
