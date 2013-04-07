@@ -28,7 +28,7 @@
 	
 	*margin-right: 5px;
 }
-.button:hover { text-decoration: none; background: #f0f2f5; }
+.button:hover { text-decoration: none; }
 .button:active { position:relative; top:1px }
 .button.fl-r { *margin-right: 0; }
 

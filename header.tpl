@@ -120,7 +120,7 @@
 		{include file='header_top.tpl'}
 
 		<div id="wrapper" class="{if $noSidebar}no-sidebar{/if}{hook run='wrapper_class'}">
-			<div id="content" role="main" {if $sidebarPosition == 'left'}class="content-profile"{/if} {if $sMenuItemSelect=='profile'}itemscope itemtype="http://data-vocabulary.org/Person"{/if}>
+			<div id="content" role="main" {if $sAction=='page'}class="static-page"{/if} {if $sidebarPosition == 'left'}class="content-profile"{/if} {if $sMenuItemSelect=='profile'}itemscope itemtype="http://data-vocabulary.org/Person"{/if}>
 
                 {if $sAction=='index'}
 					{insert name="block" block=simpleTopicsTop}

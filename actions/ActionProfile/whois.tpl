@@ -131,7 +131,7 @@
 			{/if}
 
 
-			{if $oConfig->GetValue('general.reg.invite') and $aUsersInvite}
+            {if $oConfig->GetValue('general.reg.invite') and $aUsersInvite}
 				<li>
 					<span>{$aLang.profile_invite_to}:</span>
 					<strong>

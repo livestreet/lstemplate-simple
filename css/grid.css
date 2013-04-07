@@ -10,4 +10,7 @@
 #footer 	{ overflow: hidden; zoom: 1; height:164px; margin-top:-164px; background:#f1f1f1; position:relative; }
 
 #wrapper.no-sidebar				{ background-image: none; }
-#wrapper.no-sidebar #content 	{ width: 100%; margin-right: 0; }       
+#wrapper.no-sidebar #content 	{ width: 100%; margin-right: 0; }
+
+
+.static-page .topic-content { margin-left:0 !important }
