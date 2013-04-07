@@ -1,8 +1,26 @@
 
 
-$(document).ready(function(){
-    $('.signin').click(function() {
-       $('#signin_menu').toggle();
+/* Выпадающее меню юзера */
+jQuery(document).ready(function($){
+      jQuery('#signin_menu').hide();
+
+      jQuery('.signin').click(function (e) {
+        var $message1 = jQuery('#signin_menu');
+
+        if ($message1.css('display') != 'block') {
+          $message1.slideDown();
+
+          var yourClick = true;
+          jQuery(document).bind('click.myEvent', function (e) {
+            if (!yourClick && $(e.target).closest('#signin_menu').length == 0) {
+              $message1.slideUp();
+              $(document).unbind('click.myEvent');
+            }
+            yourClick = false;
+          });
+        }
+
+        e.preventDefault();
     });
 });
 

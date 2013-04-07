@@ -4,6 +4,12 @@
 	<div class="profile-photo-wrapper">
 		<div class="status {if $oUserProfile->isOnline()}status-online{else}status-offline{/if}">{if $oUserProfile->isOnline()}{$aLang.user_status_online}{else}{$aLang.user_status_offline}{/if}</div>
 		<a href="{$oUserProfile->getUserWebPath()}"><img src="{$oUserProfile->getProfileFotoPath()}" alt="photo" class="profile-photo" id="foto-img" /></a>
+
+        {if $oUserCurrent && $oUserCurrent->getId()!=$oUserProfile->getId()}
+          <div class="friend">
+              {include file='actions/ActionProfile/friend_item.tpl' oUserFriend=$oUserProfile->getUserFriend()}
+          </div>
+        {/if}
 	</div>
 	
 	{if $sAction=='settings' and $oUserCurrent and $oUserCurrent->getId() == $oUserProfile->getId()}

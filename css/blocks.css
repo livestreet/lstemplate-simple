@@ -90,9 +90,7 @@
 .block.block-type-profile-actions 						{ border: none; }
 .block.block-type-profile-actions .block-content 		{ padding: 0 0 0 30px; }
 .block.block-type-profile-actions ul li					{ margin-bottom: 2px; font-size: 12px; }
-.block.block-type-profile-actions ul li:last-child		{ margin-bottom: 0; }
-.block.block-type-profile-actions ul li a				{ color: #727a90; }
-.block.block-type-profile-actions ul li a:hover			{ color: #f00; }
+.block.block-type-profile-actions ul li:last-child		{ margin-bottom: 0; }   
 .block.block-type-profile-actions ul li a.followed		{ color: #f00; }
 
 

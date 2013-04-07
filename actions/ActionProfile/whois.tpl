@@ -13,21 +13,6 @@
 
 
 <div class="user-profile-content">
-
-    <div class="foto-profile">
-        {if $oUserProfile->getProfileFoto()}
-		    <img src="{$oUserProfile->getProfileFoto()}" alt="photo" />
-        {else}
-            <img src="{cfg name='path.static.skin'}/images/nofoto.jpg" alt="photo" />
-	    {/if}
-
-        {if $oUserCurrent && $oUserCurrent->getId()!=$oUserProfile->getId()}
-        <div class="friend">
-            {include file='actions/ActionProfile/friend_item.tpl' oUserFriend=$oUserProfile->getUserFriend()}
-        </div>
-        {/if}
-    </div>
-
     <div class="about-profile">
         {if $oUserCurrent && $oUserCurrent->getId()!=$oUserProfile->getId()}
           	<script type="text/javascript">
@@ -35,11 +20,18 @@
           			ls.lang.load({lang_load name="profile_user_unfollow,profile_user_follow"});
           		});
           	</script>
-            <div class="send-message button2"><em></em><span></span><a href="{router page='talk'}add/?talk_users={$oUserProfile->getLogin()}">{$aLang.write_message}</a></div>
-            <div class="send-message button2" style="right:158px"><em></em><span></span>
-					<a href="#" onclick="ls.user.followToggle(this, {$oUserProfile->getId()}); return false;" class="{if $oUserProfile->isFollow()}followed{/if}">
-						{if $oUserProfile->isFollow()}{$aLang.profile_user_unfollow}{else}{$aLang.profile_user_follow}{/if}
-					</a>
+            <div class="send-message button2">
+                <div class="l"></div>
+                <div class="r"></div>
+                <a href="{router page='talk'}add/?talk_users={$oUserProfile->getLogin()}">{$aLang.write_message}</a>
+            </div>
+
+            <div class="send-message button2" style="right:158px">
+                <div class="l"></div>
+                <div class="r"></div>
+				<a href="#" onclick="ls.user.followToggle(this, {$oUserProfile->getId()}); return false;" class="{if $oUserProfile->isFollow()}followed{/if}">
+				    {if $oUserProfile->isFollow()}{$aLang.profile_user_unfollow}{else}{$aLang.profile_user_follow}{/if}
+				</a>
             </div>
         {/if}
 
